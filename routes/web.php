@@ -14,14 +14,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/admin', function () {
+Route::get('/dashboard', function () {
     return view('admin.index');
 });
 
+// Авторизация
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -31,3 +33,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
+
+
+// для использования vue-router
+//Route::get('/{any}', 'SpaController@index')->where('any', '.*');

@@ -11,6 +11,7 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .sass('resources/sass/app.scss', 'public/css')
+mix.js('resources/js/layouts.js', 'public/js')
+    .sass('resources/sass/admin/layouts.scss', 'public/admin/css')
+    .sass('resources/sass/tc_lvovo/layouts.scss', 'public/css/tc_lvovo')
     .browserSync('http://tc_lvovo/');
