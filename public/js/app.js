@@ -45212,7 +45212,7 @@ function add$1 (
         // #9681 QtWebEngine event.timeStamp is negative value
         e.timeStamp <= 0 ||
         // #9448 bail if event is fired in another document in a multi-page
-        // electron/nw.js layouts, since event.timeStamp will be using a different
+        // electron/nw.js app, since event.timeStamp will be using a different
         // starting reference
         e.target.ownerDocument !== document
       ) {
@@ -49718,7 +49718,7 @@ module.exports = function(module) {
 
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
-  !*** ./resources/js/layouts.js ***!
+  !*** ./resources/js/app.js ***!
   \*****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
@@ -49826,7 +49826,7 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   null,
   null,
   null
-
+  
 )
 
 /* hot reload */
@@ -49846,7 +49846,7 @@ component.options.__file = "resources/js/components/ExampleComponent.vue"
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../node_modules/babel-loader/lib??ref--4-0!../../../node_modules/vue-loader/lib??vue-loader-options!./ExampleComponent.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/ExampleComponent.vue?vue&type=script&lang=js&");
-/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]);
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_ExampleComponent_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
 
 /***/ }),
 
@@ -49870,7 +49870,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ "./resources/sass/admin/app.scss":
 /*!***************************************!*\
-  !*** ./resources/sass/admin/layouts.scss ***!
+  !*** ./resources/sass/admin/app.scss ***!
   \***************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -49881,7 +49881,7 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ "./resources/sass/tc_lvovo/app.scss":
 /*!******************************************!*\
-  !*** ./resources/sass/tc_lvovo/layouts.scss ***!
+  !*** ./resources/sass/tc_lvovo/app.scss ***!
   \******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
@@ -49892,14 +49892,14 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ 0:
 /*!******************************************************************************************************!*\
-  !*** multi ./resources/js/layouts.js ./resources/sass/admin/layouts.scss ./resources/sass/tc_lvovo/layouts.scss ***!
+  !*** multi ./resources/js/app.js ./resources/sass/admin/app.scss ./resources/sass/tc_lvovo/app.scss ***!
   \******************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/Gesha/Desktop/www/code/tc_lvovo/resources/js/layouts.js */"./resources/js/app.js");
-__webpack_require__(/*! /Users/Gesha/Desktop/www/code/tc_lvovo/resources/sass/admin/layouts.scss */"./resources/sass/admin/app.scss");
-module.exports = __webpack_require__(/*! /Users/Gesha/Desktop/www/code/tc_lvovo/resources/sass/tc_lvovo/layouts.scss */"./resources/sass/tc_lvovo/app.scss");
+__webpack_require__(/*! /Users/Gesha/Desktop/www/code/tc_lvovo/resources/js/app.js */"./resources/js/app.js");
+__webpack_require__(/*! /Users/Gesha/Desktop/www/code/tc_lvovo/resources/sass/admin/app.scss */"./resources/sass/admin/app.scss");
+module.exports = __webpack_require__(/*! /Users/Gesha/Desktop/www/code/tc_lvovo/resources/sass/tc_lvovo/app.scss */"./resources/sass/tc_lvovo/app.scss");
 
 
 /***/ })
