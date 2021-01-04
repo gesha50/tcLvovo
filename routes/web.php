@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\IndexController;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,9 +20,24 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('admin.index');
+Route::group([
+    'prefix' => 'dashboard',
+    'as' => 'admin.',
+// Важно: эта строчка закрывает админку!
+//    'middleware' => 'auth'
+
+], function () {
+    Route::get('/index', [IndexController::class, 'index'])->name('index');
+    Route::get('/charts', [IndexController::class, 'charts'])->name('charts');
+    Route::get('/tables', [IndexController::class, 'tables'])->name('tables');
+    Route::get('/layoutStatic', [IndexController::class, 'layoutStatic'])->name('layoutStatic');
+    Route::get('/layoutSidenav', [IndexController::class, 'layoutSidenav'])->name('layoutSidenav');
+
 });
+
+
+
+
 
 // Авторизация
 Auth::routes();
