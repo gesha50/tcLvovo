@@ -4,9 +4,9 @@ import Vue from 'vue'
 
 Vue.use(Router)
 
-import ExampleComponent from "./components/ExampleComponent";
-import Test from "./components/Test";
-import Test2 from "./components/Test2";
+import ExampleComponent from "../components/ExampleComponent";
+import Test from "../components/Test";
+import Test2 from "../components/Test2";
 
 const routes = [
     {

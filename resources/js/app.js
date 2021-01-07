@@ -28,9 +28,11 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-import router from './router'
+import router from './router/router'
+import store from "./vuex/store";
 
 const app = new Vue({
     el: '#app',
-    router
+    router,
+    store
 });
