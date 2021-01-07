@@ -10,11 +10,10 @@
                     </div>
                     <router-link
                         v-for="link in links"
-                        :key="Object.keys(links)"
                         :to="link.href">{{ link.title }}
                     </router-link>
 
-                    <router-view></router-view>
+                    <router-view />
                 </div>
             </div>
         </div>
@@ -28,11 +27,11 @@
                 links: [
                     {
                         title: "Главная",
-                        href: "/blog/1"
+                        href: "/blog/index"
                     },
                     {
                         title: "Блог",
-                        href: "/blog/2"
+                        href: "/blog/testing"
                     }
                 ]
             }

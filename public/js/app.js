@@ -1930,16 +1930,15 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
       links: [{
         title: "Главная",
-        href: "/blog/1"
+        href: "/blog/index"
       }, {
         title: "Блог",
-        href: "/blog/2"
+        href: "/blog/testing"
       }]
     };
   },
@@ -37600,11 +37599,9 @@ var render = function() {
             ]),
             _vm._v(" "),
             _vm._l(_vm.links, function(link) {
-              return _c(
-                "router-link",
-                { key: Object.keys(_vm.links), attrs: { to: link.href } },
-                [_vm._v(_vm._s(link.title) + "\n                ")]
-              )
+              return _c("router-link", { attrs: { to: link.href } }, [
+                _vm._v(_vm._s(link.title) + "\n                ")
+              ])
             }),
             _vm._v(" "),
             _c("router-view")
@@ -53242,10 +53239,10 @@ vue__WEBPACK_IMPORTED_MODULE_1___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 
 
 var routes = [{
-  path: "/blog/1",
+  path: "/blog/index",
   component: _components_Test__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
-  path: "/blog/2",
+  path: "/blog/testing",
   component: _components_Test2__WEBPACK_IMPORTED_MODULE_4__["default"]
 }];
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_0__["default"]({
