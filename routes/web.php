@@ -23,16 +23,13 @@ Route::get('/', function () {
 Route::group([
     'prefix' => 'dashboard',
     'as' => 'admin.',
-// Важно: эта строчка закрывает админку!
-//    'middleware' => 'auth'
-
+    'middleware' => 'auth'
 ], function () {
-    Route::get('/index', [IndexController::class, 'index'])->name('index');
+    Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/charts', [IndexController::class, 'charts'])->name('charts');
     Route::get('/tables', [IndexController::class, 'tables'])->name('tables');
     Route::get('/layoutStatic', [IndexController::class, 'layoutStatic'])->name('layoutStatic');
     Route::get('/layoutSidenav', [IndexController::class, 'layoutSidenav'])->name('layoutSidenav');
-
 });
 
 
@@ -52,4 +49,6 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 
 // для использования vue-router
-//Route::get('/{any}', 'SpaController@index')->where('any', '.*');
+Route::get('/blog/{any}', function (){
+    return view('welcome');
+})->where('any', '.*');
