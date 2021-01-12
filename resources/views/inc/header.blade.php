@@ -1,7 +1,8 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
-    <div class="container">
+<nav class="navbar navbar-expand-md navbar-light shadow-sm navbar_edit">
+    <div class="container-fluid">
+        <img width="45px" src="{{ asset('storage/без_фона.png') }}" alt="">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ config('layouts.name', 'Laravel') }}
+            {{ config('layouts.name', 'ТК Львово') }}
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -48,6 +49,9 @@
                     </li>
                 @endguest
             </ul>
+            <div class="search navbar-nav">
+                <i class="fas fa-search"></i>
+            </div>
         </div>
     </div>
 </nav>
