@@ -10927,3 +10927,25 @@ a.text-dark:focus {
   font-size: 20px;
 }
 
+.statistic {
+  position: relative;
+  background-color: #111111;
+  color: #ffffff;
+  padding-left: -15px;
+  padding-right: -15px;
+}
+
+.statistic__number {
+  height: 100px;
+  width: 100px;
+  background: url(/images/angar_3.png?29f6f71c1055afe395fccd578d00ea74) center center no-repeat;
+  background-size: cover;
+  text-align: center;
+  font-size: 30px;
+  color: #fcd846;
+}
+
+.statistic__order {
+  position: absolute;
+}
+

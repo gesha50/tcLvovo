@@ -18,7 +18,7 @@ use App\Http\Controllers\Admin\IndexController;
 
 Route::get('/', function () {
     return view('welcome');
-});
+})->name('index');
 
 Route::group([
     'prefix' => 'dashboard',
