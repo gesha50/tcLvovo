@@ -2018,6 +2018,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "carousel",
@@ -6468,7 +6469,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".agile__nav-button {\n  background: transparent;\n  border: none;\n  color: #fff;\n  cursor: pointer;\n  font-size: 24px;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  transition-duration: 0.3s;\n  width: 80px;\n}\n.agile__nav-button:hover {\n  background-color: rgba(0, 0, 0, 0.5);\n  opacity: 1;\n}\n.agile__nav-button--prev {\n  left: 0;\n}\n.agile__nav-button--next {\n  right: 0;\n}\n.agile__dots {\n  bottom: 10px;\n  left: 50%;\n  position: absolute;\n  transform: translateX(-50%);\n}\n.agile__dot {\n  margin: 0 10px;\n}\n.agile__dot button {\n  background-color: transparent;\n  border: 1px solid #fff;\n  border-radius: 50%;\n  cursor: pointer;\n  display: block;\n  height: 10px;\n  font-size: 0;\n  line-height: 0;\n  margin: 0;\n  padding: 0;\n  transition-duration: 0.3s;\n  width: 10px;\n}\n.agile__dot--current button, .agile__dot:hover button {\n  background-color: #fff;\n}\n.slide {\n  display: block;\n  height: 500px;\n  -o-object-fit: cover;\n  object-fit: cover;\n  width: 100%;\n}", ""]);
+exports.push([module.i, ".agile__nav-button {\n  background: transparent;\n  border: none;\n  color: #fff;\n  cursor: pointer;\n  font-size: 24px;\n  height: 100%;\n  position: absolute;\n  top: 0;\n  transition-duration: 0.3s;\n  width: 80px;\n}\n.agile__nav-button:hover {\n  background-color: rgba(0, 0, 0, 0.5);\n  opacity: 1;\n}\n.agile__nav-button--prev {\n  left: 0;\n}\n.agile__nav-button--next {\n  right: 0;\n}\n.agile__dots {\n  bottom: 10px;\n  left: 50%;\n  position: absolute;\n  transform: translateX(-50%);\n}\n.agile__dot {\n  margin: 0 10px;\n}\n.agile__dot button {\n  background-color: transparent;\n  border: 1px solid #fcd846;\n  border-radius: 50%;\n  cursor: pointer;\n  display: block;\n  height: 10px;\n  font-size: 0;\n  line-height: 0;\n  margin: 0;\n  padding: 0;\n  transition-duration: 0.3s;\n  width: 10px;\n}\n.agile__dot--current button, .agile__dot:hover button {\n  background-color: #fcd846;\n}\n.agile__actions button i {\n  color: #fcd846;\n}\n.slide {\n  display: block;\n  height: 500px;\n  -o-object-fit: cover;\n  object-fit: cover;\n  width: 100%;\n}", ""]);
 
 // exports
 
@@ -43906,26 +43907,22 @@ var render = function() {
           [
             _c("img", {
               staticClass: "slide",
-              attrs: {
-                src:
-                  "https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-              }
+              attrs: { src: "/storage/slider_1.jpeg" }
             }),
             _vm._v(" "),
             _c("img", {
               staticClass: "slide",
-              attrs: {
-                src:
-                  "https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-              }
+              attrs: { src: "/storage/slider_2.jpg" }
             }),
             _vm._v(" "),
             _c("img", {
               staticClass: "slide",
-              attrs: {
-                src:
-                  "https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&w=1600&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ"
-              }
+              attrs: { src: "/storage/slider_3.jpg" }
+            }),
+            _vm._v(" "),
+            _c("img", {
+              staticClass: "slide",
+              attrs: { src: "/storage/slider_4.jpg" }
             }),
             _vm._v(" "),
             _c("template", { slot: "prevButton" }, [

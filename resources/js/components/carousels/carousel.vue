@@ -2,9 +2,10 @@
 <div class="container">
     <div id="app">
         <agile  :autoplay-speed="4000" :initial-slide="0" :autoplay="true" :pauseOnHover="true">
-            <img class="slide" src="https://images.unsplash.com/photo-1506260408121-e353d10b87c7?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/>
-            <img class="slide" src="https://images.unsplash.com/photo-1523712999610-f77fbcfc3843?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/>
-            <img class="slide" src="https://images.unsplash.com/photo-1524260855046-f743b3cdad07?ixlib=rb-1.2.1&amp;q=85&amp;fm=jpg&amp;crop=entropy&amp;cs=srgb&amp;w=1600&amp;fit=max&amp;ixid=eyJhcHBfaWQiOjE0NTg5fQ"/>
+            <img class="slide" src="/storage/slider_1.jpeg"/>
+            <img class="slide" src="/storage/slider_2.jpg"/>
+            <img class="slide" src="/storage/slider_3.jpg"/>
+            <img class="slide" src="/storage/slider_4.jpg"/>
             <template slot="prevButton"><i class="fas fa-chevron-left"></i></template>
             <template slot="nextButton"><i class="fas fa-chevron-right"></i></template>
         </agile>
@@ -57,7 +58,7 @@ export default {
 }
 .agile__dot button {
     background-color: transparent;
-    border: 1px solid #fff;
+    border: 1px solid #fcd846;
     border-radius: 50%;
     cursor: pointer;
     display: block;
@@ -70,7 +71,11 @@ export default {
     width: 10px;
 }
 .agile__dot--current button, .agile__dot:hover button {
-    background-color: #fff;
+    background-color: #fcd846;
+}
+
+.agile__actions button i {
+    color: #fcd846;
 }
 
 .slide {

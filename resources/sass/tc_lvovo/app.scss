@@ -1,3 +1,4 @@
+
 // Fonts
 @import 'fonts';
 
@@ -7,8 +8,10 @@
 // Bootstrap
 @import '../../../node_modules/bootstrap/scss/bootstrap';
 
-
+@import "mixin";
 @import 'header';
+@import 'footer';
 @import 'rentPlace';
 @import "serviceReview";
+
 

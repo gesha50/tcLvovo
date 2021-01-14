@@ -1,0 +1,115 @@
+.footerUp {
+    background: $textBlack;
+    color: $white;
+    padding: 60px 0;
+    &__aboutUs,
+    &__news {
+        width: 40%;
+    }
+    &__aboutUs {
+
+    }
+    &__news {
+
+    }
+}
+
+.aboutUsMini {
+    &__topText {
+
+    }
+    &__img {
+        margin-top: -12px;
+    }
+    &__headingText {
+        @include miniHeader();
+        padding-right: 20px;
+    }
+    &__nearHeadingText {
+        color: $whiteText;
+        font-family: "CrimsonText_Italic";
+        font-size: 15px;
+        font-style: italic;
+        letter-spacing: normal;
+        line-height: 36px;
+    }
+    &__bodyText {
+        @include miniBodyText($gray_2, Montserrat_light);
+    }
+    &__socIcons {
+        padding-top: 20px;
+    }
+}
+
+.socIcons {
+    &__vk,
+    &__google,
+    &__youtube,
+    &__facebook {
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    }
+    &__facebook {
+        background-color: #3a589b;
+    }
+    &__vk {
+        background-color: #007ab9;
+    }
+    &__google {
+        background-color: #dc493c;
+    }
+    &__youtube {
+        background-color: #cc2626;
+    }
+}
+
+.newsMini {
+    &__header {
+
+    }
+    &__headerText {
+        @include miniHeader();
+    }
+    &__cursor {
+        width: 30px;
+    }
+    &__cursor i:hover {
+        color: $yellow;
+    }
+
+    &__date {
+        @include forDate();
+    }
+    &__text {
+        @include miniBodyText($yellow, Montserrat_light);
+    }
+    &__footer {
+        display: inline-block;
+    }
+
+    &__link {
+        @include miniBodyText($white,$MontserratSB);
+
+        &:hover {
+            text-decoration: none;
+            color: $grayText;
+            cursor: pointer;
+        }
+    }
+
+    &__link:hover .line {
+        width: 100%;
+    }
+}
+.newsMini hr {
+    background: $gray_2;
+}

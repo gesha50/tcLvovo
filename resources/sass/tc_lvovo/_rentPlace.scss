@@ -53,6 +53,7 @@
         color: $textBlack;
         font-family: "Montserrat";
         font-size: 16px;
+        transition: 0.5s;
         &:hover {
             color: $hoverForTextBlack;
             font-size: 20px;

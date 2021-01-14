@@ -10934,6 +10934,163 @@ a.text-dark:focus {
   font-size: 20px;
 }
 
+.footerUp {
+  background: #111;
+  color: #fff;
+  padding: 60px 0;
+}
+
+.footerUp__aboutUs,
+.footerUp__news {
+  width: 40%;
+}
+
+.aboutUsMini__img {
+  margin-top: -12px;
+}
+
+.aboutUsMini__headingText {
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+  padding-right: 20px;
+}
+
+.aboutUsMini__nearHeadingText {
+  color: #ffffff;
+  font-family: "CrimsonText_Italic";
+  font-size: 15px;
+  font-style: italic;
+  letter-spacing: normal;
+  line-height: 36px;
+}
+
+.aboutUsMini__bodyText {
+  color: #555555;
+  font-family: Montserrat_light;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.aboutUsMini__socIcons {
+  padding-top: 20px;
+}
+
+.socIcons__vk,
+.socIcons__google,
+.socIcons__youtube,
+.socIcons__facebook {
+  width: 35px;
+  height: 35px;
+  text-align: center;
+  line-height: 35px;
+  margin: 0;
+  padding: 0;
+  transition: 0.5s;
+}
+
+.socIcons__vk:hover,
+.socIcons__google:hover,
+.socIcons__youtube:hover,
+.socIcons__facebook:hover {
+  transform: scale(1.2);
+  cursor: pointer;
+}
+
+.socIcons__facebook {
+  background-color: #3a589b;
+}
+
+.socIcons__vk {
+  background-color: #007ab9;
+}
+
+.socIcons__google {
+  background-color: #dc493c;
+}
+
+.socIcons__youtube {
+  background-color: #cc2626;
+}
+
+.newsMini__headerText {
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+}
+
+.newsMini__cursor {
+  width: 30px;
+}
+
+.newsMini__cursor i:hover {
+  color: #fcd846;
+}
+
+.newsMini__date {
+  color: #7d7d7d;
+  font-family: "CrimsonText_Italic";
+  font-size: 16px;
+  font-style: italic;
+  letter-spacing: normal;
+  line-height: 30px;
+  text-align: left;
+}
+
+.newsMini__text {
+  color: #fcd846;
+  font-family: Montserrat_light;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.newsMini__footer {
+  display: inline-block;
+}
+
+.newsMini__link {
+  color: #fff;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.newsMini__link:hover {
+  text-decoration: none;
+  color: #7d7d7d;
+  cursor: pointer;
+}
+
+.newsMini__link:hover .line {
+  width: 100%;
+}
+
+.newsMini hr {
+  background: #555555;
+}
+
 .statistic {
   position: relative;
   background-color: #111;
@@ -10996,6 +11153,7 @@ a.text-dark:focus {
   color: #111;
   font-family: "Montserrat";
   font-size: 16px;
+  transition: 0.5s;
 }
 
 .miniOrder__blockText a:hover {
