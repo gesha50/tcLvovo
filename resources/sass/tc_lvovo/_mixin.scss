@@ -1,7 +1,7 @@
 
-@mixin miniHeader() {
+@mixin miniHeader($fontF) {
     color: $whiteText;
-    font-family: Montserrat;
+    font-family: $fontF;
     font-size: 25px;
     font-weight: 400;
     font-style: normal;
@@ -12,7 +12,7 @@
 
 @mixin miniBodyText($color, $fontF) {
     color: $color;
-    font-family: $fontF; // Montserrat_light
+    font-family: $fontF;
     font-size: 16px;
     font-weight: 300;
     font-style: normal;

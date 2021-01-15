@@ -22,7 +22,7 @@
         margin-top: -12px;
     }
     &__headingText {
-        @include miniHeader();
+        @include miniHeader(Montserrat);
         padding-right: 20px;
     }
     &__nearHeadingText {
@@ -77,7 +77,7 @@
 
     }
     &__headerText {
-        @include miniHeader();
+        @include miniHeader(Montserrat);
     }
     &__cursor {
         width: 30px;
@@ -112,4 +112,86 @@
 }
 .newsMini hr {
     background: $gray_2;
+}
+
+.footerMiddle {
+    background: $black_2;
+    color: $white;
+    padding: 0 110px;
+    &__block {
+        width: 30%;
+        padding: 60px 0;
+    }
+}
+.footerLinks hr,
+.footerHours hr,
+.footerHours__block hr,
+.footerEmail hr {
+    background: $gray_2;
+}
+
+.footerLinks {
+    &__header {
+        @include miniHeader($MontserratSB);
+    }
+    &__li {
+        color: #555555;
+    }
+    &__link {
+        @include miniBodyText($gray_2, Montserrat);
+        &:hover {
+            text-decoration: none;
+            color: $yellow;
+        }
+    }
+}
+
+.footerHours {
+    &__header {
+        @include miniHeader($MontserratSB);
+    }
+    &__body {
+
+    }
+    &__day {
+        @include miniBodyText($gray_2, Montserrat);
+    }
+    &__line {
+        border-bottom: 1px dashed $gray_2;
+    }
+    &__time {
+        @include miniBodyText($whiteText, Montserrat);
+    }
+}
+
+.footerEmail {
+    &__header {
+        @include miniHeader($MontserratSB);
+    }
+    &__send {
+
+    }
+    &__email {
+
+    }
+    &__input {
+        border-radius: 3px 0 0 3px;
+        background-color: #131313;
+        height: 52px;
+        border: none;
+        @include miniBodyText($gray_2, $MontserratSB);
+    }
+    &__btn {
+        height: 52px;
+        border-radius: 0 3px 3px 0;
+        background-color: #8dc63f;
+        border: none;
+        @include miniBodyText($whiteText, $MontserratSB);
+    }
+    &__body {
+        padding-top: 20px;
+        color: #363636;
+        @include miniBodyText(#363636, Montserrat);
+        font-size: 14px;
+    }
 }

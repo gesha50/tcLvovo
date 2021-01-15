@@ -11091,6 +11091,147 @@ a.text-dark:focus {
   background: #555555;
 }
 
+.footerMiddle {
+  background: #0e0e0e;
+  color: #fff;
+  padding: 0 110px;
+}
+
+.footerMiddle__block {
+  width: 30%;
+  padding: 60px 0;
+}
+
+.footerLinks hr,
+.footerHours hr,
+.footerHours__block hr,
+.footerEmail hr {
+  background: #555555;
+}
+
+.footerLinks__header {
+  color: #ffffff;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+}
+
+.footerLinks__li {
+  color: #555555;
+}
+
+.footerLinks__link {
+  color: #555555;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.footerLinks__link:hover {
+  text-decoration: none;
+  color: #fcd846;
+}
+
+.footerHours__header {
+  color: #ffffff;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+}
+
+.footerHours__day {
+  color: #555555;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.footerHours__line {
+  border-bottom: 1px dashed #555555;
+}
+
+.footerHours__time {
+  color: #ffffff;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.footerEmail__header {
+  color: #ffffff;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+}
+
+.footerEmail__input {
+  border-radius: 3px 0 0 3px;
+  background-color: #131313;
+  height: 52px;
+  border: none;
+  color: #555555;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.footerEmail__btn {
+  height: 52px;
+  border-radius: 0 3px 3px 0;
+  background-color: #8dc63f;
+  border: none;
+  color: #ffffff;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.footerEmail__body {
+  padding-top: 20px;
+  color: #363636;
+  color: #363636;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+  font-size: 14px;
+}
+
 .statistic {
   position: relative;
   background-color: #111;
