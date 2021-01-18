@@ -22,7 +22,7 @@
         margin-top: -12px;
     }
     &__headingText {
-        @include miniHeader(Montserrat);
+        @include miniHeader($whiteText, Montserrat);
         padding-right: 20px;
     }
     &__nearHeadingText {
@@ -77,7 +77,7 @@
 
     }
     &__headerText {
-        @include miniHeader(Montserrat);
+        @include miniHeader($whiteText, Montserrat);
     }
     &__cursor {
         width: 30px;
@@ -87,7 +87,7 @@
     }
 
     &__date {
-        @include forDate();
+        @include forDate($grayText);
     }
     &__text {
         @include miniBodyText($yellow, Montserrat_light);
@@ -132,7 +132,7 @@
 
 .footerLinks {
     &__header {
-        @include miniHeader($MontserratSB);
+        @include miniHeader($whiteText, $MontserratSB);
     }
     &__li {
         color: #555555;
@@ -148,7 +148,7 @@
 
 .footerHours {
     &__header {
-        @include miniHeader($MontserratSB);
+        @include miniHeader($whiteText, $MontserratSB);
     }
     &__body {
 
@@ -166,7 +166,7 @@
 
 .footerEmail {
     &__header {
-        @include miniHeader($MontserratSB);
+        @include miniHeader($whiteText, $MontserratSB);
     }
     &__send {
 
@@ -190,8 +190,31 @@
     }
     &__body {
         padding-top: 20px;
-        color: #363636;
-        @include miniBodyText(#363636, Montserrat);
+        color: $gray_3;
+        @include miniBodyText($gray_3, Montserrat);
         font-size: 14px;
+    }
+}
+
+.footerDown {
+    padding: 25px 0;
+    background-color: $black_3;
+    &__date {
+        @include miniBodyText($gray_3, Montserrat);
+        font-size: 14px;
+    }
+    &__date p {
+        display: inline;
+        @include miniBodyText($yellow, Montserrat);
+        font-size: 14px;
+        padding-right: 5px;
+    }
+    &__privacy a {
+        @include miniBodyText($gray_3, Montserrat);
+        font-size: 14px;
+        &:hover {
+            text-decoration: none;
+            color: $yellow;
+        }
     }
 }

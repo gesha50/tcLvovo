@@ -1,6 +1,6 @@
 
-@mixin miniHeader($fontF) {
-    color: $whiteText;
+@mixin miniHeader($color, $fontF) {
+    color: $color;
     font-family: $fontF;
     font-size: 25px;
     font-weight: 400;
@@ -10,9 +10,9 @@
     text-align: left;
 }
 
-@mixin miniBodyText($color, $fontF) {
+@mixin miniBodyText($color, $fontFamily) {
     color: $color;
-    font-family: $fontF;
+    font-family: $fontFamily;
     font-size: 16px;
     font-weight: 300;
     font-style: normal;
@@ -21,8 +21,8 @@
     text-align: left;
 }
 
-@mixin forDate() {
-    color: $grayText;
+@mixin forDate($color) {
+    color: $color;
     font-family: "CrimsonText_Italic";
     font-size: 16px;
     font-style: italic;

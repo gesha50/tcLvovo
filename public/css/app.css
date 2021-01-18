@@ -11232,6 +11232,54 @@ a.text-dark:focus {
   font-size: 14px;
 }
 
+.footerDown {
+  padding: 25px 0;
+  background-color: #0b0b0b;
+}
+
+.footerDown__date {
+  color: #363636;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.footerDown__date p {
+  display: inline;
+  color: #fcd846;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+  font-size: 14px;
+  padding-right: 5px;
+}
+
+.footerDown__privacy a {
+  color: #363636;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+  font-size: 14px;
+}
+
+.footerDown__privacy a:hover {
+  text-decoration: none;
+  color: #fcd846;
+}
+
 .statistic {
   position: relative;
   background-color: #111;
@@ -11398,5 +11446,49 @@ a.text-dark:focus {
   background: #fcd846;
   width: 20%;
   transition: 1s;
+}
+
+.allService__block {
+  background-color: #fcd846;
+}
+
+.allService__block2 {
+  background-color: #f3cb29;
+}
+
+.allService__block3 {
+  background-color: #eec313;
+}
+
+.miniServiceBlock {
+  padding: 55px 0;
+}
+
+.miniServiceBlock__img img {
+  height: 110px;
+  padding: 0 25px;
+  margin: 25px 0;
+}
+
+.miniServiceBlock__heading {
+  color: #111;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+  margin-bottom: 10px;
+}
+
+.miniServiceBlock__body {
+  color: #111;
+  font-family: "CrimsonText_Italic";
+  font-size: 16px;
+  font-style: italic;
+  letter-spacing: normal;
+  line-height: 30px;
+  text-align: left;
 }
 
