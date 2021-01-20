@@ -30,3 +30,14 @@
     line-height: 30px;
     text-align: left;
 }
+
+@mixin heading ($color) {
+    color: $color;
+    font-family: "Montserrat - Ultra Light";
+    font-size: 35px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 60px;
+    text-align: left;
+}

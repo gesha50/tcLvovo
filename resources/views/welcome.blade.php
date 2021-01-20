@@ -7,4 +7,7 @@
     @include('blocks.rentPlace')
     @include('blocks.serviceReview')
     @include('blocks.allService')
+{{--    <gallery></gallery>--}}
+    @include('blocks.partners')
+    @include('blocks.contact')
 @endsection

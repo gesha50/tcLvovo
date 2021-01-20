@@ -1,13 +1,14 @@
 
 .allService {
     &__block {
-        background-color: #fcd846;
+        background-color: $yellow;
     }
     &__block2 {
-        background-color: #f3cb29;
+        background-color: darken($yellow, 5%);
     }
     &__block3 {
-        background-color: #eec313;    }
+        background-color: darken($yellow, 10%);
+    }
 }
 
 .miniServiceBlock {

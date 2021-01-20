@@ -11,12 +11,6 @@
     &__rightBlock {
         margin: auto;
     }
-    &__decor {
-        width: 30px;
-        height: 30px;
-        border-top: solid 2px $yellow;
-        border-left: solid 2px $yellow;
-    }
     &__textBlock {
         padding-left: 30px;
         width: 75%;
@@ -42,7 +36,7 @@
         text-align: left
     }
     &__linkBlock {
-        width: 90px;
+        display: inline-block;
     }
     &__link {
         color: $textBlack;
@@ -68,4 +62,11 @@
     background: $yellow;
     width: 20%;
     transition: 1s;
+}
+
+.decor {
+    width: 30px;
+    height: 30px;
+    border-top: solid 2px $yellow;
+    border-left: solid 2px $yellow;
 }

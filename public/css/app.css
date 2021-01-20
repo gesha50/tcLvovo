@@ -11383,13 +11383,6 @@ a.text-dark:focus {
   margin: auto;
 }
 
-.service__decor {
-  width: 30px;
-  height: 30px;
-  border-top: solid 2px #fcd846;
-  border-left: solid 2px #fcd846;
-}
-
 .service__textBlock {
   padding-left: 30px;
   width: 75%;
@@ -11418,7 +11411,7 @@ a.text-dark:focus {
 }
 
 .service__linkBlock {
-  width: 90px;
+  display: inline-block;
 }
 
 .service__link {
@@ -11448,16 +11441,23 @@ a.text-dark:focus {
   transition: 1s;
 }
 
+.decor {
+  width: 30px;
+  height: 30px;
+  border-top: solid 2px #fcd846;
+  border-left: solid 2px #fcd846;
+}
+
 .allService__block {
   background-color: #fcd846;
 }
 
 .allService__block2 {
-  background-color: #f3cb29;
+  background-color: #fcd32d;
 }
 
 .allService__block3 {
-  background-color: #eec313;
+  background-color: #fbcd14;
 }
 
 .miniServiceBlock {
@@ -11490,5 +11490,126 @@ a.text-dark:focus {
   letter-spacing: normal;
   line-height: 30px;
   text-align: left;
+}
+
+.miniPartners {
+  padding: 100px 0;
+  background: #ffffff;
+}
+
+.miniPartners__block {
+  width: 30%;
+  position: relative;
+}
+
+.miniPartners__decor {
+  position: absolute;
+  left: -30px;
+  top: -30px;
+}
+
+.miniPartners__heading {
+  color: #111;
+  font-family: "Montserrat - Ultra Light";
+  font-size: 35px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 60px;
+  text-align: left;
+}
+
+.miniPartners__body {
+  color: #7d7d7d;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+  margin: 30px 0;
+}
+
+.miniPartners__footer {
+  display: inline-block;
+}
+
+.miniPartners__link {
+  color: #111;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+
+.miniPartners__link:hover {
+  text-decoration: none;
+  color: #565454;
+}
+
+.miniPartners__link:hover .line {
+  width: 100%;
+}
+
+.miniPartners__img {
+  width: 46%;
+  margin: 2%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  opacity: 0.5;
+}
+
+.miniPartners__img:hover {
+  opacity: 1;
+}
+
+.miniContact__block,
+.miniContact__block2,
+.miniContact__block3 {
+  text-align: center;
+  padding: 50px;
+  position: relative;
+}
+
+.miniContact__block {
+  background-color: #fcd846;
+}
+
+.miniContact__block2 {
+  background-color: #fcd32d;
+}
+
+.miniContact__block3 {
+  background-color: #fbcd14;
+}
+
+.miniContact__img {
+  height: 80px;
+}
+
+.miniContact__body {
+  color: #111;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+  margin: 30px 0;
+  text-align: center;
+}
+
+.miniContact__line {
+  width: 40px;
+  height: 2px;
+  background: #111;
+  position: absolute;
+  bottom: 50px;
+  left: calc(50% - 20px);
 }
 
