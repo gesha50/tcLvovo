@@ -24,6 +24,14 @@
         margin: 30px 0;
         text-align: center;
     }
+    &__body a {
+        @include miniBodyText($textBlack, Montserrat);
+        &:hover {
+            color: $hoverForTextBlack;
+            text-decoration: none;
+        }
+    }
+
     &__line {
         width: 40px;
         height: 2px;

@@ -50,7 +50,10 @@
                 <form class="d-flex" action="#" method="POST">
                     <input type="text" class="footerEmail__input"
                            placeholder="Введите ваш email">
-                    <button class="footerEmail__btn">Отправить</button>
+                    <div class="footerEmail__fullBtn d-flex">
+                        <div class="footerEmail__btnLeft"></div>
+                        <button class="footerEmail__btn">Отправить</button>
+                    </div>
                 </form>
             </div>
             <div class="footerEmail__body">

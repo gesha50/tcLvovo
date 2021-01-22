@@ -59,19 +59,12 @@
             font-size: 20px;
         }
     }
-    &__triangleRight,
     &__triangleLeft {
         background: $yellow;
         border-style: solid;
         border-color:  transparent  $textBlack;
     }
     &__triangleLeft {
-        border-width: 30px 0px 0px 131px;
-        float: left;
+        border-width: 30px 130px 0px 131px;
     }
-    &__triangleRight {
-        border-width: 30px 130px 0px 0px;
-        float: right;
-    }
-
 }

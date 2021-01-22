@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\ContactController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\IndexController;
@@ -16,9 +17,7 @@ use App\Http\Controllers\Admin\IndexController;
 */
 
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('index');
+Route::get('/',  [App\Http\Controllers\IndexController::class, 'index'])->name('index');
 
 Route::group([
     'prefix' => 'dashboard',
@@ -30,6 +29,10 @@ Route::group([
     Route::get('/tables', [IndexController::class, 'tables'])->name('tables');
     Route::get('/layoutStatic', [IndexController::class, 'layoutStatic'])->name('layoutStatic');
     Route::get('/layoutSidenav', [IndexController::class, 'layoutSidenav'])->name('layoutSidenav');
+
+    Route::put('/contact/update', [ContactController::class, 'update'])->name('contact.update');
+    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+    Route::get('/contact/edit', [ContactController::class, 'edit'])->name('contact.edit');
 });
 
 

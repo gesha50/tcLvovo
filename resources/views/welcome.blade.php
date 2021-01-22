@@ -11,3 +11,4 @@
     @include('blocks.partners')
     @include('blocks.contact')
 @endsection
+

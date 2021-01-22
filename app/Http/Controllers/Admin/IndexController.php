@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
 use Illuminate\Http\Request;
 
 class IndexController extends Controller
@@ -24,8 +25,9 @@ class IndexController extends Controller
     {
         return view('admin.layoutSidenav');
     }
+
     public function layoutStatic()
-{
-    return view('admin.layoutStatic');
-}
+    {
+        return view('admin.layoutStatic');
+    }
 }

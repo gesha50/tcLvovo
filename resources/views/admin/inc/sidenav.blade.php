@@ -26,6 +26,15 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseContact" aria-expanded="false" aria-controls="pagesCollapseContact">
+                            Главная страница
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapseContact" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ route('admin.contact') }}">Контакты</a>
+                            </nav>
+                        </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
                             Authentication
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

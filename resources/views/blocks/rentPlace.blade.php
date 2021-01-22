@@ -21,7 +21,7 @@
                         <a href="#">Оставьте заявку!</a>
                     </div>
                     <div class="miniOrder__triangleLeft"></div>
-                    <div class="miniOrder__triangleRight"></div>
+{{--                    <div class="miniOrder__triangleRight"></div>--}}
                 </div>
             </div>
         </div>
