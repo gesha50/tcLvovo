@@ -27,5 +27,5 @@
                 </tbody>
             </table>
         </div>
-    <a href="{{ route('admin.contact.edit') }}" class="btn btn-info contact__btn">Внести изменения</a>
+    <a href="{{ route('admin.contact.edit') }}" class="btn btn-success contact__btn">Изменить</a>
 @endsection
