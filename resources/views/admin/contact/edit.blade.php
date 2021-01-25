@@ -1,7 +1,6 @@
 
 @extends('admin.layouts.app')
 @section('title')Админка | ТК Львово@endsection
-@section('description')Мета описание для СЕО@endsection
 
 @section('content')
     <div class="container-fluid">

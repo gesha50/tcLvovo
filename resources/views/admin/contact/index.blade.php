@@ -1,6 +1,5 @@
 @extends('admin.layouts.app')
 @section('title')Админка | ТК Львово@endsection
-@section('description')Мета описание для СЕО@endsection
 
 @section('content')
     <div class="container-fluid">
@@ -9,23 +8,44 @@
             <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Contact</li>
         </ol>
-        <div class="card">
-            <table class="table">
-                <thead class="thead-light">
-                <tr>
-                    <th>Телефон</th>
-                    <th>Почта</th>
-                    <th>Адрес</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>{{ $contact->phone }}</td>
-                    <td>{{ $contact->email }}</td>
-                    <td>{{ $contact->address }}</td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    <a href="{{ route('admin.contact.edit') }}" class="btn btn-success contact__btn">Изменить</a>
+            <div class="card cardTable">
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Название компании</th>
+                        <th>Территориальное название</th>
+                        <th>Описание</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ $contact->phone }}</td>
+                        <td>{{ $contact->email }}</td>
+                        <td>{{ $contact->address }}</td>
+                        <td><a href="{{ route('admin.contact.edit') }}" class="btn btn-success">Изменить</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card">
+                <table class="table">
+                    <thead class="thead-light">
+                    <tr>
+                        <th>Телефон</th>
+                        <th>Почта</th>
+                        <th>Адрес</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>{{ $contact->phone }}</td>
+                        <td>{{ $contact->email }}</td>
+                        <td>{{ $contact->address }}</td>
+                        <td><a href="{{ route('admin.contact.edit') }}" class="btn btn-success">Изменить</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
 @endsection
