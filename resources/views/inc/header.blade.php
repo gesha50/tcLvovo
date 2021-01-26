@@ -3,7 +3,8 @@
         <nav class="navbar fixed-top navbar-expand-md navbar-light shadow-sm navbar_edit">
             <img width="45px" src="{{ asset('storage/без_фона.png') }}" alt="">
             <a class="navbar-brand" href="{{ url('/') }}">
-                {{ config('layouts.name', 'ТК Львово') }}
+{{--                {{ config('layouts.name', 'ТК Львово') }}--}}
+                {{ $information->name }}
             </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false"

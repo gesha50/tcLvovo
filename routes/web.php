@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\Admin\InformationController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\IndexController;
@@ -30,9 +31,16 @@ Route::group([
     Route::get('/layoutStatic', [IndexController::class, 'layoutStatic'])->name('layoutStatic');
     Route::get('/layoutSidenav', [IndexController::class, 'layoutSidenav'])->name('layoutSidenav');
 
-    Route::put('/contact/update', [ContactController::class, 'update'])->name('contact.update');
-    Route::get('/contact', [ContactController::class, 'index'])->name('contact');
-    Route::get('/contact/edit', [ContactController::class, 'edit'])->name('contact.edit');
+    Route::group(['prefix' => 'information', 'as' => 'information.',], function() {
+        Route::get('/edit', [InformationController::class, 'edit'])->name('edit');
+        Route::put('/update', [InformationController::class, 'update'])->name('update');
+    });
+
+    Route::group(['prefix' => 'contact', 'as' => 'contact.',], function() {
+        Route::put('/update', [ContactController::class, 'update'])->name('update');
+        Route::get('/', [ContactController::class, 'index'])->name('index');
+        Route::get('/edit', [ContactController::class, 'edit'])->name('edit');
+    });
 });
 
 

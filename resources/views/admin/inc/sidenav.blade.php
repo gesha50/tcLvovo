@@ -32,7 +32,7 @@
                         </a>
                         <div class="collapse" id="pagesCollapseContact" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
-                                <a class="nav-link" href="{{ route('admin.contact') }}">Контакты</a>
+                                <a class="nav-link" href="{{ route('admin.contact.index') }}">Контакты</a>
                             </nav>
                         </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">

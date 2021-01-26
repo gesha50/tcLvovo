@@ -3,13 +3,11 @@
         <div class="aboutUsMini p-3">
             <div class="aboutUsMini__topText">
                 <img class="aboutUsMini__img" width="25px" src="{{ asset('storage/без_фона.png') }}" alt="">
-                <span class="aboutUsMini__headingText">ТК Львово</span>
+                <span class="aboutUsMini__headingText">{{ $information->name }}</span>
                 <span class="aboutUsMini__nearHeadingText">торговый комплекс</span>
             </div>
             <div class="aboutUsMini__bodyText">
-                Наша компания предоставляет торговые площадки в аренду
-                Наша компания предоставляет торговые площадки в аренду
-                Наша компания предоставляет торговые площадки в аренду
+                {{ $information->description }}
             </div>
             <div class="aboutUsMini__socIcons">
                 <div class="socIcons d-flex">

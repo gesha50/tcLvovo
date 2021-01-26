@@ -15,20 +15,22 @@
                         <th>Название компании</th>
                         <th>Территориальное название</th>
                         <th>Описание</th>
+                        <th>Помещений в работе</th>
                         <th></th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td>{{ $contact->phone }}</td>
-                        <td>{{ $contact->email }}</td>
-                        <td>{{ $contact->address }}</td>
-                        <td><a href="{{ route('admin.contact.edit') }}" class="btn btn-success">Изменить</a></td>
+                        <td>{{ $information->company_name }}</td>
+                        <td>{{ $information->name }}</td>
+                        <td width="500px">{{ $information->description }}</td>
+                        <td>{{ $information->works_room }}</td>
+                        <td><a href="{{ route('admin.information.edit') }}" class="btn btn-success">Изменить</a></td>
                     </tr>
                     </tbody>
                 </table>
             </div>
-            <div class="card">
+            <div class="card cardTable">
                 <table class="table">
                     <thead class="thead-light">
                     <tr>

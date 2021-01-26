@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
+use App\Models\Informations;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\ConfirmsPasswords;
 
@@ -20,6 +21,13 @@ class ConfirmPasswordController extends Controller
     */
 
     use ConfirmsPasswords;
+
+    public function showConfirmForm()
+    {
+        return view('auth.passwords.confirm')->with([
+            'information' => Informations::first()
+        ]);
+    }
 
     /**
      * Where to redirect users when the intended url fails.
