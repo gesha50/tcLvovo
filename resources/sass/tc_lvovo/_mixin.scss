@@ -1,0 +1,43 @@
+
+@mixin miniHeader($color, $fontF) {
+    color: $color;
+    font-family: $fontF;
+    font-size: 25px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 24px;
+    text-align: left;
+}
+
+@mixin miniBodyText($color, $fontFamily) {
+    color: $color;
+    font-family: $fontFamily;
+    font-size: 16px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 25px;
+    text-align: left;
+}
+
+@mixin forDate($color) {
+    color: $color;
+    font-family: "CrimsonText_Italic";
+    font-size: 16px;
+    font-style: italic;
+    letter-spacing: normal;
+    line-height: 30px;
+    text-align: left;
+}
+
+@mixin heading ($color) {
+    color: $color;
+    font-family: "Montserrat - Ultra Light";
+    font-size: 35px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 60px;
+    text-align: left;
+}

@@ -1,0 +1,43 @@
+
+.miniContact {
+    &__block,
+    &__block2,
+    &__block3 {
+        text-align: center;
+        padding: 50px;
+        position: relative;
+    }
+    &__block {
+        background-color: $yellow;
+    }
+    &__block2 {
+        background-color: darken($yellow, 5%);
+    }
+    &__block3 {
+        background-color: darken($yellow, 10%);
+    }
+    &__img {
+        height: 80px;
+    }
+    &__body {
+        @include miniBodyText($textBlack, Montserrat);
+        margin: 30px 0;
+        text-align: center;
+    }
+    &__body a {
+        @include miniBodyText($textBlack, Montserrat);
+        &:hover {
+            color: $hoverForTextBlack;
+            text-decoration: none;
+        }
+    }
+
+    &__line {
+        width: 40px;
+        height: 2px;
+        background: $textBlack;
+        position: absolute;
+        bottom: 50px;
+        left: calc(50% - 20px);
+    }
+}

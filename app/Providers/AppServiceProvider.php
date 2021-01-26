@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         // Регистрация Dusk тестов
-//        if ($this->app->environment('local', 'testing')) {
-//            $this->app->register(DuskServiceProvider::class);
+//        if ($this->layouts->environment('local', 'testing')) {
+//            $this->layouts->register(DuskServiceProvider::class);
 //        }
     }
 
