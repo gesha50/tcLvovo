@@ -1,5 +1,6 @@
 <template>
     <div class="container">
+        <div class="companyContent">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">
@@ -18,6 +19,7 @@
                 </div>
             </div>
         </div>
+        </div>
     </div>
 </template>
 
@@ -28,13 +30,13 @@
                 links: [
                     {
                         id:0,
-                        title: "Главная",
-                        href: "/blog/index"
+                        title: "о нас",
+                        href: "/company/about"
                     },
                     {
                         id:1,
-                        title: "Блог",
-                        href: "/blog/testing"
+                        title: "История",
+                        href: "/company/history"
                     }
                 ]
             }
@@ -44,3 +46,10 @@
         }
     }
 </script>
+
+<style scoped>
+.companyContent {
+    background: #fff;
+    margin-top: 575px;
+}
+</style>

@@ -1,12 +1,12 @@
 <template>
-<div>
-    <h1>История</h1>
+<div class="card">
+    История
 </div>
 </template>
 
 <script>
 export default {
-    name: "Test2"
+    name: "HistoryComponent"
 }
 </script>
 

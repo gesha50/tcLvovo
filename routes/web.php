@@ -58,8 +58,12 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
+Route::get('/company',  [App\Http\Controllers\CompanyController::class, 'index'])->name('company');
+Route::get('/company/{any}',  [App\Http\Controllers\CompanyController::class, 'index'])
+    ->name('company')
+    ->where('any', '.*');
 
 // для использования vue-router
-Route::get('/blog/{any}', function (){
-    return view('welcome');
-})->where('any', '.*');
+//Route::get('/company/{any}', function (){
+//    return view('welcome');
+//})->where('any', '.*');

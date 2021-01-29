@@ -19,6 +19,8 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
+Vue.component('breadcrumb-component', require('./components/BreadcrumbComponent.vue').default);
+Vue.component('content-component', require('./pages/company/ContentComponent.vue').default);
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('carousel', require('./components/carousels/carousel.vue').default);
 
@@ -29,6 +31,7 @@ Vue.component('carousel', require('./components/carousels/carousel.vue').default
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
+import './assets/scss/scss.scss'
 import router from './router/router'
 import store from "./vuex/store";
 
