@@ -60,7 +60,7 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
 
 Route::get('/company',  [App\Http\Controllers\CompanyController::class, 'index'])->name('company');
 Route::get('/company/{any}',  [App\Http\Controllers\CompanyController::class, 'index'])
-    ->name('company')
+    ->name('company.any')
     ->where('any', '.*');
 
 // для использования vue-router

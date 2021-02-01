@@ -21,7 +21,6 @@ window.Vue = require('vue');
 
 Vue.component('breadcrumb-component', require('./components/BreadcrumbComponent.vue').default);
 Vue.component('content-component', require('./pages/company/ContentComponent.vue').default);
-Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('carousel', require('./components/carousels/carousel.vue').default);
 
 

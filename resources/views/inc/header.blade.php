@@ -17,7 +17,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li><a class="nav-link" href="{{ route('index') }}">Главная</a></li>
                     <li><a class="nav-link" href="{{ route('admin.index') }}">Админка</a></li>
-
+                    <li><a class="nav-link" href="{{ route('company') }}">О нас</a></li>
                 </ul>
 
                 <!-- Right Side Of Navbar -->

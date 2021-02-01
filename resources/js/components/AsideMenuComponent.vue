@@ -6,7 +6,7 @@
     <div class="aside__text"><router-link class="aside__link" to="/company/history">История</router-link></div>
     <div class="aside__text"><router-link class="aside__link" to="/company/brands">Бренды</router-link></div>
     <div class="aside__text"><router-link class="aside__link" to="/company/partners">Партнеры</router-link></div>
-    <div class="aside__text"><router-link class="aside__link" to="/company/ourteam"></router-link></div>
+    <div class="aside__text"><router-link class="aside__link" to="/company/ourteam">Наша команда</router-link></div>
 </div>
     <div class="verticaleLine"></div>
     </div>
@@ -14,7 +14,7 @@
 
 <script>
 export default {
-    name: "AsideComponent"
+    name: "AsideMenuComponent"
 }
 </script>
 

@@ -41,3 +41,16 @@
     line-height: 60px;
     text-align: left;
 }
+
+@mixin miniText ($color, $fontFamily) {
+    color: $color;
+    font-family: $fontFamily;
+    font-size: 14px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 16px;
+    text-align: left;
+    text-transform: uppercase;
+}
+

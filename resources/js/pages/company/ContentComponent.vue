@@ -3,7 +3,8 @@
         <div class="companyContent">
             <div class="row">
                 <div class="col-md-3">
-                    <aside-component></aside-component>
+                    <aside-menu-component></aside-menu-component>
+                    <aside-documents-component></aside-documents-component>
                 </div>
                 <div class="col-md-9">
                     <router-view />
@@ -14,10 +15,11 @@
 </template>
 
 <script>
-import AsideComponent from "../../components/AsideComponent";
+import AsideMenuComponent from "../../components/AsideMenuComponent";
+import AsideDocumentsComponent from "../../components/AsideDocumentsComponent";
 export default {
 name: "ContentComponent",
-    components: {AsideComponent}
+    components: {AsideMenuComponent,AsideDocumentsComponent}
 }
 </script>
 

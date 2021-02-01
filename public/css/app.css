@@ -33,15 +33,45 @@
   margin: 35px 15px;
   width: 2px;
   background: #fcd846;
+}.download:hover .download__link {
+  color: #fcd846;
+  text-decoration: none;
+}
+.download:hover i {
+  color: #fcd846;
+}
+.download__img {
+  color: #7d7d7d;
+}
+.download__imgLink i {
+  font-size: 55px;
+  color: gray;
+}
+.download__MB {
+  color: #c2c2c2;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 16px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.download__link {
+  color: #7d7d7d;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 16px;
+  text-align: left;
+  text-transform: uppercase;
 }.companyContent {
   background: #fff;
   margin-top: 575px;
 }
-.companyContent[data-v-299e239e] {
-    background: #fff;
-    margin-top: 575px;
-}
-
 .agile {
 	position: relative;
 }
@@ -11555,6 +11585,7 @@ a.text-dark:focus {
   font-family: "Montserrat";
   font-size: 16px;
   transition: 0.5s;
+  display: block;
 }
 
 .miniOrder__blockText a:hover {
