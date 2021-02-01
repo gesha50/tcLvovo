@@ -1,12 +1,10 @@
 <template>
-<div>
-    <h1>История</h1>
-</div>
+$END$
 </template>
 
 <script>
 export default {
-    name: "Test2"
+name: "AsideDocumentsComponent"
 }
 </script>
 
