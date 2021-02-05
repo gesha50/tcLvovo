@@ -8,7 +8,7 @@
     <div class="aside__text"><router-link class="aside__link" to="/company/partners">Партнеры</router-link></div>
     <div class="aside__text"><router-link class="aside__link" to="/company/ourteam">Наша команда</router-link></div>
 </div>
-    <div class="verticaleLine"></div>
+    <div class="verticalLine"></div>
     </div>
 </template>
 
@@ -20,7 +20,7 @@ export default {
 
 <style lang="scss">
 .aside {
-    padding: 40px;
+    padding: 0 40px;
     text-align: left;
     &__logo {
         @include miniHeader ($textBlack, Montserrat);
@@ -37,8 +37,8 @@ export default {
     }
 }
 
-.verticaleLine {
-    margin: 35px 15px;
+.verticalLine {
+    margin: 5px 15px;
     width: 2px;
     background: $yellow;
 }

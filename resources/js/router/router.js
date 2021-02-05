@@ -9,17 +9,36 @@ import HistoryComponent from "../pages/company/HistoryComponent";
 
 const routes = [
     {
-        path: "/company",
-        component: AboutComponent
+        path: "/",
+        meta: {
+            breadcrumb: 'Главная'
+        },
+        children: [
+            {
+                path: "/company",
+                component: AboutComponent,
+                meta: {
+                    breadcrumb:'Компания'
+                },
+                children: [
+                    {
+                        path: "/company/aboutus",
+                        component: AboutComponent,
+                        meta: {
+                            breadcrumb: 'О нас'
+                        }
+                    },
+                    {
+                        path: "/company/history",
+                        component: HistoryComponent,
+                        meta: {
+                            breadcrumb: 'История'
+                        }
+                    }
+                ]
+            },
+        ]
     },
-    {
-        path: "/company/aboutus",
-        component: AboutComponent
-    },
-    {
-        path: "/company/history",
-        component: HistoryComponent
-    }
 ]
 
 export default new Router({

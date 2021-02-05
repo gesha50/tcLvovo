@@ -1,5 +1,5 @@
 <template>
-    <div class="aside">
+    <div class="aside documentPadding">
         <div class="aside__logo">Документы</div>
         <div class="aside__text">
             <div class="download d-flex justify-content-between">
@@ -33,7 +33,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+.documentPadding {
+    padding-top: 30px;
+}
 .download {
     &:hover &__link {
         color: $yellow;

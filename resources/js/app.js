@@ -19,7 +19,7 @@ window.Vue = require('vue');
 // const files = require.context('./', true, /\.vue$/i)
 // files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
 
-Vue.component('breadcrumb-component', require('./components/BreadcrumbComponent.vue').default);
+Vue.component('breadcrumb-component', require('./components/Breadcrumbs/BreadcrumbComponent.vue').default);
 Vue.component('content-component', require('./pages/company/ContentComponent.vue').default);
 Vue.component('carousel', require('./components/carousels/carousel.vue').default);
 
@@ -37,9 +37,12 @@ import store from "./vuex/store";
 // для слайдера
 import VueAgile from 'vue-agile'
 
+import VueBreadcrumbs from './components/Breadcrumbs/breadcrumbs';
+
 const app = new Vue({
     el: '#app',
     router,
     store,
     agile: VueAgile,
+    breadcrumb: VueBreadcrumbs,
 });

@@ -1,5 +1,10 @@
-.aside {
-  padding: 40px;
+.breadcrumb {
+  background-color: rgba(233, 236, 239, 0) !important;
+}
+.my_css {
+  color: #fff;
+}.aside {
+  padding: 0 40px;
   text-align: left;
 }
 .aside__logo {
@@ -29,11 +34,14 @@
   text-decoration: none;
   color: #fcd846;
 }
-.verticaleLine {
-  margin: 35px 15px;
+.verticalLine {
+  margin: 5px 15px;
   width: 2px;
   background: #fcd846;
-}.download:hover .download__link {
+}.documentPadding {
+  padding-top: 30px;
+}
+.download:hover .download__link {
   color: #fcd846;
   text-decoration: none;
 }
@@ -68,9 +76,36 @@
   line-height: 16px;
   text-align: left;
   text-transform: uppercase;
-}.companyContent {
+}.topContent {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  height: 60px;
+  width: 100%;
+}
+.whiteBlock {
+  background: #fff;
+  width: 100%;
+}
+.clearBlock {
+  width: 63px;
+}
+.companyContent {
+  position: relative;
   background: #fff;
   margin-top: 575px;
+}
+.list {
+  position: relative;
+}
+.list__triangle {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: -60px;
+  border: 30px solid transparent;
+  border-bottom: 30px solid #e1e1e1;
+  border-left: 30px solid #e1e1e1;
 }
 .agile {
 	position: relative;
