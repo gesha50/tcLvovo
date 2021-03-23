@@ -20,3 +20,5 @@ mix.js('resources/js/app.js', 'public/js')
     })
     .version()
     .browserSync('http://tc_lvovo/');
+mix.sourceMaps()
+    .js('node_modules/popper.js/dist/popper.js', 'public/js').sourceMaps()

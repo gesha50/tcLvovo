@@ -1,112 +1,4 @@
-.breadcrumb {
-  background-color: rgba(233, 236, 239, 0) !important;
-}
-.my_css {
-  color: #fff;
-}.aside {
-  padding: 0 40px;
-  text-align: left;
-}
-.aside__logo {
-  color: #111;
-  font-family: Montserrat;
-  font-size: 25px;
-  font-weight: 400;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 24px;
-  text-align: left;
-}
-.aside__text {
-  margin: 15px 0;
-}
-.aside__link {
-  color: #7d7d7d;
-  font-family: "Montserrat - Semi Bold";
-  font-size: 16px;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 25px;
-  text-align: left;
-}
-.aside__link:hover {
-  text-decoration: none;
-  color: #fcd846;
-}
-.verticalLine {
-  margin: 5px 15px;
-  width: 2px;
-  background: #fcd846;
-}.documentPadding {
-  padding-top: 30px;
-}
-.download:hover .download__link {
-  color: #fcd846;
-  text-decoration: none;
-}
-.download:hover i {
-  color: #fcd846;
-}
-.download__img {
-  color: #7d7d7d;
-}
-.download__imgLink i {
-  font-size: 55px;
-  color: gray;
-}
-.download__MB {
-  color: #c2c2c2;
-  font-family: Montserrat;
-  font-size: 14px;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 16px;
-  text-align: left;
-  text-transform: uppercase;
-}
-.download__link {
-  color: #7d7d7d;
-  font-family: Montserrat;
-  font-size: 14px;
-  font-weight: 300;
-  font-style: normal;
-  letter-spacing: normal;
-  line-height: 16px;
-  text-align: left;
-  text-transform: uppercase;
-}.topContent {
-  position: absolute;
-  top: -60px;
-  left: 0;
-  height: 60px;
-  width: 100%;
-}
-.whiteBlock {
-  background: #fff;
-  width: 100%;
-}
-.clearBlock {
-  width: 63px;
-}
-.companyContent {
-  position: relative;
-  background: #fff;
-  margin-top: 575px;
-}
-.list {
-  position: relative;
-}
-.list__triangle {
-  content: "";
-  position: absolute;
-  right: 15px;
-  top: -60px;
-  border: 30px solid transparent;
-  border-bottom: 30px solid #e1e1e1;
-  border-left: 30px solid #e1e1e1;
-}
+
 .agile {
 	position: relative;
 }
@@ -199,7 +91,115 @@
 	font-size: 0;
 	line-height: 0;
 }
-.agile__nav-button {
+.breadcrumb {
+  background-color: rgba(233, 236, 239, 0) !important;
+}
+.my_css {
+  color: #fff;
+}.aside {
+  padding: 0 40px;
+  text-align: left;
+}
+.aside__logo {
+  color: #111;
+  font-family: Montserrat;
+  font-size: 25px;
+  font-weight: 400;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 24px;
+  text-align: left;
+}
+.aside__text {
+  margin: 15px 0;
+}
+.aside__link {
+  color: #7d7d7d;
+  font-family: "Montserrat - Semi Bold";
+  font-size: 16px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 25px;
+  text-align: left;
+}
+.aside__link:hover {
+  text-decoration: none;
+  color: #fcd846;
+}
+.verticalLine {
+  margin: 5px 15px;
+  width: 2px;
+  background: #fcd846;
+}.topContent {
+  position: absolute;
+  top: -60px;
+  left: 0;
+  height: 60px;
+  width: 100%;
+}
+.whiteBlock {
+  background: #fff;
+  width: 100%;
+}
+.clearBlock {
+  width: 63px;
+}
+.companyContent {
+  position: relative;
+  background: #fff;
+  margin-top: 575px;
+}
+.list {
+  position: relative;
+}
+.list__triangle {
+  content: "";
+  position: absolute;
+  right: 15px;
+  top: -60px;
+  border: 30px solid transparent;
+  border-bottom: 30px solid #e1e1e1;
+  border-left: 30px solid #e1e1e1;
+}.documentPadding {
+  padding-top: 30px;
+}
+.download:hover .download__link {
+  color: #fcd846;
+  text-decoration: none;
+}
+.download:hover i {
+  color: #fcd846;
+}
+.download__img {
+  color: #7d7d7d;
+}
+.download__imgLink i {
+  font-size: 55px;
+  color: gray;
+}
+.download__MB {
+  color: #c2c2c2;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 16px;
+  text-align: left;
+  text-transform: uppercase;
+}
+.download__link {
+  color: #7d7d7d;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-weight: 300;
+  font-style: normal;
+  letter-spacing: normal;
+  line-height: 16px;
+  text-align: left;
+  text-transform: uppercase;
+}.agile__nav-button {
   background: transparent;
   border: none;
   color: #fff;
