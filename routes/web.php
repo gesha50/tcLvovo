@@ -17,9 +17,6 @@ use App\Http\Controllers\Admin\IndexController;
 |
 */
 
-
-Route::get('/',  [App\Http\Controllers\IndexController::class, 'index'])->name('index');
-
 Route::group([
     'prefix' => 'dashboard',
     'as' => 'admin.',
@@ -44,13 +41,10 @@ Route::group([
 });
 
 
-
-
-
 // Авторизация
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
 // Для файлового менеджера
@@ -58,12 +52,12 @@ Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
 
-Route::get('/company',  [App\Http\Controllers\CompanyController::class, 'index'])->name('company');
-Route::get('/company/{any}',  [App\Http\Controllers\CompanyController::class, 'index'])
-    ->name('company.any')
-    ->where('any', '.*');
+//Route::get('/company',  [App\Http\Controllers\CompanyController::class, 'index'])->name('company');
+//Route::get('/company/{any}',  [App\Http\Controllers\CompanyController::class, 'index'])
+//    ->name('company.any')
+//    ->where('any', '.*');
 
 // для использования vue-router
-//Route::get('/company/{any}', function (){
-//    return view('welcome');
-//})->where('any', '.*');
+Route::get('/{any?}', function (){
+    return view('app');
+})->where('any', '.*');

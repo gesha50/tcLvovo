@@ -6,35 +6,50 @@ Vue.use(Router)
 
 import AboutComponent from "../pages/company/AboutComponent";
 import HistoryComponent from "../pages/company/HistoryComponent";
+import IndexComponent from "../pages/Index/IndexComponent";
+import ContentComponent from "../pages/company/ContentComponent";
+import AppContainer from "../AppContainer";
 
 const routes = [
     {
         path: "/",
+        component: AppContainer,
         meta: {
             breadcrumb: 'Главная'
         },
         children: [
             {
-                path: "/company",
-                component: AboutComponent,
+                path: "",
+                component: IndexComponent,
+            },
+            {
+                path: "company",
+                component: ContentComponent,
                 meta: {
                     breadcrumb:'Компания'
                 },
                 children: [
                     {
-                        path: "/company/aboutus",
+                        path: "aboutus",
                         component: AboutComponent,
                         meta: {
                             breadcrumb: 'О нас'
                         }
                     },
                     {
-                        path: "/company/history",
+                        path: "history",
                         component: HistoryComponent,
                         meta: {
                             breadcrumb: 'История'
                         }
-                    }
+                    },
+                    {
+                        path: "",
+                        component: AboutComponent,
+                        meta: {
+                            breadcrumb: 'О нас'
+                        }
+                    },
                 ]
             },
         ]

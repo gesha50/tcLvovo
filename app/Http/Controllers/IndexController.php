@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class IndexController extends Controller
 {
-    public function index () {
-        return view('welcome')->with([
-            'contact' => Contact::first(),
-            'information' =>Informations::first(),
-        ]);
+    public function information () {
+        return Informations::first();
+    }
+    public function contact () {
+        return Contact::first();
     }
 }
