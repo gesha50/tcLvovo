@@ -1,25 +1,3 @@
 
-// Fonts
 @import 'fonts';
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '../../../node_modules/bootstrap/scss/bootstrap';
-
-@import "mixin";
-@import 'header';
-@import 'footer';
-@import 'rentPlace';
-@import "serviceReview";
-@import "miniServiceBlocks";
-@import "partners";
-@import "miniContact";
-@import "breadcrumb";
-
-//если шапка остается при прокручивании сверху
-main {
-    padding-top: 66px;
-}
 

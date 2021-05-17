@@ -1,5 +1,5 @@
 <template>
-<div class="card">О нас!!!</div>
+<div class="aboutUsPage">О нас!!!</div>
 </template>
 
 <script>
@@ -8,6 +8,10 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+
+.aboutUsPage {
+    border: 1px solid black;
+}
 
 </style>

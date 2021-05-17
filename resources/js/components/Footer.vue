@@ -154,6 +154,245 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.footerUp {
+    background: $textBlack;
+    color: $white;
+    padding: 60px 0;
+    &__aboutUs,
+    &__news {
+        width: 40%;
+    }
+    &__aboutUs {
 
+    }
+    &__news {
+
+    }
+}
+
+.aboutUsMini {
+    &__topText {
+
+    }
+    &__img {
+        margin-top: -12px;
+    }
+    &__headingText {
+        @include miniHeader($whiteText, Montserrat);
+        padding-right: 20px;
+    }
+    &__nearHeadingText {
+        color: $whiteText;
+        font-family: "CrimsonText_Italic";
+        font-size: 15px;
+        font-style: italic;
+        letter-spacing: normal;
+        line-height: 36px;
+    }
+    &__bodyText {
+        @include miniBodyText($gray_2, Montserrat_light);
+    }
+    &__socIcons {
+        padding-top: 20px;
+    }
+}
+
+.socIcons {
+    &__vk,
+    &__google,
+    &__youtube,
+    &__facebook {
+        width: 35px;
+        height: 35px;
+        text-align: center;
+        line-height: 35px;
+        margin: 0;
+        padding: 0;
+        transition: 0.5s;
+        &:hover {
+            transform: scale(1.2);
+            cursor: pointer;
+        }
+    }
+    &__facebook {
+        background-color: #3a589b;
+    }
+    &__vk {
+        background-color: #007ab9;
+    }
+    &__google {
+        background-color: #dc493c;
+    }
+    &__youtube {
+        background-color: #cc2626;
+    }
+}
+
+.newsMini {
+    &__header {
+
+    }
+    &__headerText {
+        @include miniHeader($whiteText, Montserrat);
+    }
+    &__cursor {
+        width: 30px;
+    }
+    &__cursor i:hover {
+        color: $yellow;
+    }
+
+    &__date {
+        @include forDate($grayText);
+    }
+    &__text {
+        @include miniBodyText($yellow, Montserrat_light);
+    }
+    &__footer {
+        display: inline-block;
+    }
+
+    &__link {
+        @include miniBodyText($white,$MontserratSB);
+
+        &:hover {
+            text-decoration: none;
+            color: $grayText;
+            cursor: pointer;
+        }
+    }
+
+    &__link:hover .line {
+        width: 100%;
+    }
+}
+.newsMini hr {
+    background: $gray_2;
+}
+
+.footerMiddle {
+    background: $black_2;
+    color: $white;
+    padding: 0 110px;
+    &__block {
+        width: 30%;
+        padding: 60px 0;
+    }
+}
+.footerLinks hr,
+.footerHours hr,
+.footerHours__block hr,
+.footerEmail hr {
+    background: $gray_2;
+}
+
+.footerLinks {
+    &__header {
+        @include miniHeader($whiteText, $MontserratSB);
+    }
+    &__li {
+        color: #555555;
+    }
+    &__link {
+        @include miniBodyText($gray_2, Montserrat);
+        &:hover {
+            text-decoration: none;
+            color: $yellow;
+        }
+    }
+}
+
+.footerHours {
+    &__header {
+        @include miniHeader($whiteText, $MontserratSB);
+    }
+    &__body {
+
+    }
+    &__day {
+        @include miniBodyText($gray_2, Montserrat);
+    }
+    &__line {
+        border-bottom: 1px dashed $gray_2;
+    }
+    &__time {
+        @include miniBodyText($whiteText, Montserrat);
+    }
+}
+
+.footerEmail {
+    &__header {
+        @include miniHeader($whiteText, $MontserratSB);
+    }
+    &__send {
+
+    }
+    &__email {
+
+    }
+    &__input {
+        border-radius: 3px 0 0 3px;
+        background-color: #131313;
+        height: 52px;
+        border: none;
+        @include miniBodyText($gray_2, $MontserratSB);
+    }
+    &__btnLeft {
+        background: $green;
+        border-style: solid;
+        border-color: transparent #131313;
+        transform: rotate(90deg);
+        border-width: 20px 26px 0px 26px;
+        margin-left: -30px;
+    }
+    &__btn {
+        height: 52px;
+        border-radius: 0 3px 3px 0;
+        background-color: $green;
+        border: none;
+        @include miniBodyText($whiteText, $MontserratSB);
+        transition: 1s;
+        //&:hover {
+        //    background: darken($green, 20);
+        //}
+    }
+    &__fullBtn:hover &__btnLeft,
+    &__fullBtn:hover &__btn {
+        background: darken($green, 20);
+    }
+    &__btnLeft {
+        transition: 1s;
+    }
+    &__body {
+        padding-top: 20px;
+        color: $gray_3;
+        @include miniBodyText($gray_3, Montserrat);
+        font-size: 14px;
+    }
+}
+
+.footerDown {
+    //margin: 0 -15px;
+    padding: 25px 0;
+    background-color: $black_3;
+    &__date {
+        @include miniBodyText($gray_3, Montserrat);
+        font-size: 14px;
+    }
+    &__date p {
+        display: inline;
+        @include miniBodyText($yellow, Montserrat);
+        font-size: 14px;
+        padding-right: 5px;
+    }
+    &__privacy a {
+        @include miniBodyText($gray_3, Montserrat);
+        font-size: 14px;
+        &:hover {
+            text-decoration: none;
+            color: $yellow;
+        }
+    }
+}
 </style>

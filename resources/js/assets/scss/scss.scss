@@ -1,11 +1,13 @@
+
+// Variables
+@import 'variables';
+
 @import "mixin";
 
-$textBlack: #111;
-$grayText: #7d7d7d;
-$gray_4: #c2c2c2;
-$whiteText: #fff;
-$yellow: #fcd846;
+// Bootstrap
+@import '../../../../node_modules/bootstrap/scss/bootstrap';
 
-
-$MontserratSB: "Montserrat - Semi Bold";
+main {
+    padding-top: 66px;
+}
 

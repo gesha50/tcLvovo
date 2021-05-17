@@ -57,6 +57,38 @@ name: "AllServices"
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.allService {
+    &__block {
+        background-color: $yellow;
+    }
+    &__block2 {
+        background-color: darken($yellow, 5%);
+    }
+    &__block3 {
+        background-color: darken($yellow, 10%);
+    }
+}
 
+.miniServiceBlock {
+    padding: 55px 0;
+    &__img img {
+        width: 110px;
+        padding: 0 25px;
+        margin: 25px 0;
+    }
+    &__info {
+
+    }
+    &__heading {
+        @include miniHeader($textBlack ,Montserrat);
+        margin-bottom: 10px;
+    }
+    &__body {
+        @include forDate($textBlack);
+    }
+    &__line {
+
+    }
+}
 </style>

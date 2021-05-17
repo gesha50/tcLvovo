@@ -32,6 +32,47 @@ name: "Partners"
 }
 </script>
 
-<style scoped>
-
+<style lang="scss">
+.miniPartners {
+    padding: 100px 0;
+    background: #ffffff;
+    &__block {
+        width: 30%;
+        position: relative;
+    }
+    &__decor{
+        position: absolute;
+        left: -30px;
+        top: -30px;
+    }
+    &__heading {
+        @include heading($textBlack);
+    }
+    &__body {
+        @include miniBodyText($grayText, Montserrat);
+        margin: 30px 0;
+    }
+    &__footer {
+        display: inline-block;
+    }
+    &__link {
+        @include miniBodyText($textBlack, $MontserratSB);
+        &:hover {
+            text-decoration: none;
+            color: $hoverForTextBlack;
+        }
+        &:hover .line {
+            width: 100%;
+        }
+    }
+    &__img {
+        width: 46%;
+        margin: 2%;
+        object-fit: contain;
+        opacity: 0.5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
 </style>

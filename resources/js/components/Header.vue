@@ -32,6 +32,14 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.navbar_edit {
+    background: $yellow;
+    color: $textBlack;
+    font-family: Montserrat;
+}
 
+.search {
+    font-size: 20px;
+}
 </style>

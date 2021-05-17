@@ -16,6 +16,10 @@ name: "BreadcrumbComponent"
 
 .my_css {
     color: $whiteText;
+    &:hover {
+        text-decoration: none;
+        color: $yellow;
+    }
 }
 
 </style>
