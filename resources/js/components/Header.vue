@@ -2,7 +2,7 @@
     <div class="container">
         <nav class="navbar fixed-top navbar-expand-md navbar-light shadow-sm navbar_edit">
             <img width="45px" src="/storage/без_фона.png" alt="">
-            <router-link class="navbar-brand" to="/">
+            <router-link class="navbar-brand" :to="{name: 'index'}">
                 ТК Львово
             </router-link>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -13,13 +13,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li><router-link class="nav-link" to="/">Главная</router-link></li>
-                    <li><a class="nav-link" href="/dashboard">Админка</a></li>
-                    <li><router-link class="nav-link" to="/company">О нас</router-link></li>
+                    <li><router-link class="nav-link my-nav-link" :to="{name: 'index'}">Главная</router-link></li>
+                    <li><router-link class="nav-link my-nav-link" :to="{name: 'company'}">О нас</router-link></li>
+                    <li><router-link class="nav-link my-nav-link" :to="{name: 'services'}">Услуги</router-link></li>
+                    <li><router-link class="nav-link my-nav-link" :to="{name: 'gallery'}">Фотогаллерея</router-link></li>
+                    <li><router-link class="nav-link my-nav-link" :to="{name: 'contact'}">Контакты</router-link></li>
+                    <li><router-link class="nav-link my-nav-link" :to="{name: 'news'}">Новости</router-link></li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <div class="search navbar-nav">
-                    <i class="fas fa-search"></i>
+                    <a v-if="true" class="nav-link my-nav-link" href="/dashboard">Админка</a>
+<!--                    <i class="fas fa-search"></i>-->
                 </div>
             </div>
         </nav>
@@ -33,6 +37,13 @@ export default {
 </script>
 
 <style lang="scss">
+
+.my-nav-link {
+    //text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+}
 .navbar_edit {
     background: $yellow;
     color: $textBlack;

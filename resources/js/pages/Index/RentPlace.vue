@@ -96,6 +96,7 @@ export default {
         transition: 0.5s;
         display: block;
         &:hover {
+            text-decoration: none;
             color: $hoverForTextBlack;
             font-size: 20px;
         }

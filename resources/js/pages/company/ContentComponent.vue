@@ -24,7 +24,9 @@
                 </div>
                 <div class="list col-md-9">
                     <div class="list__triangle"></div>
-                    <router-view />
+                    <div class="contentBlock">
+                        <router-view />
+                    </div>
                 </div>
             </div>
         </div>
@@ -55,8 +57,6 @@ export default {
     position: relative;
     z-index: -22;
 }
-
-
 
 .blockForBreadcrumd {
     position: relative;
@@ -107,5 +107,8 @@ export default {
         border-bottom: 30px solid  #e1e1e1;
         border-left: 30px solid  #e1e1e1;
     }
+}
+.contentBlock {
+    padding-right: 60px;
 }
 </style>

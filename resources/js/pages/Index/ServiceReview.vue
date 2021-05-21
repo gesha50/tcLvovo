@@ -12,9 +12,9 @@
                             <p class="service__heading">Мы предоставляем различные услуги</p>
                             <p class="service__text">Многие наши сотрудники трудятся для Вашего блага! Хотите ознакомится со всеми услугами, которые мы предоствляем?</p>
                             <div class="service__linkBlock">
-                                <a href="#" class="service__link">Наши услуги
+                                <router-link :to="{name: 'services'}" class="service__link">Наши услуги
                                     <div class="line"></div>
-                                </a>
+                                </router-link>
                             </div>
                         </div>
                     </div>

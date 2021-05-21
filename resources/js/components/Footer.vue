@@ -42,9 +42,9 @@
                             </div>
                         </div>
                         <div class="newsMini__footer">
-                            <a href="#" class="newsMini__link">Все новости
+                            <router-link :to="{name: 'news'}" class="newsMini__link">Все новости
                                 <div class="line"></div>
-                            </a>
+                            </router-link>
                         </div>
                     </div>
                 </div>
@@ -59,10 +59,10 @@
                         <hr>
                         <ul class="footerLinks__body">
                             <li class="footerLinks__li">
-                                <a href="/" class="footerLinks__link">Главная</a>
+                                <router-link :to="{name: 'index'}" class="footerLinks__link">Главная</router-link>
                             </li>
                             <li class="footerLinks__li">
-                                <a href="/" class="footerLinks__link">Home</a>
+                                <router-link :to="{name: 'company'}" class="footerLinks__link">О нас</router-link>
                             </li>
                         </ul>
                     </div>
@@ -118,10 +118,10 @@
                 </div>
             </div>
 <!--            -->
-            <div class="footerDown d-flex justify-content-around">
-                <div class="footerDown__date"><p>{{ year }}</p>  {{ company_name }}</div>
-                <div class="footerDown__privacy"><a href="#">Политика конфиденциальности</a></div>
-            </div>
+        </div>
+        <div class="footerDown d-flex justify-content-around">
+            <div class="footerDown__date"><p>{{ year }}</p>  {{ company_name }}</div>
+            <div class="footerDown__privacy"><router-link :to="{name: 'policy'}">Политика конфиденциальности</router-link></div>
         </div>
     </footer>
 </template>
@@ -144,7 +144,6 @@ export default {
         getInformation() {
             axios.get('/api/information')
             .then(res => {
-                console.log(res.data)
                 this.name = res.data.name
                 this.company_name = res.data.company_name
                 this.description = res.data.description

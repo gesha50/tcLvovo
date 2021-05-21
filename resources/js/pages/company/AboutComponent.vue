@@ -1,5 +1,5 @@
 <template>
-<div class="aboutUsPage">О нас!!!</div>
+<div class="card">О нас!!!</div>
 </template>
 
 <script>

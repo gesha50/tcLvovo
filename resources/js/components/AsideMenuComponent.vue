@@ -2,11 +2,11 @@
     <div class="d-flex">
 <div class="aside">
     <div class="aside__logo">Торговый комплекс</div>
-    <div class="aside__text"><router-link class="aside__link" to="/company/aboutus">О нас</router-link></div>
-    <div class="aside__text"><router-link class="aside__link" to="/company/history">История</router-link></div>
-    <div class="aside__text"><router-link class="aside__link" to="/company/brands">Бренды</router-link></div>
-    <div class="aside__text"><router-link class="aside__link" to="/company/partners">Партнеры</router-link></div>
-    <div class="aside__text"><router-link class="aside__link" to="/company/ourteam">Наша команда</router-link></div>
+    <div class="aside__text"><router-link class="aside__link" :to="{name: 'aboutus'}">О нас</router-link></div>
+    <div class="aside__text"><router-link class="aside__link" :to="{name: 'history'}">История</router-link></div>
+    <div class="aside__text"><router-link class="aside__link" :to="{name: 'territory'}">Территория</router-link></div>
+    <div class="aside__text"><router-link class="aside__link" :to="{name: 'tenant'}">Арендаторам</router-link></div>
+    <div class="aside__text"><router-link class="aside__link" :to="{name: 'brands'}">Бренды</router-link></div>
 </div>
     <div class="verticalLine"></div>
     </div>

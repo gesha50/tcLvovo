@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="miniPartners d-flex justify-content-center">
-            <div class="miniPartners__block">
+            <div class="miniPartners__block pr-2">
                 <div class="miniPartners__decor">
                     <div class="decor"></div>
 
@@ -11,9 +11,9 @@
                     Множество различных брендов, которые сейчас популярны во всём мире!
                 </div>
                 <div class="miniPartners__footer">
-                    <a href="#" class="miniPartners__link">Все бренды
+                    <router-link :to="{name: 'brands'}" class="miniPartners__link">Все бренды
                         <div class="line"></div>
-                    </a>
+                    </router-link>
                 </div>
             </div>
             <div class="miniPartners__block row">

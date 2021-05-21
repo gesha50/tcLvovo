@@ -22,8 +22,11 @@ import Contact from "./Contact";
 export default {
     data() {
       return {
-          works_room: 12,
+          works_room: null,
       }
+    },
+    mounted() {
+        this.getWorksRoom()
     },
     name: "IndexComponent",
     components: {
@@ -33,6 +36,17 @@ export default {
         AllServices,
         Partners,
         Contact,
+    },
+    methods: {
+        getWorksRoom() {
+          axios.get('/api/information')
+          .then(res => {
+              this.works_room = res.data.works_room
+          })
+          .catch(e => {
+              console.log(e)
+          })
+        },
     },
 }
 </script>

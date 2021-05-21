@@ -36799,6 +36799,7 @@ main {
   display: block;
 }
 .miniOrder__blockText a:hover {
+  text-decoration: none;
   color: #565454;
   font-size: 20px;
 }
@@ -105610,6 +105611,9 @@ main {
   border: 30px solid transparent;
   border-bottom: 30px solid #e1e1e1;
   border-left: 30px solid #e1e1e1;
+}
+.contentBlock {
+  padding-right: 60px;
 }@charset "UTF-8";
 @font-face {
   font-family: Montserrat;
@@ -114163,6 +114167,11 @@ body {
 }
 main {
   padding-top: 66px;
+}
+.my-nav-link {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: normal;
 }
 .navbar_edit {
   background: #fcd846;
