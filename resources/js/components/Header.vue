@@ -40,8 +40,8 @@ export default {
 
 .my-nav-link {
     //text-transform: uppercase;
-    font-size: 14px;
-    font-weight: 400;
+    font-size: 17px;
+    font-weight: 700;
     font-style: normal;
 }
 .navbar_edit {
