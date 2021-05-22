@@ -1,49 +1,41 @@
 <template>
     <div>
-    <div class="bgForBreadcrumb"></div>
-    <div class="container blockForBreadcrumd">
-        <div class="d-flex justify-content-between p-3">
-            <h1 class="blockForBreadcrumd__header">Наша компания</h1>
-            <div class="blockForBreadcrumd__contact">
-                <a class="blockForBreadcrumd__link" href="#">Связаться с нами
-                    <div class="line"></div></a>
-            </div>
-        </div>
-        <breadcrumb-component></breadcrumb-component>
-    </div>
-    <div class="container">
-        <div class="companyContent">
-            <div class="d-flex topContent">
-                <div class="whiteBlock"></div>
-                <div class="clearBlock"></div>
-            </div>
-            <div class="row">
-                <div class="col-md-3">
-                    <aside-menu-component></aside-menu-component>
-                    <aside-documents-component></aside-documents-component>
-                </div>
-                <div class="list col-md-9">
-                    <div class="list__triangle"></div>
-                    <div class="contentBlock">
-                        <router-view />
+        <top-image
+            :headerText="headerText"
+        ></top-image>
+        <div class="container">
+            <div style="background: white">
+                <div class="row">
+                    <div class="col-md-3">
+                        <aside-menu-component></aside-menu-component>
+                        <aside-documents-component></aside-documents-component>
+                    </div>
+                    <div class="list col-md-9">
+                        <div class="contentBlock">
+                            <router-view />
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
 </template>
 
 <script>
 import AsideMenuComponent from "../../components/AsideMenuComponent";
 import AsideDocumentsComponent from "../../components/AsideDocumentsComponent";
-import BreadcrumbComponent from "../../components/Breadcrumbs/BreadcrumbComponent";
+import TopImage from "../../components/TopImage";
 export default {
+    data() {
+      return {
+          headerText: 'Наша компания',
+      }
+    },
     name: "ContentComponent",
     components: {
         AsideMenuComponent,
         AsideDocumentsComponent,
-        BreadcrumbComponent,
+        TopImage,
     },
 }
 </script>
@@ -97,6 +89,7 @@ export default {
     margin-top: 575px;
 }
 .list {
+    min-height: 237px;
     position: relative;
     &__triangle {
         content: '';

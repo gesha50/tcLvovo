@@ -14,6 +14,7 @@ import Territory from "../pages/company/Territory";
 import Tenant from "../pages/company/Tenant";
 import Brands from "../pages/company/Brands";
 import PolicyIndex from "../pages/Policy/PolicyIndex";
+import NotFound from "../pages/NotFound";
 
 Vue.use(Router)
 
@@ -128,8 +129,20 @@ const routes = [
                     breadcrumb: 'Политика конфиденциальности'
                 }
             },
+            {
+                path: '/404',
+                name: '404',
+                component: NotFound,
+                meta: {
+                    breadcrumb: '404'
+                },
+            },
         ]
     },
+    {
+        path: '*',
+        redirect: '/404'
+    }
 ]
 
 export default new Router({

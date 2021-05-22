@@ -105601,6 +105601,7 @@ main {
   margin-top: 575px;
 }
 .list {
+  min-height: 237px;
   position: relative;
 }
 .list__triangle {
