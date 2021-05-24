@@ -54,7 +54,7 @@ export default {
         font-weight: 400;
         font-style: normal;
         letter-spacing: normal;
-        line-height: 60px;
+        line-height: 40px;
         text-align: left;
     }
     &__text {
