@@ -1,4 +1,15 @@
 
+@mixin superHeader($color, $fontF) {
+    font-family: $fontF;
+    color: $color;
+    font-size: 50px;
+    font-weight: 400;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 60px;
+    text-align: left;
+}
+
 @mixin miniHeader($color, $fontF) {
     color: $color;
     font-family: $fontF;

@@ -10,6 +10,9 @@
     <title>{{ config('layouts.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+{{--    <script defer src="/js/brands.js"></script>--}}
+{{--    <script defer src="/js/solid.js"></script>--}}
+{{--    <script defer src="/js/fontawesome.js"></script>--}}
     <script src="https://kit.fontawesome.com/e1158baa42.js" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 

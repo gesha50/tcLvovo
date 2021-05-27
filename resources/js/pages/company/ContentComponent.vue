@@ -87,6 +87,7 @@ export default {
     position: relative;
     background: $whiteText;
     margin-top: 575px;
+    z-index: -1;
 }
 .list {
     min-height: 237px;

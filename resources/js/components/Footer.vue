@@ -1,7 +1,6 @@
 <template>
     <footer class="footer">
-        <div class="container">
-            <div class="footerUp d-flex justify-content-center">
+        <div class="footerUp d-flex justify-content-center">
                 <div class="footerUp__aboutUs">
                     <div class="aboutUsMini p-3">
                         <div class="aboutUsMini__topText">
@@ -50,7 +49,7 @@
                 </div>
             </div>
 <!--            -->
-            <div class="footerMiddle d-flex justify-content-around">
+        <div class="footerMiddle d-flex justify-content-around">
                 <div class="footerMiddle__block">
                     <div class="footerLinks">
                         <div class="footerLinks__header">
@@ -118,7 +117,6 @@
                 </div>
             </div>
 <!--            -->
-        </div>
         <div class="footerDown d-flex justify-content-around">
             <div class="footerDown__date"><p>{{ year }}</p>  {{ company_name }}</div>
             <div class="footerDown__privacy"><router-link :to="{name: 'policy'}">Политика конфиденциальности</router-link></div>
