@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\InformationController;
+use App\Http\Controllers\Admin\GalleryController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\IndexController;
@@ -37,6 +38,12 @@ Route::group([
         Route::put('/update', [ContactController::class, 'update'])->name('update');
         Route::get('/', [ContactController::class, 'index'])->name('index');
         Route::get('/edit', [ContactController::class, 'edit'])->name('edit');
+    });
+    Route::group(['prefix' => 'gallery', 'as' => 'gallery.',], function() {
+//        Route::put('/update', [GalleryController::class, 'update'])->name('update');
+        Route::get('/filter', [GalleryController::class, 'filter'])->name('filter');
+        Route::get('/', [GalleryController::class, 'index'])->name('index');
+//        Route::get('/edit', [GalleryController::class, 'edit'])->name('edit');
     });
 });
 

@@ -17,6 +17,11 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
 Route::get('/information', [App\Http\Controllers\IndexController::class, 'information'] );
 Route::get('/contact', [App\Http\Controllers\IndexController::class, 'contact'] );
+
+Route::get('/gallery/photo', [App\Http\Controllers\GalleryController::class, 'index'] );
+Route::get('/gallery/photoCategory', [App\Http\Controllers\GalleryController::class, 'category'] );
+
 

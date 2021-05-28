@@ -1,0 +1,9 @@
+.galleryCards {
+    display: flex;
+    justify-content: space-around;
+    flex-flow: row wrap;
+}
+.galleryCard {
+    margin: 1%;
+    width: 46%;
+}
