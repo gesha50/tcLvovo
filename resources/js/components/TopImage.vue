@@ -40,6 +40,46 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.bgForBreadcrumb {
+    background: url("../assets/img/stroyka.png") center center;
+    filter: brightness(40%);
+    background-size: cover;
+    height: 550px;
+    position: relative;
+    z-index: -22;
+}
 
+.blockForBreadcrumd {
+    position: relative;
+    margin: -480px auto;
+    z-index: 1;
+    &__header {
+        @include heading ($whiteText);
+    }
+    &__link {
+        @include miniBodyText ($whiteText, $MontserratSB);
+        &:hover .line {
+            width: 100%;
+        }
+        &:hover {
+            text-decoration: none;
+            color: $whiteText;
+        }
+    }
+}
+.topContent {
+    position: absolute;
+    top: -60px;
+    left: 0;
+    height: 60px;
+    width: 100%;
+}
+.whiteBlock{
+    background: $whiteText;
+    width: 100%;
+}
+.clearBlock{
+    width: 63px;
+}
 </style>

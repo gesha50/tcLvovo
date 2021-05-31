@@ -8,12 +8,12 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     public function index () {
-        $all = Gallery::all('img');
+        $all = Gallery::all('img')->sortDesc();
         $uniqueName = Gallery::all(['nameRU', 'nameForId'])->unique('nameRU');
         return ['all' => $all, 'uniqueName' => $uniqueName];
     }
     public function category (Request $request) {
         $searchName = $request->get('searchName');
-        return Gallery::all()->where('nameForId', $searchName);
+        return Gallery::all()->where('nameForId', $searchName)->sortDesc();
     }
 }

@@ -24,4 +24,7 @@ Route::get('/contact', [App\Http\Controllers\IndexController::class, 'contact'] 
 Route::get('/gallery/photo', [App\Http\Controllers\GalleryController::class, 'index'] );
 Route::get('/gallery/photoCategory', [App\Http\Controllers\GalleryController::class, 'category'] );
 
+Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'] );
+
+
 

@@ -11268,5 +11268,16 @@ body {
 .galleryCard {
   margin: 1%;
   width: 46%;
+  position: relative;
+}
+
+.galleryCard__delete {
+  top: 3px;
+  right: 3px;
+  position: absolute;
+}
+
+.galleryCard img {
+  margin-top: 38px;
 }
 

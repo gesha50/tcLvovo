@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\Admin\NewsController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\IndexController;
@@ -23,6 +24,7 @@ Route::group([
     'as' => 'admin.',
     'middleware' => 'auth'
 ], function () {
+    Route::resource('news', NewsController::class);
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/charts', [IndexController::class, 'charts'])->name('charts');
     Route::get('/tables', [IndexController::class, 'tables'])->name('tables');
@@ -40,10 +42,10 @@ Route::group([
         Route::get('/edit', [ContactController::class, 'edit'])->name('edit');
     });
     Route::group(['prefix' => 'gallery', 'as' => 'gallery.',], function() {
-//        Route::put('/update', [GalleryController::class, 'update'])->name('update');
+        Route::get('/destroy/{id}', [GalleryController::class, 'destroy'])->name('destroy');
         Route::get('/filter', [GalleryController::class, 'filter'])->name('filter');
+        Route::post('/store', [GalleryController::class, 'store'])->name('store');
         Route::get('/', [GalleryController::class, 'index'])->name('index');
-//        Route::get('/edit', [GalleryController::class, 'edit'])->name('edit');
     });
 });
 
