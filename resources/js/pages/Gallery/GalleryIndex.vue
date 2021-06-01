@@ -26,9 +26,7 @@
                     </span>
                 </nav>
                 <div class="fullLine"></div>
-                <div class="gallerySpinner" v-if="loading">
-                    <b-spinner :variant="'warning'" type="grow" label="Loading..."></b-spinner>
-                </div>
+                <spinner v-if="loading"></spinner>
                 <div v-else class="galleryPhoto">
                     <img
                         v-for="item in img"
@@ -44,6 +42,7 @@
 
 <script>
 import TopImage from "../../components/TopImage";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default {
     data() {
@@ -58,6 +57,7 @@ export default {
     name: "GalleryIndex",
     components: {
         TopImage,
+        Spinner,
     },
     mounted() {
         this.getAllPhoto()
@@ -130,9 +130,5 @@ export default {
         width: 100%;
         height: 200px;
     }
-}
-.gallerySpinner {
-    margin-top: 80px;
-    text-align: center;
 }
 </style>

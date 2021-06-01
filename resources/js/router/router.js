@@ -15,6 +15,7 @@ import Tenant from "../pages/company/Tenant";
 import Brands from "../pages/company/Brands";
 import PolicyIndex from "../pages/Policy/PolicyIndex";
 import NotFound from "../pages/NotFound";
+import OneNews from "../pages/News/OneNews/OneNews";
 
 Vue.use(Router)
 
@@ -111,7 +112,21 @@ const routes = [
                 component: NewsIndex,
                 meta: {
                     breadcrumb: 'Новости'
-                }
+                },
+                children: [
+                    {
+                        path: ":slug",
+                        name: "oneNews",
+                        component: OneNews,
+                        meta: {
+                            breadcrumb: routeParams => routeParams.slug
+                        },
+                        props: (route) => ({ // функция генерации входных параметров
+                            id: route.query.id,
+                            slug: route.params.slug,
+                        }),
+                    },
+                ]
             },
             {
                 path: "contact",

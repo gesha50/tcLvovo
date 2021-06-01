@@ -19,7 +19,7 @@ import Footer from "../components/Footer";
 import TopImage from "../components/TopImage";
 
 export default {
-    name: "404",
+    name: "NotFound",
     components: {
         Header,
         Footer,

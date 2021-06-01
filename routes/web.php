@@ -49,22 +49,13 @@ Route::group([
     });
 });
 
-
 // Авторизация
 Auth::routes();
-
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
 
 // Для файлового менеджера
 Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
     \UniSharp\LaravelFilemanager\Lfm::routes();
 });
-
-//Route::get('/company',  [App\Http\Controllers\CompanyController::class, 'index'])->name('company');
-//Route::get('/company/{any}',  [App\Http\Controllers\CompanyController::class, 'index'])
-//    ->name('company.any')
-//    ->where('any', '.*');
 
 // для использования vue-router
 Route::get('/{any?}', function (){

@@ -10,6 +10,17 @@
     text-align: left;
 }
 
+@mixin newsHeader() {
+    color: $textBlack;
+    font-family: Montserrat;
+    font-size: 30px;
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: 36px;
+    text-align: left;
+}
+
 @mixin miniHeader($color, $fontF) {
     color: $color;
     font-family: $fontF;
@@ -62,6 +73,16 @@
     letter-spacing: normal;
     line-height: 16px;
     text-align: left;
-    text-transform: uppercase;
+    //text-transform: uppercase;
+}
+@mixin anyText ($color, $family, $size, $weight, $height) {
+    color: $color;
+    font-family: $family;
+    font-size: $size;
+    font-weight: $weight;
+    font-style: normal;
+    letter-spacing: normal;
+    line-height: $height;
+    text-align: left;
 }
 

@@ -4,24 +4,29 @@
         :headerText="'Новости'"
     ></top-image>
     <div class="container">
-        <div class="gallerySpinner" v-if="loading">
-            <b-spinner :variant="'warning'" type="grow" label="Loading..."></b-spinner>
+        <div v-if="Object.keys($route.params).length !== 0">
+            <router-view></router-view>
         </div>
-        <div v-else class="newsContainer">
-            <div
-                v-for="oneNews in news"
-                :key="oneNews.id"
-                class="oneNews"
-            >
-                <div class="row">
-                    <div class="col-md-2">
-                        {{ oneNews.created_at | formatDate()}}
-                        {{ oneNews.created_at | formatMonth()}}
-                    </div>
-                    <div class="col-md-10">
-                        <h3>{{ oneNews.title }}</h3>
-                        <p>{{ oneNews.preview }}</p>
-                        <a href="#">Читать полностью</a>
+        <div v-else>
+            <spinner v-if="loading"></spinner>
+            <div v-else class="newsContainer">
+                <div
+                    v-for="oneNews in news"
+                    :key="oneNews.id"
+                    class="eachNews"
+                >
+                    <div class="row">
+                        <div class="col-md-2">
+                            <date-month
+                                :created_at="oneNews.created_at"
+                            ></date-month>
+                        </div>
+                        <div class="col-md-10">
+                            <preview
+                                :one-news="oneNews"
+                            ></preview>
+                        </div>
+                        <hr>
                     </div>
                 </div>
             </div>
@@ -32,11 +37,17 @@
 
 <script>
 import TopImage from "../../components/TopImage";
+import DateMonth from "./DateMonth";
+import Preview from "./Preview";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default {
     name: "NewsIndex",
     components: {
         TopImage,
+        DateMonth,
+        Preview,
+        Spinner
     },
     data() {
         return {
@@ -61,19 +72,11 @@ export default {
                 })
         },
     },
-    filters: {
-        formatDate: function (date) {
-            let arrayDate = date.split('T0')
-            return arrayDate[0].split('-')[2]
-        },
-        formatMonth: function (date) {
-            let arrayDate = date.split('T0')
-            return arrayDate[0].split('-')[1]
-        },
-    },
 }
 </script>
 
 <style lang="scss">
-
+.eachNews {
+    margin-bottom: 20px;
+}
 </style>
