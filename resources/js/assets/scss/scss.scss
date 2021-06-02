@@ -7,6 +7,9 @@
 // Bootstrap
 @import '../../../../node_modules/bootstrap/scss/bootstrap';
 
+body {
+    background: $gray_5 !important;
+}
 main {
     padding-top: 66px;
 }

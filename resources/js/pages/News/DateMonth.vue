@@ -35,7 +35,6 @@ export default {
 .newsDataBlock {
     width: 50px;
     height: 90px;
-    margin: 0 auto;
     text-align: center;
     &__top, &__bottom {
         height: 50%;

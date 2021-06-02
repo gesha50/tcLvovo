@@ -16,8 +16,10 @@ class CreateNewsTable extends Migration
         Schema::create('news', function (Blueprint $table) {
             $table->id();
             $table->string('title')->default('Заголовок Новости');
-            $table->string('preview')->default('Короткое описание');
-            $table->string('description')->default('Длинное описание');
+            $table->string('full_title')->default('Полный заголовок Новости');
+            $table->text('preview')->nullable();
+            $table->text('description')->nullable();
+            $table->string('image')->default('')->nullable();
             $table->timestamps();
         });
     }

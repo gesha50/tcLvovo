@@ -25,7 +25,7 @@ Route::get('/gallery/photo', [App\Http\Controllers\GalleryController::class, 'in
 Route::get('/gallery/photoCategory', [App\Http\Controllers\GalleryController::class, 'category'] );
 
 Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'] );
-Route::get('/news/{news}', [App\Http\Controllers\Admin\NewsController::class, 'show'] );
+Route::get('/news/{news}', [App\Http\Controllers\NewsController::class, 'show'] );
 
 
 

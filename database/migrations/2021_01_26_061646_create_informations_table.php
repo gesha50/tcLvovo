@@ -19,7 +19,7 @@ class CreateInformationsTable extends Migration
             $table->string('name', '100')->default('ТК ЛЬВОВО');
             $table->string('description')
                 ->default('Наша компания предоставляет торговые площадки в аренду');
-            $table->integer('works_room')->default(1);
+            $table->integer('works_room')->default(10);
             $table->timestamps();
         });
     }

@@ -15,8 +15,8 @@ class CreateContactsTable extends Migration
     {
         Schema::create('contacts', function (Blueprint $table) {
             $table->id();
-            $table->string('phone', 100)->comment('phone')->default('+777');
-            $table->string('email', 100)->comment('email')->default('mail@mail');
+            $table->string('phone', 100)->comment('phone')->default('+8 916 191 99 15');
+            $table->string('email', 100)->comment('email')->default('mail@mail.ru');
             $table->string('address', 255)->comment('address')->default('Moscow');
             $table->timestamps();
         });

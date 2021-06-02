@@ -1,9 +1,14 @@
 <template>
-<div>
-    {{oneNews.title}}
-    {{ oneNews.preview}}
-    {{ oneNews.description}}
-
+<div class="FullNews">
+    <div class="FullNews__header">{{oneNews.title}}</div>
+    <div class="FullNews__preview">{{ oneNews.preview}}</div>
+    <div class="FullNews__imgBlock">
+        <img
+            :src="oneNews.image"
+            alt=""
+            class="FullNews__img">
+    </div>
+    <div class="FullNews__description">{{ oneNews.description}}</div>
 </div>
 </template>
 
@@ -17,5 +22,19 @@ export default {
 </script>
 
 <style lang="scss">
+.FullNews {
+    &__header {
+       @include newsHeader();
+    }
+    &__preview,
+    &__description {
+        @include miniBodyText($grayText, Montserrat);
+    }
+    &__imgBlock {
+        padding: 30px 100px;
+    }
+    &__img {
 
+    }
+}
 </style>

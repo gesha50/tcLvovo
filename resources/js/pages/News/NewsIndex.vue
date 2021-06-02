@@ -16,12 +16,12 @@
                     class="eachNews"
                 >
                     <div class="row">
-                        <div class="col-md-2">
+                        <div class="col-md-1">
                             <date-month
                                 :created_at="oneNews.created_at"
                             ></date-month>
                         </div>
-                        <div class="col-md-10">
+                        <div class="col-md-11">
                             <preview
                                 :one-news="oneNews"
                             ></preview>
@@ -76,6 +76,10 @@ export default {
 </script>
 
 <style lang="scss">
+.newsContainer {
+    padding: 0 60px 20px;
+    background: $whiteText;
+}
 .eachNews {
     margin-bottom: 20px;
 }

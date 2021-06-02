@@ -11281,3 +11281,11 @@ body {
   margin-top: 38px;
 }
 
+.newsCard {
+  position: relative;
+}
+
+.newsCard img {
+  width: 350px;
+}
+

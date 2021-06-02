@@ -22,9 +22,11 @@ class NewsFactory extends Factory
     public function definition()
     {
         return [
-            'title' => $this->faker->word(),
-            'preview' => $this->faker->text(50),
-            'description' => $this->faker->text(200),
+            'title' => $this->faker->sentence(2, 3),
+            'full_title' => $this->faker->sentence(10),
+            'preview' => $this->faker->sentence(50),
+            'description' => $this->faker->sentence(200),
+            'image' => 'https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson',
         ];
     }
 }

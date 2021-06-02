@@ -10,4 +10,9 @@ class NewsController extends Controller
     public function index () {
         return News::all()->sortDesc();
     }
+
+    public function show(News $news)
+    {
+        return $news;
+    }
 }
