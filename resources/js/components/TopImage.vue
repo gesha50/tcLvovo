@@ -5,8 +5,12 @@
         <div class="d-flex justify-content-between p-3">
             <h1 class="blockForBreadcrumd__header">{{ headerText }}</h1>
             <div class="blockForBreadcrumd__contact">
-                <a class="blockForBreadcrumd__link" href="#">Связаться с нами
-                    <div class="line"></div></a>
+                <router-link
+                    class="blockForBreadcrumd__link"
+                    :to="{name: 'contact'}"
+                >Связаться с нами
+                    <div class="line"></div>
+                </router-link>
             </div>
         </div>
         <breadcrumb-component></breadcrumb-component>

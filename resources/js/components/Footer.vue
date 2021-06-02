@@ -22,30 +22,10 @@
                     </div>
                 </div>
                 <div class="footerUp__news p-3">
-                    <div class="newsMini">
-                        <div class="newsMini__header d-flex justify-content-between">
-                            <div class="newsMini__headerText">Новости</div>
-                            <div class="newsMini__cursor d-flex justify-content-between">
-                                <i class="fas fa-chevron-left"></i>
-                                <i class="fas fa-chevron-right"></i>
-                            </div>
-                        </div>
-                        <hr>
-                        <div class="d-flex justify-content-between">
-                            <div class="newsMini__img col-md-6">
-                                <img width="100%" src="/storage/slider_1.jpeg" alt="">
-                            </div>
-                            <div class="newsMini__bodyText col-md-6">
-                                <p class="newsMini__date">29 октября 2020</p>
-                                <p class="newsMini__text">Текст самой новости Текст самой новости Текст самой новости</p>
-                            </div>
-                        </div>
-                        <div class="newsMini__footer">
-                            <router-link :to="{name: 'news'}" class="newsMini__link">Все новости
-                                <div class="line"></div>
-                            </router-link>
-                        </div>
-                    </div>
+                    <mini-news-component
+                        :news="news"
+                        :created_at="created_at"
+                    ></mini-news-component>
                 </div>
             </div>
 <!--            -->
@@ -125,6 +105,8 @@
 </template>
 
 <script>
+import MiniNewsComponent from "./MiniNewsComponent";
+
 export default {
     data() {
       return {
@@ -132,11 +114,17 @@ export default {
           company_name: '',
           description: '',
           year: (new Date()).getFullYear(),
+          news: {},
+          created_at: '',
       }
     },
     name: "Footer",
+    components: {
+      MiniNewsComponent,
+    },
     mounted() {
       this.getInformation()
+        this.getNews()
     },
     methods: {
         getInformation() {
@@ -146,6 +134,13 @@ export default {
                 this.company_name = res.data.company_name
                 this.description = res.data.description
             })
+        },
+        getNews() {
+            axios.get('/api/lastNews')
+                .then(res => {
+                    this.news = res.data
+                    this.created_at = res.data.created_at
+                })
         },
     },
 }

@@ -15,4 +15,7 @@ class NewsController extends Controller
     {
         return $news;
     }
+    public function lastNews () {
+        return News::all()->last();
+    }
 }

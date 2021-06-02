@@ -91,7 +91,6 @@ export default {
             this.currentLink = this.homeLink
             axios.get('/api/gallery/photo')
             .then(res => {
-                console.log(res.data.all)
                 this.loading = false
                 this.data = res.data.uniqueName
                 this.img = res.data.all

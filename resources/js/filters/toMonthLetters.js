@@ -15,10 +15,10 @@ export default function toMonthLetters(date) {
         return 'мая'
     }
     if(date === '06'){
-        return 'июн.'
+        return 'июня'
     }
     if(date === '07'){
-        return 'июл.'
+        return 'июля'
     }
     if(date === '08'){
         return 'авг.'
