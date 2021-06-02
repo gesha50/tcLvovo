@@ -3,10 +3,11 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="mt-4">Новости</h1>
+        <h1 class="mt-4">Редактировать новость</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">News</li>
+            <li class="breadcrumb-item active"><a href="{{ route('admin.news.index') }}">News</a></li>
+            <li class="breadcrumb-item active">Новость №{{$news->id}}</li>
         </ol>
         <div class="newsContainer">
             <form method="POST" action="{{ route('admin.news.update', $news) }}" enctype="multipart/form-data">

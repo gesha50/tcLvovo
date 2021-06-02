@@ -90,7 +90,7 @@ class NewsController extends Controller
     public function update(Request $request, News $news)
     {
         $validated = $request->validate([
-            'title' => 'required|unique:news,title|max:255',
+            'title' => 'required|max:255',
             'full_title' => 'required',
             'preview' => 'required',
             'description' => 'required',
@@ -102,6 +102,7 @@ class NewsController extends Controller
             $news->image = \Storage::url($path);
             $news->save();
         }
+        flash('Новость успешно отредактирована')->success()->important();
         return redirect(route('admin.news.index'));
     }
 
@@ -114,6 +115,7 @@ class NewsController extends Controller
     public function destroy(News $news)
     {
         $news->delete();
+        flash('Новость успешно удалена')->warning()->important();
         return redirect(route('admin.news.index'));
     }
 }

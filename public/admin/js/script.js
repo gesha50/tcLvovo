@@ -17,6 +17,9 @@
     // Toggle the side navigation
     $("#sidebarToggle").on("click", function(e) {
         e.preventDefault();
-        $("body").toggleClass("sb-sidenav-toggled");
+        $("body").toggleClass("sb-sidenav-toggled")
     });
+
+    //
+    $('.alert').delay(3000).fadeOut(350)
 })(jQuery);

@@ -3,10 +3,11 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="mt-4">Новости</h1>
+        <h1 class="mt-4">Новость №{{$news->id}}</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active">News</li>
+            <li class="breadcrumb-item active"><a href="{{ route('admin.news.index') }}">News</a></li>
+            <li class="breadcrumb-item active">Новость №{{$news->id}}</li>
         </ol>
         <div class="newsContainer">
             <div class="addNews">
@@ -23,7 +24,7 @@
                 <div class="card-body">
                     <p class="card-text">{{$news->preview}}</p>
                 </div>
-                <img src="{{$news->image}}" alt="Card image">
+                <img width="600" src="{{$news->image}}" alt="Card image">
                 <div class="card-body">
                     <p class="card-text">{{$news->description}}</p>
                 </div>
