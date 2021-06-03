@@ -10,12 +10,12 @@
     <title>{{ config('layouts.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="https://kit.fontawesome.com/e1158baa42.js" crossorigin="anonymous"></script>
+    <script src="{{asset('js/fontawesome.js')}}" crossorigin="anonymous"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+{{--    <link rel="dns-prefetch" href="//fonts.gstatic.com">--}}
+{{--    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">--}}
 
     <!-- Styles -->
     <link href="{{ asset('css/scss.css') }}" rel="stylesheet" />
@@ -25,6 +25,6 @@
         @yield('content')
     </div>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="{{asset('js/jquery-3.5.1.min.js')}}"></script>
 </body>
 </html>

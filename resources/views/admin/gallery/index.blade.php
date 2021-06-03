@@ -3,7 +3,7 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="mt-4">Контакты</h1>
+        <h1 class="mt-4">Галерея</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Gallery</li>

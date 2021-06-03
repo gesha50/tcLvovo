@@ -7,10 +7,10 @@
 {{--    <meta name="description" content="@yield('description')" />--}}
     <meta name="author" content="" />
     <title>@yield('title')</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.0.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ asset('admin/css/twitter-bootstrap-5.0.1.min.css')  }}">
     <link href="{{ asset('admin/css/app.css') }}" rel="stylesheet" />
-    <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
+    <link href="{{ asset('admin/css/bootstrap4.min.css')  }}" rel="stylesheet" crossorigin="anonymous" />
+    <script src="{{ asset('admin/js/font-awesome-5.15.1.min.js')  }}" crossorigin="anonymous"></script>
 </head>
 <body class="sb-nav-fixed">
 @include('admin.inc.topnav')
@@ -25,15 +25,15 @@
     </div>
 </div>
 <script
-    src="https://code.jquery.com/jquery-3.6.0.js"
-    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    src="{{asset('admin/js/jquery-3.6.0.js')}}"
+
     crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+<script src="{{asset('admin/js/bootstrap.bundle.min.js')}}" crossorigin="anonymous"></script>
+<script src="{{ asset('admin/js/Chart.min.js')  }}" crossorigin="anonymous"></script>
 {{--<script src="{{ asset('admin/assets/demo/chart-area-demo.js') }}"></script>--}}
 {{--<script src="{{ asset('admin/assets/demo/chart-bar-demo.js') }}"></script>--}}
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
-<script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
+<script src="{{ asset('admin/js/dataTables.bootstrap4.min.js') }}" crossorigin="anonymous"></script>
 <script src="{{ asset('admin/assets/demo/datatables-demo.js') }}"></script>
 <script src="{{ asset('admin/js/script.js') }}"></script>
 </body>
