@@ -21,7 +21,6 @@
                             <a href="#">Оставьте заявку!</a>
                         </div>
                         <div class="miniOrder__triangleLeft"></div>
-                        <div class="miniOrder__triangleRight"></div>
                     </div>
                 </div>
             </div>
@@ -105,8 +104,6 @@ export default {
         background: $yellow;
         border-style: solid;
         border-color:  transparent  $textBlack;
-    }
-    &__triangleLeft {
         border-width: 30px 130px 0px 131px;
     }
 }

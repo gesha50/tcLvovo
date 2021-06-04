@@ -18,6 +18,7 @@
                 </div>
             </div>
         </div>
+        <request-component></request-component>
     </div>
 </template>
 
@@ -25,6 +26,7 @@
 import AsideMenuComponent from "../../components/AsideMenuComponent";
 import AsideDocumentsComponent from "../../components/AsideDocumentsComponent";
 import TopImage from "../../components/TopImage";
+import RequestComponent from "../../components/RequestComponent";
 export default {
     data() {
       return {
@@ -36,6 +38,7 @@ export default {
         AsideMenuComponent,
         AsideDocumentsComponent,
         TopImage,
+        RequestComponent,
     },
 }
 </script>

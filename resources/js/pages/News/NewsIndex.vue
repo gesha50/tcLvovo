@@ -32,6 +32,7 @@
             </div>
         </div>
     </div>
+    <request-component></request-component>
 </div>
 </template>
 
@@ -40,6 +41,7 @@ import TopImage from "../../components/TopImage";
 import DateMonth from "./DateMonth";
 import Preview from "./Preview";
 import Spinner from "../../components/Spinner/Spinner";
+import RequestComponent from "../../components/RequestComponent";
 
 export default {
     name: "NewsIndex",
@@ -47,7 +49,8 @@ export default {
         TopImage,
         DateMonth,
         Preview,
-        Spinner
+        Spinner,
+        RequestComponent,
     },
     data() {
         return {

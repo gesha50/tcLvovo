@@ -50,6 +50,7 @@ export default {
                 .catch(e => {
                     this.loading = false
                     console.log(e)
+                    return this.$router.push('/404')
                 })
         },
     },

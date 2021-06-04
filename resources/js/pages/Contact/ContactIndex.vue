@@ -22,6 +22,7 @@
             </div>
     </div>
     <YandexMap></YandexMap>
+    <request-component></request-component>
 </div>
 </template>
 
@@ -30,6 +31,7 @@ import TopImage from "../../components/TopImage";
 import YandexMap from "./YandexMap";
 import FeedBack from "./FeedBack";
 import ContactInformation from "./ContactInformation";
+import RequestComponent from "../../components/RequestComponent";
 
 export default {
     name: "ContactIndex",
@@ -38,6 +40,7 @@ export default {
         YandexMap,
         FeedBack,
         ContactInformation,
+        RequestComponent,
     },
 }
 </script>

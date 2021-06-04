@@ -37,12 +37,14 @@
                 </div>
             </div>
         </div>
+        <request-component></request-component>
     </div>
 </template>
 
 <script>
 import TopImage from "../../components/TopImage";
 import Spinner from "../../components/Spinner/Spinner";
+import RequestComponent from "../../components/RequestComponent";
 
 export default {
     data() {
@@ -58,6 +60,7 @@ export default {
     components: {
         TopImage,
         Spinner,
+        RequestComponent,
     },
     mounted() {
         this.getAllPhoto()

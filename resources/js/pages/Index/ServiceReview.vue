@@ -86,6 +86,9 @@ export default {
         &:hover .line {
             width: 100%;
         }
+        &:hover .request__line {
+            width: 100%;
+        }
     }
 }
 
