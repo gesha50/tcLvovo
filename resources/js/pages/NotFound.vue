@@ -4,7 +4,7 @@
         :headerText="'Страница не найдена'"
     ></top-image>
     <div class="container">
-        <div class="error" style="background: white">
+        <div class="error">
             <img class="error__img"
                  src="../assets/img/icon-error.png"
                  alt=""
@@ -15,11 +15,22 @@
                 Пожалуйста вернитесь на шаг назад или перейдите на главную страницу.
             </p>
             <div class="error__blockForButtons">
-                <a @click="$router.go(-1)">Назад</a>
-                <router-link to="/">Главная</router-link>
+                <a
+                    class="btn btn-dark"
+                    @click="$router.go(-1)"
+                >
+                    Назад
+                </a>
+                <router-link
+                    class="btn btn-warning"
+                    to="/"
+                >
+                    на Главную
+                </router-link>
             </div>
         </div>
     </div>
+    <request-component></request-component>
 </div>
 </template>
 
@@ -27,6 +38,7 @@
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TopImage from "../components/TopImage";
+import RequestComponent from "../components/RequestComponent";
 
 export default {
     name: "NotFound",
@@ -34,10 +46,33 @@ export default {
         Header,
         Footer,
         TopImage,
+        RequestComponent,
     },
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.error {
+    background: white;
+    text-align: center;
+    padding-bottom: 40px;
+    &__img {
 
+    }
+    &__header {
+        @include anyText($yellow_2, $MontserratSB, 72px, 600, normal);
+        text-align: center;
+        & h2 {
+            @include anyText($textBlack, "Montserrat - Ultra Light", 72px, 200, normal);
+            display: inline-block;
+        }
+    }
+    &__text {
+        @include miniHeader($textBlack, "Montserrat - Ultra Light");
+        text-align: center;
+    }
+    &__blockForButtons {
+        margin-top: 40px;
+    }
+}
 </style>

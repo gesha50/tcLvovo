@@ -70,7 +70,7 @@ class NewsController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
+     * @param News $news
      * @return \Illuminate\Http\Response
      */
     public function edit(News $news)
@@ -114,6 +114,7 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
+        dd($news);
         $news->delete();
         flash('Новость успешно удалена')->warning()->important();
         return redirect(route('admin.news.index'));

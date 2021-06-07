@@ -8,17 +8,6 @@
                     Главная
                 </a>
                 <div class="sb-sidenav-menu-heading">Interface</div>
-{{--                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">--}}
-{{--                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>--}}
-{{--                    Layouts--}}
-{{--                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>--}}
-{{--                </a>--}}
-{{--                <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">--}}
-{{--                    <nav class="sb-sidenav-menu-nested nav">--}}
-{{--                        <a class="nav-link" href="{{ route('admin.layoutStatic') }}">Static Navigation</a>--}}
-{{--                        <a class="nav-link" href="{{ route('admin.layoutSidenav') }}">Light Sidenav</a>--}}
-{{--                    </nav>--}}
-{{--                </div>--}}
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Страницы
@@ -26,6 +15,7 @@
                 </a>
                 <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
+                        <a class="nav-link" href="{{ route('admin.services.index') }}">Услуги</a>
                         <a class="nav-link" href="{{ route('admin.gallery.index') }}">Галерея</a>
                         <a class="nav-link" href="{{ route('admin.news.index') }}">Новости</a>
                         <a class="nav-link" href="{{ route('admin.contact.index') }}">Контакты</a>

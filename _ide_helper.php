@@ -380,7 +380,7 @@
                         $instance->registerConfiguredProviders();
         }
                     /**
-         * Register a service provider with the application.
+         * Register a services provider with the application.
          *
          * @param \Illuminate\Support\ServiceProvider|string $provider
          * @param bool $force
@@ -393,7 +393,7 @@
                         return $instance->register($provider, $force);
         }
                     /**
-         * Get the registered service provider instance if it exists.
+         * Get the registered services provider instance if it exists.
          *
          * @param \Illuminate\Support\ServiceProvider|string $provider
          * @return \Illuminate\Support\ServiceProvider|null
@@ -405,7 +405,7 @@
                         return $instance->getProvider($provider);
         }
                     /**
-         * Get the registered service provider instances if any exist.
+         * Get the registered services provider instances if any exist.
          *
          * @param \Illuminate\Support\ServiceProvider|string $provider
          * @return array
@@ -417,7 +417,7 @@
                         return $instance->getProviders($provider);
         }
                     /**
-         * Resolve a service provider instance from the class name.
+         * Resolve a services provider instance from the class name.
          *
          * @param string $provider
          * @return \Illuminate\Support\ServiceProvider
@@ -440,7 +440,7 @@
                         $instance->loadDeferredProviders();
         }
                     /**
-         * Load the provider for a deferred service.
+         * Load the provider for a deferred services.
          *
          * @param string $service
          * @return void
@@ -452,7 +452,7 @@
                         $instance->loadDeferredProvider($service);
         }
                     /**
-         * Register a deferred provider and service.
+         * Register a deferred provider and services.
          *
          * @param string $provider
          * @param string|null $service
@@ -501,7 +501,7 @@
                         return $instance->isBooted();
         }
                     /**
-         * Boot the application's service providers.
+         * Boot the application's services providers.
          *
          * @return void
          * @static
@@ -707,7 +707,7 @@
                         $instance->terminate();
         }
                     /**
-         * Get the service providers that have been loaded.
+         * Get the services providers that have been loaded.
          *
          * @return array
          * @static
@@ -718,7 +718,7 @@
                         return $instance->getLoadedProviders();
         }
                     /**
-         * Determine if the given service provider is loaded.
+         * Determine if the given services provider is loaded.
          *
          * @param string $provider
          * @return bool
@@ -765,7 +765,7 @@
                         $instance->addDeferredServices($services);
         }
                     /**
-         * Determine if the given service is a deferred service.
+         * Determine if the given services is a deferred services.
          *
          * @param string $service
          * @return bool

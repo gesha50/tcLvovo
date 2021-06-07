@@ -4,6 +4,7 @@ use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\NewsController;
+use App\Http\Controllers\Admin\ServiceController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\IndexController;
@@ -24,7 +25,10 @@ Route::group([
     'as' => 'admin.',
     'middleware' => 'auth'
 ], function () {
-    Route::resource('news', NewsController::class);
+    Route::resources([
+        'news' => NewsController::class,
+        'services' => ServiceController::class,
+    ]);
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/charts', [IndexController::class, 'charts'])->name('charts');
     Route::get('/tables', [IndexController::class, 'tables'])->name('tables');

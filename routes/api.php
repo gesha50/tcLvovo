@@ -28,6 +28,9 @@ Route::get('/news', [App\Http\Controllers\NewsController::class, 'index'] );
 Route::get('/lastNews', [App\Http\Controllers\NewsController::class, 'lastNews'] );
 Route::get('/news/{news}', [App\Http\Controllers\NewsController::class, 'show'] );
 
+Route::get('/services', [App\Http\Controllers\ServiceController::class, 'index'] );
+
+
 
 
 
