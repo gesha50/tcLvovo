@@ -5,6 +5,7 @@ use App\Http\Controllers\Admin\InformationController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ServiceController;
+use \App\Http\Controllers\Admin\BrandController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\IndexController;
@@ -28,6 +29,7 @@ Route::group([
     Route::resources([
         'news' => NewsController::class,
         'services' => ServiceController::class,
+        'brands' => BrandController::class,
     ]);
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/charts', [IndexController::class, 'charts'])->name('charts');

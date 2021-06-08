@@ -4,7 +4,10 @@
         :headerText="'Услуги'"
     ></top-image>
     <div class="container">
-        <div class="ourServices pl-5 pr-5">
+        <div v-if="Object.keys($route.params).length !== 0">
+            <router-view></router-view>
+        </div>
+        <div v-else class="ourServices pl-5 pr-5">
             <h2 class="ourServices__header">Что мы можем предложить Вам?</h2>
             <p class="ourServices__text">
                 Claritas est etiam processus dynamicus, qui sequitur
@@ -21,7 +24,9 @@
                     <div
                         v-for="item in services"
                         :key="item.id"
-                        class="oneService">
+                        class="oneService"
+                        @click="goToOneService(item)"
+                    >
                         <div class="oneService__img">
                             <i
                                 :class="item.icon_class"
@@ -37,12 +42,14 @@
             <img class="bgImgServices" src="../../assets/img/buildings_sketch.png" alt="">
         </div>
     </div>
+    <request-component></request-component>
 </div>
 </template>
 
 <script>
 import TopImage from "../../components/TopImage";
 import Spinner from "../../components/Spinner/Spinner";
+import RequestComponent from "../../components/RequestComponent";
 
 export default {
     name: "ServiceIndex",
@@ -55,6 +62,7 @@ export default {
     components: {
         TopImage,
         Spinner,
+        RequestComponent,
     },
     mounted() {
         this.getServices()
@@ -72,7 +80,10 @@ export default {
                     console.log(e)
                 })
         },
-    }
+        goToOneService(item) {
+            this.$router.push({name: 'oneService', params: { slug: item.company }, query: { id: item.id }})
+        },
+    },
 }
 </script>
 

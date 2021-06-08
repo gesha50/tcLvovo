@@ -14,7 +14,7 @@
             </div>
             <div class="newsMini__bodyText col-md-6">
                 <p class="newsMini__date">{{date}} {{month}} {{yearNews}}</p>
-                <p class="newsMini__text">{{news.preview}}</p>
+                <p class="newsMini__text">{{ preview }}</p>
             </div>
         </div>
         <div class="newsMini__footer">
@@ -30,12 +30,21 @@ import toDateFromFullDate from "../filters/toDateFromFullDate";
 import toMonthFromFullDate from "../filters/toMonthFromFullDate";
 import toMonthFullLetters from "../filters/toMonthFullLetters";
 import toYearFromFullDate from "../filters/toYearFromFullDate";
+import truncateText from "../filters/truncateText";
 
 export default {
     name: "MiniNewsComponent",
     props: {
         news: Object | Array,
         created_at: String,
+    },
+    data() {
+        return {
+           preview: ''
+        }
+    },
+    updated() {
+        this.getPreview()
     },
     computed: {
         date() {
@@ -47,6 +56,11 @@ export default {
         },
         yearNews() {
             return toYearFromFullDate(this.created_at)
+        },
+    },
+    methods: {
+        getPreview() {
+            this.preview = truncateText(this.news.preview, 100, '...')
         }
     },
 }

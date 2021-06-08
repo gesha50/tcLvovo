@@ -12,10 +12,11 @@ import NewsIndex from "../pages/News/NewsIndex";
 import ContactIndex from "../pages/Contact/ContactIndex";
 import Territory from "../pages/company/Territory";
 import Tenant from "../pages/company/Tenant";
-import Brands from "../pages/company/Brands";
+import Brands from "../pages/company/Brands/Brands";
 import PolicyIndex from "../pages/Policy/PolicyIndex";
 import NotFound from "../pages/NotFound";
 import OneNews from "../pages/News/OneNews/OneNews";
+import OneServiceIndex from "../pages/Service/OneService/OneServiceIndex";
 
 Vue.use(Router)
 
@@ -96,7 +97,21 @@ const routes = [
                 component: ServiceIndex,
                 meta: {
                     breadcrumb: 'Услуги'
-                }
+                },
+                children: [
+                    {
+                        path: ":slug",
+                        name: "oneService",
+                        component: OneServiceIndex,
+                        meta: {
+                            breadcrumb: routeParams => routeParams.slug
+                        },
+                        props: (route) => ({ // функция генерации входных параметров
+                            id: route.query.id,
+                            slug: route.params.slug,
+                        }),
+                    },
+                ],
             },
             {
                 path: "gallery",

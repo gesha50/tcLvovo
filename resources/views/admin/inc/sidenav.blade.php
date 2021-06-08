@@ -19,6 +19,7 @@
                         <a class="nav-link" href="{{ route('admin.gallery.index') }}">Галерея</a>
                         <a class="nav-link" href="{{ route('admin.news.index') }}">Новости</a>
                         <a class="nav-link" href="{{ route('admin.contact.index') }}">Контакты</a>
+                        <a class="nav-link" href="{{ route('admin.brands.index') }}">Бренды</a>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                             Error
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

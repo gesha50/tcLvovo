@@ -36,7 +36,7 @@ class ServiceController extends Controller
      */
     public function show(Services $services)
     {
-        //
+        return $services;
     }
 
     /**

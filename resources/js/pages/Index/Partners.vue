@@ -17,10 +17,12 @@
                 </div>
             </div>
             <div class="miniPartners__block row">
-                <img src="/storage/unis.png" alt="" class="miniPartners__img">
-                <img src="/storage/5.jpeg" alt="" class="miniPartners__img">
-                <img src="/storage/dulux.png" alt="" class="miniPartners__img">
-                <img src="/storage/knauf.png" alt="" class="miniPartners__img">
+                <img
+                    v-for="img in brandsImg"
+                    :src="img.image"
+                    alt=""
+                    class="miniPartners__img"
+                >
             </div>
         </div>
     </div>
@@ -28,7 +30,35 @@
 
 <script>
 export default {
-name: "Partners"
+    name: "Partners",
+    data() {
+        return {
+            brandsImg: [],
+        }
+    },
+    mounted() {
+      this.getBrandsImg()
+    },
+    methods: {
+        getBrandsImg() {
+          axios.get('/api/brands')
+          .then(res => {
+              for (let i=0; i<4; i++){
+                  //Фото выбираются рандомом
+                  //Могут повторяться!
+                  let obj = this.arrayRandElement(res.data)
+                  this.brandsImg.push(obj)
+              }
+          })
+          .catch(e => {
+              console.log(e)
+          })
+        },
+        arrayRandElement(arr) {
+            let rand = Math.floor(Math.random() * arr.length);
+            return arr[rand];
+        }
+    },
 }
 </script>
 

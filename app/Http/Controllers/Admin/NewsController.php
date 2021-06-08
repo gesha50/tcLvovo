@@ -114,7 +114,6 @@ class NewsController extends Controller
      */
     public function destroy(News $news)
     {
-        dd($news);
         $news->delete();
         flash('Новость успешно удалена')->warning()->important();
         return redirect(route('admin.news.index'));

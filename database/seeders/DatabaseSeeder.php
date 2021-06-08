@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
             GallerySeeder::class,
             NewsSeeder::class,
             ServicesSeeder::class,
+            BrandsSeeder::class,
         ]);
     }
 }
