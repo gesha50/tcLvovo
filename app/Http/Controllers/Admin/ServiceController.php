@@ -4,14 +4,20 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Services;
+use Illuminate\Contracts\Foundation\Application;
+use Illuminate\Contracts\View\Factory;
+use Illuminate\Contracts\View\View;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
+use Illuminate\Routing\Redirector;
 
 class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function index()
     {
@@ -23,7 +29,7 @@ class ServiceController extends Controller
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Application|Factory|View|Response
      */
     public function create()
     {
@@ -34,7 +40,7 @@ class ServiceController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return Application|RedirectResponse|Response|Redirector
      */
     public function store(Request $request)
     {
@@ -52,26 +58,26 @@ class ServiceController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $id
-     * @return \Illuminate\Http\Response
+     * @param Services $service
+     * @return Application|Factory|View|Response
      */
-    public function show($id)
+    public function show(Services $service)
     {
         return view('admin.services.show')->with([
-            'services' => Services::find($id),
+            'services' => $service,
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param $id
-     * @return \Illuminate\Http\Response
+     * @param Services $service
+     * @return Application|Factory|View|Response
      */
-    public function edit($id)
+    public function edit(Services $service)
     {
         return view('admin.services.edit')->with([
-            'services' => Services::find($id),
+            'services' => $service,
         ]);
     }
 
@@ -79,10 +85,10 @@ class ServiceController extends Controller
      * Update the specified resource in storage.
      *
      * @param \Illuminate\Http\Request $request
-     * @param $id
-     * @return \Illuminate\Http\Response
+     * @param Services $service
+     * @return Application|RedirectResponse|Response|Redirector
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Services $service)
     {
         $validated = $request->validate([
             'service_name' => 'required|max:255',
@@ -91,8 +97,7 @@ class ServiceController extends Controller
             'description' => 'required',
             'icon_class' => 'required',
         ]);
-        $services = Services::find($id);
-        $services->update($validated);
+        $service->update($validated);
         $request->flash();
         flash('Услуга успешно отредактирована')->success()->important();
         return redirect(route('admin.services.index'));
@@ -101,12 +106,12 @@ class ServiceController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param $id
-     * @return \Illuminate\Http\Response
+     * @param Services $service
+     * @return Application|RedirectResponse|Response|Redirector
      */
-    public function destroy($id)
+    public function destroy(Services $service)
     {
-        Services::destroy($id);
+        $service->delete();
         flash('Услуга успешно удалена')->warning()->important();
         return redirect(route('admin.services.index'));
     }

@@ -56,26 +56,26 @@ class BrandController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param $id
-     * @return \Illuminate\Http\Response
+     * @param Brands $brand
+     * @return void
      */
-    public function show($id)
+    public function show(Brands $brand)
     {
         return view('admin.brands.show')->with([
-            'brands' => Brands::find($id),
+            'brands' => $brand,
         ]);
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param $id
+     * @param Brands $brand
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Brands $brand)
     {
         return view('admin.brands.edit')->with([
-            'brands' => Brands::find($id),
+            'brands' => $brand,
         ]);
     }
 
@@ -86,20 +86,19 @@ class BrandController extends Controller
      * @param $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Brands $brand)
     {
         $validated = $request->validate([
             'title' => 'required|max:255',
             'link' => 'required',
             'description' => 'required',
         ]);
-        $brands = Brands::find($id);
-        $brands->update($validated);
+        $brand->update($validated);
         $request->flash();
         if ($request->hasFile('image')) {
             $path = $request->file('image')->store('brands');
-            $brands->image = \Storage::url($path);
-            $brands->save();
+            $brand->image = \Storage::url($path);
+            $brand->save();
         }
         flash('Бренд успешно отредактирован')->success()->important();
         return redirect(route('admin.brands.index'));
@@ -108,12 +107,12 @@ class BrandController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Brands  $brands
+     * @param Brands $brand
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Brands $brand)
     {
-        Brands::destroy($id);
+        $brand->delete();
         flash('Бренд успешно удален')->warning()->important();
         return redirect(route('admin.brands.index'));
     }
