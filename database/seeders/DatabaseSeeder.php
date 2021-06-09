@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
             NewsSeeder::class,
             ServicesSeeder::class,
             BrandsSeeder::class,
+            HistoriesSeeder::class,
+            TenantsSeeder::class,
         ]);
     }
 }

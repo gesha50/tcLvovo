@@ -1,7 +1,7 @@
 <template>
     <div>
         <spinner v-if="loading"></spinner>
-        <div v-else class="oneServiceIndex p-5">
+        <div v-else class="oneServiceIndex bg-white p-5">
             <h2 class="oneServiceIndex__header">{{oneService.company}}</h2>
             <h4 class="oneServiceIndex__miniHeader">{{oneService.service_name}}</h4>
             <p class="oneServiceIndex__preview">{{oneService.preview}}</p>

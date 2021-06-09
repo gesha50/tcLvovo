@@ -6,7 +6,7 @@
     <div class="request__triangle col-md-1"></div>
     <div class="col-md-4 p-5 request__blockRight">
         <div class="service__linkBlock">
-            <a class="service__link" href="#">Оставть заявку
+            <a class="service__link request__link" href="#">Оставть заявку
                 <div class="request__line"></div>
             </a>
         </div>
@@ -38,6 +38,9 @@ export default {
         border-style: solid;
         border-color:  transparent  $yellow;
         border-width: 85px 0 85px 60px;
+    }
+    &__link {
+        font-size: 20px;
     }
     &__line {
         height: 2px;

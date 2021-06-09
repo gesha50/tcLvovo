@@ -2,10 +2,12 @@
 <div class="container">
     <div id="app">
         <agile  :autoplay-speed="4000" :initial-slide="0" :autoplay="true" :pauseOnHover="true">
-            <img class="slide" src="/storage/slider_1.jpeg"/>
-            <img class="slide" src="/storage/slider_2.jpeg"/>
-            <img class="slide" src="/storage/slider_3.jpeg"/>
-            <img class="slide" src="/storage/slider_4.jpeg"/>
+            <img
+                v-for="i in 4"
+                :key="i"
+                class="slide"
+                :src="'/storage/slider_'+i+'.jpeg'"
+            />
             <template slot="prevButton"><i class="fas fa-chevron-left"></i></template>
             <template slot="nextButton"><i class="fas fa-chevron-right"></i></template>
         </agile>

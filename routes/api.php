@@ -33,6 +33,12 @@ Route::get('/services/{services}', [App\Http\Controllers\ServiceController::clas
 
 Route::get('/brands', [App\Http\Controllers\BrandController::class, 'index'] );
 
+Route::get('/histories', [App\Http\Controllers\HistoryController::class, 'index'] );
+
+Route::get('/tenants', [App\Http\Controllers\TenantController::class, 'index'] );
+
+
+
 
 
 

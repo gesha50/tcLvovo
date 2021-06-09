@@ -2,7 +2,7 @@
 import Router from 'vue-router'
 import Vue from 'vue'
 import AboutComponent from "../pages/company/AboutComponent";
-import HistoryComponent from "../pages/company/HistoryComponent";
+import HistoryIndex from "../pages/company/History/HistoryIndex";
 import IndexComponent from "../pages/Index/IndexComponent";
 import ContentComponent from "../pages/company/ContentComponent";
 import AppContainer from "../AppContainer";
@@ -11,7 +11,7 @@ import GalleryIndex from "../pages/Gallery/GalleryIndex";
 import NewsIndex from "../pages/News/NewsIndex";
 import ContactIndex from "../pages/Contact/ContactIndex";
 import Territory from "../pages/company/Territory";
-import Tenant from "../pages/company/Tenant";
+import Tenant from "../pages/company/Tenant/Tenant";
 import Brands from "../pages/company/Brands/Brands";
 import PolicyIndex from "../pages/Policy/PolicyIndex";
 import NotFound from "../pages/NotFound";
@@ -60,7 +60,7 @@ const routes = [
                     {
                         path: "history",
                         name: "history",
-                        component: HistoryComponent,
+                        component: HistoryIndex,
                         meta: {
                             breadcrumb: 'История'
                         }

@@ -19,7 +19,17 @@
                         <a class="nav-link" href="{{ route('admin.gallery.index') }}">Галерея</a>
                         <a class="nav-link" href="{{ route('admin.news.index') }}">Новости</a>
                         <a class="nav-link" href="{{ route('admin.contact.index') }}">Контакты</a>
-                        <a class="nav-link" href="{{ route('admin.brands.index') }}">Бренды</a>
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                            Компания
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ route('admin.tenants.index') }}">Арендаторам</a>
+                                <a class="nav-link" href="{{ route('admin.histories.index') }}">История</a>
+                                <a class="nav-link" href="{{ route('admin.brands.index') }}">Бренды</a>
+                            </nav>
+                        </div>
                         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
                             Error
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>

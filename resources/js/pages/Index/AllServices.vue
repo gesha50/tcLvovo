@@ -1,48 +1,20 @@
 <template>
     <div class="allService container  d-flex justify-content-center">
-        <div class="allService__block col-md-4">
+        <div
+            v-for="service in services"
+            :key="service.id"
+            class="allService__block col-md-4"
+        >
             <div class="miniServiceBlock d-flex justify-content-between">
                 <div class="miniServiceBlock__img">
                     <img src="/storage/icon.png" alt="">
                 </div>
                 <div class="miniServiceBlock__info">
                     <div class="miniServiceBlock__heading">
-                        Плов
+                        {{service.service_name}}
                     </div>
                     <div class="miniServiceBlock__body">
-                        Каждое утро в ресторане "Самарканд" готовится горячая выпечка и плов!
-                    </div>
-                    <div class="miniServiceBlock__line"></div>
-                </div>
-            </div>
-        </div>
-        <div class="allService__block2 col-md-4">
-            <div class="miniServiceBlock d-flex justify-content-between">
-                <div class="miniServiceBlock__img">
-                    <img src="/storage/icon_2.png" alt="">
-                </div>
-                <div class="miniServiceBlock__info">
-                    <div class="miniServiceBlock__heading">
-                        Автосервис
-                    </div>
-                    <div class="miniServiceBlock__body">
-                        Каждое утро в ресторане "Самарканд" готовится горячая выпечка и плов!
-                    </div>
-                    <div class="miniServiceBlock__line"></div>
-                </div>
-            </div>
-        </div>
-        <div class="allService__block3 col-md-4">
-            <div class="miniServiceBlock d-flex justify-content-between">
-                <div class="miniServiceBlock__img">
-                    <img src="/storage/icon_3.png" alt="">
-                </div>
-                <div class="miniServiceBlock__info">
-                    <div class="miniServiceBlock__heading">
-                        Шиномонтаж
-                    </div>
-                    <div class="miniServiceBlock__body">
-                        Каждое утро в ресторане "Самарканд" готовится горячая выпечка и плов!
+                        {{ service.preview}}
                     </div>
                     <div class="miniServiceBlock__line"></div>
                 </div>
@@ -53,19 +25,41 @@
 
 <script>
 export default {
-name: "AllServices"
+    data() {
+      return {
+          services: [],
+      }
+    },
+    name: "AllServices",
+    mounted() {
+        this.getServices()
+    },
+    methods: {
+      getServices() {
+          axios.get('/api/services')
+          .then(res => {
+              for (let i=0;i<3;i++) {
+                  this.services.push(res.data[i])
+              }
+              console.log(this.services)
+          })
+          .catch(e => {
+              console.log(e)
+          })
+      },
+    },
 }
 </script>
 
 <style lang="scss">
 .allService {
-    &__block {
+    &__block:nth-child(1) {
         background-color: $yellow;
     }
-    &__block2 {
+    &__block:nth-child(2) {
         background-color: darken($yellow, 5%);
     }
-    &__block3 {
+    &__block:nth-child(3) {
         background-color: darken($yellow, 10%);
     }
 }
