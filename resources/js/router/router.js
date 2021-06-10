@@ -1,7 +1,7 @@
 
 import Router from 'vue-router'
 import Vue from 'vue'
-import AboutComponent from "../pages/company/AboutComponent";
+import AboutComponent from "../pages/company/About/AboutComponent";
 import HistoryIndex from "../pages/company/History/HistoryIndex";
 import IndexComponent from "../pages/Index/IndexComponent";
 import ContentComponent from "../pages/company/ContentComponent";

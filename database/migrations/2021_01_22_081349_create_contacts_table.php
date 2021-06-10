@@ -17,7 +17,8 @@ class CreateContactsTable extends Migration
             $table->id();
             $table->string('phone', 100)->comment('phone')->default('+8 916 191 99 15');
             $table->string('email', 100)->comment('email')->default('mail@mail.ru');
-            $table->string('address', 255)->comment('address')->default('Moscow');
+            $table->string('address', 255)->comment('address')
+                ->default('город Москва, поселение Вороновское, деревня Львово, Крутовская улица, дом 29 строение 7');
             $table->timestamps();
         });
     }

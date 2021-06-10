@@ -1,5 +1,7 @@
 <template>
-<div class="card">О нас!!!</div>
+<div>
+
+</div>
 </template>
 
 <script>
