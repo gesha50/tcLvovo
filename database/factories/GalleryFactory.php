@@ -25,7 +25,7 @@ class GalleryFactory extends Factory
         return [
             'nameForId' => $name,
             'nameRU' => $name,
-            'img' => 'https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson'
+            'img' => 'http://lorempixel.com/400/200/'
         ];
     }
 }

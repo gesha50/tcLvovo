@@ -17,7 +17,7 @@ class CreateGalleriesTable extends Migration
             $table->id();
             $table->string('nameForId')->default('territory');
             $table->string('nameRU')->default('территория');
-            $table->string('img')->default('https://imgholder.ru/600x300/8493a8/adb9ca&text=IMAGE+HOLDER&font=kelson');
+            $table->string('img')->default('http://lorempixel.com/400/200/');
             $table->timestamps();
         });
     }

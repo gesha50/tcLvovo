@@ -22,8 +22,8 @@
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <div class="search navbar-nav">
-                    <a v-if="true" class="nav-link my-nav-link" href="/dashboard">Админка</a>
-<!--                    <i class="fas fa-search"></i>-->
+                    <a v-if="userLogin" class="nav-link my-nav-link" href="/dashboard">Админка</a>
+                    <i v-else class="fas fa-search"></i>
                 </div>
             </div>
         </nav>
@@ -32,7 +32,10 @@
 
 <script>
 export default {
-    name: "Header"
+    name: "Header",
+    props: {
+        userLogin: Boolean,
+    },
 }
 </script>
 
