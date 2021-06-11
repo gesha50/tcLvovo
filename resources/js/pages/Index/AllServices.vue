@@ -41,7 +41,6 @@ export default {
               for (let i=0;i<3;i++) {
                   this.services.push(res.data[i])
               }
-              console.log(this.services)
           })
           .catch(e => {
               console.log(e)

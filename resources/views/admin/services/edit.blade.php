@@ -29,17 +29,17 @@
                 @endforeach
 
                 <div class="form-group">
-                    <label for="company">Название фирмы</label>
+                    <label for="name">Название фирмы</label>
                     <input
-                        name="company"
+                        name="name"
                         type="text"
-                        class="form-control @error('company') is-invalid @enderror"
-                        id="company"
+                        class="form-control @error('name') is-invalid @enderror"
+                        id="name"
                         placeholder="TireFast"
-                        value="{{ old('company', $services->company) }}"
+                        value="{{ old('name', $services->companies->name) }}"
                     >
                 </div>
-                @foreach($errors->get('company') as $error)
+                @foreach($errors->get('name') as $error)
                     <div class="text-danger">{{ $error }}</div>
                 @endforeach
 

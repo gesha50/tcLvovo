@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\Companies;
 use App\Models\Services;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Contracts\View\Factory;
@@ -22,7 +23,7 @@ class ServiceController extends Controller
     public function index()
     {
         return view('admin.services.index')->with([
-            'services' => Services::all()->sortDesc(),
+            'services' => Services::query()->with('companies')->get()->sortDesc(),
         ]);
     }
 
@@ -44,14 +45,19 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
+        $validatedCompany = $request->validate([
+            'name' => 'required',
+        ]);
+        $company = Companies::create($validatedCompany);
         $validated = $request->validate([
             'service_name' => 'required|max:255',
-            'company' => 'required',
             'preview' => 'required',
             'description' => 'required',
             'icon_class' => 'required',
         ]);
         $service = Services::create($validated);
+        $service->companies_id = $company->id;
+        $service->save();
         return redirect(route('admin.services.index'));
     }
 
@@ -90,9 +96,12 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Services $service)
     {
+        $validatedCompany = $request->validate([
+            'name' => 'required',
+        ]);
+        (new \App\Models\Companies)->update($validatedCompany);
         $validated = $request->validate([
             'service_name' => 'required|max:255',
-            'company' => 'required',
             'preview' => 'required',
             'description' => 'required',
             'icon_class' => 'required',

@@ -13,6 +13,6 @@ class GallerySeeder extends Seeder
      */
     public function run()
     {
-         \App\Models\Gallery::factory(10)->create();
+         \App\Models\Gallery::factory(6)->create();
     }
 }

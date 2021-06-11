@@ -16,9 +16,9 @@
                         <option value="all">Все</option>
                         @foreach ($uniqueName as $obj)
                             <option
-                                {{ $obj->nameForId == $name ? "selected":"" }}
-                                value="{{$obj->nameForId}}">
-                                {{$obj->nameForId}}
+                                {{ $obj->name == $name ? "selected":"" }}
+                                value="{{$obj->name}}">
+                                {{$obj->name}}
                             </option>
                         @endforeach
                     </select>
@@ -28,6 +28,17 @@
             <div class="col-md-6">
                 <form action="{{route('admin.gallery.store')}}" method="post" enctype="multipart/form-data">
                     @csrf
+                    <span>Если нету категории сначало создайте компанию</span>
+                    <select name="name">
+                            <option value="all">Все</option>
+                        @foreach ($uniqueName as $obj)
+                            <option
+                                {{ $obj->name == $name ? "selected":"" }}
+                                value="{{$obj->name}}">
+                                {{$obj->name}}
+                            </option>
+                        @endforeach
+                    </select>
 {{--                    <label for="" class="galleryImgDownload">Загрузить изображения</label>--}}
                     <input
                         multiple

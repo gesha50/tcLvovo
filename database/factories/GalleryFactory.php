@@ -2,7 +2,9 @@
 
 namespace Database\Factories;
 
+use App\Models\Companies;
 use App\Models\Gallery;
+use App\Models\Services;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class GalleryFactory extends Factory
@@ -21,11 +23,9 @@ class GalleryFactory extends Factory
      */
     public function definition()
     {
-        $name = $this->faker->word;
         return [
-            'nameForId' => $name,
-            'nameRU' => $name,
-            'img' => 'http://lorempixel.com/400/200/'
+            'companies_id' => Companies::factory(),
+            'img' => 'http://lorempixel.com/400/200/',
         ];
     }
 }

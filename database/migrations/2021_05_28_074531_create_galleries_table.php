@@ -15,8 +15,13 @@ class CreateGalleriesTable extends Migration
     {
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
-            $table->string('nameForId')->default('territory');
-            $table->string('nameRU')->default('территория');
+            $table->foreignId('companies_id')
+                ->default(1)
+                ->references('id')
+                ->on('companies')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+
             $table->string('img')->default('http://lorempixel.com/400/200/');
             $table->timestamps();
         });

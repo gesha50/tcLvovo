@@ -2,7 +2,7 @@
     <div>
         <spinner v-if="loading"></spinner>
         <div v-else class="oneServiceIndex bg-white p-5">
-            <h2 class="oneServiceIndex__header">{{oneService.company}}</h2>
+            <h2 class="oneServiceIndex__header">{{slug}}</h2>
             <h4 class="oneServiceIndex__miniHeader">{{oneService.service_name}}</h4>
             <p class="oneServiceIndex__preview">{{oneService.preview}}</p>
             <div class="oneServiceIndex__icon">
@@ -38,6 +38,7 @@ export default {
                 .then(res => {
                     this.loading = false
                     this.oneService = res.data
+                    console.log(this.oneService)
                 })
                 .catch(e => {
                     this.loading = false

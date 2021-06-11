@@ -33,7 +33,7 @@
                                 class="fas"></i>
                         </div>
                         <div class="oneService__miniHeader">{{item.service_name}}</div>
-                        <div class="oneService__header">{{item.company}}</div>
+                        <div class="oneService__header">{{item.companies.name}}</div>
                         <div class="oneService__preview">{{item.preview}}</div>
                         <div class="oneService__line"></div>
                     </div>
@@ -81,7 +81,7 @@ export default {
                 })
         },
         goToOneService(item) {
-            this.$router.push({name: 'oneService', params: { slug: item.company }, query: { id: item.id }})
+            this.$router.push({name: 'oneService', params: { slug: item.companies.name }, query: { id: item.id }})
         },
     },
 }

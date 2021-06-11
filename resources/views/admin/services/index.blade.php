@@ -19,7 +19,7 @@
                     <div>
                         <i class="fas {{$obj->icon_class}}"></i>
                         <h3>{{$obj->service_name}}</h3>
-                        <h6>{{$obj->company}}</h6>
+                        <h6>{{$obj->companies->name}}</h6>
                         <p>{{$obj->preview}}</p>
                     </div>
                 <div class="text-center">

@@ -16,13 +16,13 @@
                     </span>
                     <span
                         v-for="item in data"
-                        :key="item.nameForId"
-                        :class="whoActive(item.nameForId)"
-                        :id="item.nameForId"
-                        @click="getFilteredPhoto(item.nameForId)"
+                        :key="item.name"
+                        :class="whoActive(item.name)"
+                        :id="item.name"
+                        @click="getFilteredPhoto(item.name)"
                         class="galleryNav__span"
                     >
-                        {{item.nameRU}}
+                        {{item.name}}
                     </span>
                 </nav>
                 <div class="fullLine"></div>
@@ -67,7 +67,7 @@ export default {
     },
     methods: {
         whoActive(id) {
-            if (this.currentLink == id) {
+            if (this.currentLink === id) {
                 return 'galleryNav__active'
             }
             return ''

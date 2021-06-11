@@ -10,4 +10,8 @@ class Gallery extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function companies() {
+        return $this->belongsTo(Companies::class);
+    }
 }

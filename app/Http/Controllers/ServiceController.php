@@ -3,62 +3,31 @@
 namespace App\Http\Controllers;
 
 use App\Models\Services;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ServiceController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
-     * @return \Illuminate\Http\Response
+     * @return Builder[]|Collection|Response
      */
     public function index()
     {
-        return Services::all()->sortDesc();
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+        return Services::query()->with('companies')->get()->sortDesc();
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Services  $services
-     * @return \Illuminate\Http\Response
+     * @param Services $services
+     * @return Services
      */
     public function show(Services $services)
     {
         return $services;
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Services  $services
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, Services $services)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Services  $services
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Services $services)
-    {
-        //
     }
 }

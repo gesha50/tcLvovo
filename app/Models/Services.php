@@ -11,4 +11,8 @@ class Services extends Model
 
     protected $table = 'services';
     protected $guarded = [];
+
+    public function companies() {
+        return $this->belongsTo(Companies::class);
+    }
 }
