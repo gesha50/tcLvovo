@@ -22,7 +22,7 @@ class HistoryController extends Controller
     public function index()
     {
         return view('admin.histories.index')->with([
-            'history' => Histories::all()->sortBy('year'),
+            'history' => Histories::all()->sortBy('year'), // sortByDesc('created_at')
         ]);
     }
 

@@ -10,7 +10,7 @@ import ServiceIndex from "../pages/Service/ServiceIndex";
 import GalleryIndex from "../pages/Gallery/GalleryIndex";
 import NewsIndex from "../pages/News/NewsIndex";
 import ContactIndex from "../pages/Contact/ContactIndex";
-import Territory from "../pages/company/Territory";
+import Territory from "../pages/company/Territory/Territory";
 import Tenant from "../pages/company/Tenant/Tenant";
 import Brands from "../pages/company/Brands/Brands";
 import PolicyIndex from "../pages/Policy/PolicyIndex";

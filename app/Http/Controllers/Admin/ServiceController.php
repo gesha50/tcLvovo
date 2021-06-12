@@ -23,7 +23,7 @@ class ServiceController extends Controller
     public function index()
     {
         return view('admin.services.index')->with([
-            'services' => Services::query()->with('companies')->get()->sortDesc(),
+            'services' => Services::with('companies')->get()->sortDesc(),
         ]);
     }
 
@@ -40,7 +40,7 @@ class ServiceController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param Request $request
      * @return Application|RedirectResponse|Response|Redirector
      */
     public function store(Request $request)
@@ -90,7 +90,7 @@ class ServiceController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param \Illuminate\Http\Request $request
+     * @param Request $request
      * @param Services $service
      * @return Application|RedirectResponse|Response|Redirector
      */

@@ -10,7 +10,9 @@ class GalleryController extends Controller
 {
     public function index () {
         $all = Gallery::all('img')->sortDesc();
-        $uniqueName = Companies::all('name')->unique('name');
+        $uniqueName = \DB::table('galleries')
+            ->join('companies', 'galleries.companies_id', 'companies.id')
+            ->select('name')->get();
         return ['all' => $all, 'uniqueName' => $uniqueName];
     }
     public function category (Request $request) {

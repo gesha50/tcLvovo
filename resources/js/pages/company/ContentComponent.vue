@@ -18,6 +18,9 @@
                 </div>
             </div>
         </div>
+        <yandex-map
+            v-if="currentRoute === 'territory'"
+        ></yandex-map>
         <request-component></request-component>
     </div>
 </template>
@@ -27,6 +30,7 @@ import AsideMenuComponent from "../../components/AsideMenuComponent";
 import AsideDocumentsComponent from "../../components/AsideDocumentsComponent";
 import TopImage from "../../components/TopImage";
 import RequestComponent from "../../components/RequestComponent";
+import YandexMap from "../Contact/YandexMap";
 export default {
     data() {
       return {
@@ -39,6 +43,12 @@ export default {
         AsideDocumentsComponent,
         TopImage,
         RequestComponent,
+        YandexMap,
+    },
+    computed: {
+      currentRoute(){
+            return this.$route.name
+        },
     },
 }
 </script>
