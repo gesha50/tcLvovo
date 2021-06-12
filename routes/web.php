@@ -26,7 +26,7 @@ use \App\Http\Controllers\Admin\HistoryController;
 Route::group([
     'prefix' => 'dashboard',
     'as' => 'admin.',
-    'middleware' => 'auth'
+    'middleware' => ['auth', 'role:admin']
 ], function () {
     Route::resources([
         'news' => NewsController::class,

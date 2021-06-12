@@ -16,9 +16,10 @@ class IndexController extends Controller
         return Contact::first();
     }
     public function check () {
-        if (Auth::guard('sanctum')->check()) {
-            return ['success' => true];
-        }
-        return ['success' => false];
+
+        return [
+            'isUser' => Auth::guard('sanctum')->check(),
+            'isAdmin' => Auth::user()->hasRole('admin'),
+        ];
     }
 }

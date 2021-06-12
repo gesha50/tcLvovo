@@ -1,7 +1,7 @@
 <template>
 <div>
     <Header
-        :userLogin="userLogin"
+        :userLogin="isAdmin"
     ></Header>
     <main>
         <router-view></router-view>
@@ -18,7 +18,8 @@ export default {
     name: "AppContainer",
     data() {
       return {
-          userLogin: false,
+          isUser: false,
+          isAdmin: false,
       }
     },
     components: {
@@ -42,7 +43,9 @@ export default {
       isUserLogin() {
           axios.get('/api/checkUser')
               .then(res => {
-                  this.userLogin = res.data.success
+                  console.log(res.data)
+                  this.isUser = res.data.isUser
+                  this.isAdmin = res.data.isAdmin
               })
               .catch(e => {
                   console.log(e)
