@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             BrandsSeeder::class,
             HistoriesSeeder::class,
             TenantsSeeder::class,
+            ReviewsSeeder::class,
         ]);
     }
 }

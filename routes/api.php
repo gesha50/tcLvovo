@@ -41,6 +41,9 @@ Route::get('/histories', [App\Http\Controllers\HistoryController::class, 'index'
 
 Route::get('/tenants', [App\Http\Controllers\TenantController::class, 'index'] );
 
+Route::get('/oneReview/{id}', [App\Http\Controllers\ReviewController::class, 'oneReview'] );
+
+
 
 
 

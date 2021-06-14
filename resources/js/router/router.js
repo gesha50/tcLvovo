@@ -159,20 +159,20 @@ const routes = [
                     breadcrumb: 'Политика конфиденциальности'
                 }
             },
-            {
-                path: '/404',
-                name: '404',
-                component: NotFound,
-                meta: {
-                    breadcrumb: '404'
-                },
-            },
+            // {
+            //     path: '/404',
+            //     name: '404',
+            //     component: NotFound,
+            //     meta: {
+            //         breadcrumb: '404'
+            //     },
+            // },
         ]
     },
-    {
-        path: '*',
-        redirect: '/404'
-    }
+    // {
+    //     path: '*',
+    //     redirect: '/404'
+    // }
 ]
 
 export default new Router({

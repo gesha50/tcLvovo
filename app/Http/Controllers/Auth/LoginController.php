@@ -24,9 +24,7 @@ class LoginController extends Controller
 
     public function showLoginForm()
     {
-        return view('auth.login')->with([
-            'information' => Informations::first()
-        ]);
+        return view('auth.login');
     }
 
     /**

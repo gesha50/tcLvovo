@@ -2,15 +2,15 @@
 <div class="oneResponse">
     <div class="row">
         <div class="col-md-6">
-            <img src="../assets/img/1.png" alt="" class="oneResponse__img">
+            <img src="../assets/img/director.png" alt="" class="oneResponse__img">
         </div>
         <div class="col-md-6 align-self-center position-relative">
             <i class="fas fa-quote-right oneResponse__icon"></i>
             <div class="oneResponse__response">
-                bhejhfcjhefhjkfke bhejhfcjhefhjkfkeb hejhfcjhefhjkfke bhejhfcjhefhjkfke bhejhfcjhefhjkfke
+                {{ reviewAboutUs.review}}
             </div>
-            <div class="oneResponse__name">Shakaryan S.H.</div>
-            <div class="oneResponse__position">director</div>
+            <div class="oneResponse__name">{{ reviewAboutUs.name }}.</div>
+            <div class="oneResponse__position">{{ reviewAboutUs.worker }}</div>
         </div>
     </div>
 </div>
@@ -19,6 +19,25 @@
 <script>
 export default {
     name: "BigOneResponseComponent",
+    data() {
+      return {
+          reviewAboutUs: [],
+      }
+    },
+    mounted() {
+        this.getReview()
+    },
+    methods: {
+      getReview() {
+          axios.get('/api/oneReview/1')
+          .then(res => {
+              this.reviewAboutUs = res.data
+          })
+          .catch(e => {
+              console.log(e)
+          })
+      },
+    },
 }
 </script>
 

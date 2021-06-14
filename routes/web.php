@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\IndexController;
 use \App\Http\Controllers\Admin\HistoryController;
+use \App\Http\Controllers\Admin\ReviewController;
+use \App\Http\Controllers\Admin\PageInfoController;
 
 /*
 |--------------------------------------------------------------------------
@@ -34,6 +36,8 @@ Route::group([
         'brands' => BrandController::class,
         'histories' => HistoryController::class,
         'tenants' => TenantController::class,
+        'reviews' => ReviewController::class,
+        'page_info' => PageInfoController::class,
     ]);
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/charts', [IndexController::class, 'charts'])->name('charts');
