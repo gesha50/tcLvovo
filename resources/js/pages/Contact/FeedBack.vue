@@ -4,65 +4,140 @@
     <p>
         Будем рады ответить вам в ближайшее время! Заполните поля ниже.
     </p>
-    <div class="messageToTCLvovo">
-        <input
-            placeholder="Введите Имя *"
-            type="text"
-            class="messageToTCLvovo__block
-                                 messageToTCLvovo__name"
+    <div v-if="idFeedback && !loading" class="text-center">
+        Ваш запрос № {{idFeedback}} принят! <br>
+        Мы свяжемся с вами в ближайшее время!
+    </div>
+    <spinner v-else-if="!idFeedback && loading"></spinner>
+    <div v-else class="messageToTCLvovo">
+            <input-feed-back
+                v-for="(obj, index) in data"
+                :key="index"
+                :index="index"
+                :item="obj"
+                v-model="obj.value"
+            ></input-feed-back>
+        <button
+            :disabled="!isAllInputsCorrect"
+            class="btn btn-warning mt-3"
+            @click="sendDataInputs"
         >
-        <input
-            placeholder="Введите email *"
-            type="email"
-            class="messageToTCLvovo__block
-                                 messageToTCLvovo__email"
-        >
-        <input
-            placeholder="Введите тему сообщения"
-            type="text"
-            class="messageToTCLvovo__block
-                                 messageToTCLvovo__theme"
-        >
-        <textarea
-            placeholder="Введите сообщение *"
-            class="messageToTCLvovo__block messageToTCLvovo__message"
-        >
-                            </textarea>
-        <button :disabled="true" class="btn btn-warning">Отправить</button>
+            Отправить
+        </button>
     </div>
 </div>
 </template>
 
 <script>
+import InputFeedBack from "../../components/Inputs/InputFeedBack";
+import Spinner from "../../components/Spinner/Spinner";
+
 export default {
-    name: "FeedBack"
+    data() {
+      return {
+          loading: false,
+          idFeedback: null,
+          data: [
+              {
+                  id: 'name',
+                  placeholder: 'Введите Имя',
+                  text: 'Имя',
+                  value: '',
+                  errorMessage: '',
+                  validate: {
+                      min: 0,
+                      max: 32,
+                  },
+                  isCorrect: false,
+              },
+              {
+                  id: 'phone',
+                  placeholder: 'Введите телефон *',
+                  text: 'Телефон',
+                  value: '',
+                  errorMessage: '',
+                  validate: {
+                      min: 10,
+                      max: 18,
+                  },
+                  isCorrect: false,
+              },
+              {
+                  id: 'email',
+                  placeholder: 'Введите email',
+                  text: 'Почтовый адрес',
+                  value: '',
+                  errorMessage: '',
+                  validate: {
+                      min: 0,
+                      max: 32,
+                  },
+                  isCorrect: false,
+              },
+              {
+                  id: 'theme',
+                  placeholder: 'Введите тему сообщения',
+                  text: 'Тема',
+                  value: '',
+                  errorMessage: '',
+                  validate: {
+                      min: 0,
+                      max: 32,
+                  },
+                  isCorrect: false,
+              },
+              {
+                  id: 'message',
+                  class: 'messageToTCLvovo__message',
+                  placeholder: 'Введите сообщение *',
+                  text: 'Сообщение',
+                  value: '',
+                  errorMessage: '',
+                  validate: {
+                      min: 1,
+                      max: 256,
+                  },
+                  isCorrect: false,
+              },
+          ],
+
+      }
+    },
+    name: "FeedBack",
+    components: {
+        InputFeedBack,
+        Spinner,
+    },
+    computed: {
+        isAllInputsCorrect() {
+            return !!(this.data[1].isCorrect
+                && this.data[4].isCorrect);
+        },
+    },
+    methods: {
+        sendDataInputs() {
+            this.loading = true
+            let sendData = {
+                'name': this.data[0].value,
+                'phone': this.data[1].value,
+                'email': this.data[2].value,
+                'theme': this.data[3].value,
+                'message': this.data[4].value
+            }
+            axios.post('/api/sendContactData', sendData)
+            .then(res => {
+                this.idFeedback = res.data.id
+                this.loading = false
+            })
+            .catch(e => {
+                console.log(e)
+                this.loading = false
+            })
+        },
+    },
 }
 </script>
 
 <style lang="scss">
-.messageToTCLvovo {
-    &__block {
-        display: block;
-        margin-bottom: 20px;
-        border-radius: 3px;
-        background-color: #f8f8f8;
-        border: none;
-        font-size: 12px;
-        padding: 9px;
-        &:focus {
-            outline: none;
-            border: 1px solid $yellow;
-        }
-    }
-    &__name,
-    &__email,
-    &__theme {
-        width: 60%;
-        height: 30px;
-    }
-    &__message {
-        width: 90%;
-        height: 150px;
-    }
-}
+
 </style>
