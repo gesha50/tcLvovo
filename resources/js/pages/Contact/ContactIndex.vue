@@ -5,18 +5,21 @@
     ></top-image>
     <div class="container">
             <div class="pl-5 pr-5 pb-5" style="min-height: 237px; background: white;">
-                <div class="row">
-                    <div class="col-md">
-                        <h2 class="contactHeader">Мы работаем для вас!</h2>
+                <spinner v-if="loading"></spinner>
+                <div v-else>
+                    <div class="row">
+                        <div class="col-md">
+                            <h2 class="contactHeader">{{title}}</h2>
+                        </div>
                     </div>
-                </div>
-                <div class="fullLine"></div>
-                <div class="row">
-                    <div class="col-md-6 contactBlock">
-                        <contact-information></contact-information>
-                    </div>
-                    <div class="col-md-6 contactBlock">
-                       <feed-back></feed-back>
+                    <div class="fullLine"></div>
+                    <div class="row">
+                        <div class="col-md-6 contactBlock">
+                            <contact-information></contact-information>
+                        </div>
+                        <div class="col-md-6 contactBlock">
+                           <feed-back></feed-back>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -32,8 +35,16 @@ import YandexMap from "./YandexMap";
 import FeedBack from "./FeedBack";
 import ContactInformation from "./ContactInformation";
 import RequestComponent from "../../components/RequestComponent";
+import Spinner from "../../components/Spinner/Spinner";
 
 export default {
+    data() {
+        return {
+            loading: false,
+            title: '',
+            description: '',
+        }
+    },
     name: "ContactIndex",
     components: {
         TopImage,
@@ -41,6 +52,25 @@ export default {
         FeedBack,
         ContactInformation,
         RequestComponent,
+        Spinner,
+    },
+    mounted() {
+        this.getTitleAndDescription()
+    },
+    methods: {
+        getTitleAndDescription() {
+            this.loading = true
+            axios.get('/api/getTitleAndDescription/contact')
+                .then(res => {
+                    this.title = res.data.title
+                    // this.description = res.data.description
+                    this.loading = false
+                })
+                .catch(e => {
+                    console.log(e)
+                    this.loading = false
+                })
+        },
     },
 }
 </script>

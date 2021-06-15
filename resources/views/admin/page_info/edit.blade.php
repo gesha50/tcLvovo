@@ -3,62 +3,46 @@
 
 @section('content')
     <div class="container-fluid">
-        <h1 class="mt-4">Редактировать отзыв</h1>
+        <h1 class="mt-4">Редактировать заголовок и описание</h1>
         <ol class="breadcrumb mb-4">
             <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
-            <li class="breadcrumb-item active"><a href="{{ route('admin.services.index') }}">Reviews</a></li>
-            <li class="breadcrumb-item active">Редактировать отзыв №{{$reviews->id}}</li>
+            <li class="breadcrumb-item active"><a href="{{ route('admin.page_info.index') }}">Page Information</a></li>
+            <li class="breadcrumb-item active">Для страницы - {{$pageInfo->page}}</li>
         </ol>
         <div class="newsContainer">
-            <form method="POST" action="{{ route('admin.reviews.update', $reviews) }}" enctype="multipart/form-data">
+            <h3 class="card-title">{{$pageInfo->page}}</h3>
+            <form method="POST" action="{{ route('admin.page_info.update', $pageInfo) }}" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf
                 <div class="form-group">
-                    <label for="name">Ваше имя</label>
+                    <label for="title">Заголовок</label>
                     <input
-                        name="name"
+                        name="title"
                         type="text"
-                        class="form-control @error('name') is-invalid @enderror"
-                        id="name"
-                        placeholder="Сергей"
-                        value="{{ old('name', $reviews->name) }}"
+                        class="form-control @error('title') is-invalid @enderror"
+                        id="title"
+                        value="{{ old('title', $pageInfo->title) }}"
                     >
                 </div>
-                @foreach($errors->get('name') as $error)
+                @foreach($errors->get('title') as $error)
                     <div class="text-danger">{{ $error }}</div>
                 @endforeach
 
                 <div class="form-group">
-                    <label for="worker">Профессия или должность</label>
+                    <label for="description">Описание</label>
                     <input
-                        name="worker"
+                        name="description"
                         type="text"
-                        class="form-control @error('worker') is-invalid @enderror"
-                        id="worker"
-                        placeholder="Директор"
-                        value="{{ old('worker', $reviews->worker) }}"
+                        class="form-control @error('description') is-invalid @enderror"
+                        id="description"
+                        value="{{ old('description', $pageInfo->description) }}"
                     >
                 </div>
-                @foreach($errors->get('worker') as $error)
+                @foreach($errors->get('description') as $error)
                     <div class="text-danger">{{ $error }}</div>
                 @endforeach
 
-                <div class="form-group">
-                    <label for="review">Отзыв</label>
-                    <input
-                        name="review"
-                        type="text"
-                        class="form-control @error('review') is-invalid @enderror"
-                        id="review"
-                        placeholder="Я в восторге от..."
-                        value="{{ old('review', $reviews->review) }}"
-                    >
-                </div>
-                @foreach($errors->get('review') as $error)
-                    <div class="text-danger">{{ $error }}</div>
-                @endforeach
-
-                <button type="submit" class="btn btn-success">Редактировать отзыв</button>
+                <button type="submit" class="btn btn-success">Редактировать заголовок и описание</button>
             </form>
         </div>
     </div>

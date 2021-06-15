@@ -43,6 +43,9 @@ Route::get('/tenants', [App\Http\Controllers\TenantController::class, 'index'] )
 
 Route::get('/oneReview/{id}', [App\Http\Controllers\ReviewController::class, 'oneReview'] );
 
+Route::get('/getTitleAndDescription/{page}', [App\Http\Controllers\PageInfoController::class, 'getTitleAndDescription'] );
+
+
 
 
 

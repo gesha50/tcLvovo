@@ -1,16 +1,19 @@
 <template>
     <div class="aboutTerritory">
-        <h3 class="aboutTerritory__header">О территории</h3>
+        <h3 class="aboutTerritory__header">{{title}}</h3>
         <p class="aboutTerritory__text">
-            efc ,kef m vf  vr vt t4v bbr5 jhjhen hfvjk
+           {{description}}
         </p>
-        <footer class="aboutTerritory__text">uhjebhhjv vhhjv</footer>
     </div>
 </template>
 
 <script>
 export default {
-    name: "AboutTerritory"
+    name: "AboutTerritory",
+    props: {
+      title: String,
+      description: String,
+    },
 }
 </script>
 

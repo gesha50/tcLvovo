@@ -19,24 +19,8 @@
 <script>
 export default {
     name: "BigOneResponseComponent",
-    data() {
-      return {
-          reviewAboutUs: [],
-      }
-    },
-    mounted() {
-        this.getReview()
-    },
-    methods: {
-      getReview() {
-          axios.get('/api/oneReview/1')
-          .then(res => {
-              this.reviewAboutUs = res.data
-          })
-          .catch(e => {
-              console.log(e)
-          })
-      },
+    props: {
+        reviewAboutUs: [Array, Object]
     },
 }
 </script>

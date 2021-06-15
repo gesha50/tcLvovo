@@ -1,29 +1,27 @@
 <template>
 <div class="brands">
-    <h2 class="brands__header">Все известные бренды у нас</h2>
-    <p class="brands__text">
-        Claritas est etiam processus dynamicus, qui sequitur
-        mutationem consuetudium lectorum. Investigationes demonstraverunt lectores
-        legere me lius quod ii legunt saepius autem. Eodem modo typi, qui nunc nobis videntur
-        parum clari, fiant sollemnes in futurum. Investigationes
-        demonstraverunt lectores legere me lius quod ii legunt saepius soluta nobis eleifend option congue.
-    </p>
-    <div>
-        <spinner v-if="loading"></spinner>
-        <div class="brands__blocks">
-            <div
-                v-for="brand in brands"
-                :key="brand.id"
-                class="oneBrand"
-            >
-                <div class="row">
-                    <div class="col-md-4">
-                        <img :src="brand.image" alt="" class="oneBrand__img">
-                    </div>
-                    <div class="col-md-8">
-                        <div class="oneBrand__header">{{brand.title}}</div>
-                        <div class="oneBrand__description">{{brand.description}}</div>
-                        <a :href="brand.link" target="_blank" class="oneBrand__link">{{brand.link}}</a>
+    <spinner v-if="loading"></spinner>
+    <div v-else>
+        <h2 class="brands__header">{{title}}</h2>
+        <p class="brands__text">
+            {{description}}
+        </p>
+        <div>
+            <div class="brands__blocks">
+                <div
+                    v-for="brand in brands"
+                    :key="brand.id"
+                    class="oneBrand"
+                >
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img :src="brand.image" alt="" class="oneBrand__img">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="oneBrand__header">{{brand.title}}</div>
+                            <div class="oneBrand__description">{{brand.description}}</div>
+                            <a :href="brand.link" target="_blank" class="oneBrand__link">{{brand.link}}</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -41,17 +39,31 @@ export default {
       return {
           brands: [],
           loading: false,
+          title: '',
+          description: '',
       }
     },
     components: {
       Spinner,
     },
     mounted() {
-        this.getBrands()
+        this.getTitleAndDescription()
     },
     methods: {
-        getBrands() {
+        getTitleAndDescription() {
             this.loading = true
+            axios.get('/api/getTitleAndDescription/brands')
+                .then(res => {
+                    this.title = res.data.title
+                    this.description = res.data.description
+                    this.getBrands()
+                })
+                .catch(e => {
+                    console.log(e)
+                    this.loading = false
+                })
+        },
+        getBrands() {
             axios.get('/api/brands')
             .then(res => {
                 this.brands = res.data

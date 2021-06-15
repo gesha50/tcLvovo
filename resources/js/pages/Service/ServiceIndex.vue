@@ -8,34 +8,31 @@
             <router-view></router-view>
         </div>
         <div v-else class="ourServices pl-5 pr-5">
-            <h2 class="ourServices__header">Что мы можем предложить Вам?</h2>
-            <p class="ourServices__text">
-                Claritas est etiam processus dynamicus, qui sequitur
-                mutationem consuetudium lectorum. Investigationes demonstraverunt lectores
-                legere me lius quod ii legunt saepius autem. Eodem modo typi, qui nunc nobis videntur
-                parum clari, fiant sollemnes in futurum. Investigationes
-                demonstraverunt lectores legere me lius quod ii legunt saepius soluta nobis eleifend option congue.
-            </p>
-            <div>
-                <spinner v-if="loading"></spinner>
-                <div
-                    v-else
-                    class="ourServices__blocks">
+            <spinner v-if="loading"></spinner>
+            <div  v-else>
+                <h2 class="ourServices__header">{{title}}</h2>
+                <p class="ourServices__text">
+                    {{description}}
+                </p>
+                <div>
                     <div
-                        v-for="item in services"
-                        :key="item.id"
-                        class="oneService"
-                        @click="goToOneService(item)"
-                    >
-                        <div class="oneService__img">
-                            <i
-                                :class="item.icon_class"
-                                class="fas"></i>
+                        class="ourServices__blocks">
+                        <div
+                            v-for="item in services"
+                            :key="item.id"
+                            class="oneService"
+                            @click="goToOneService(item)"
+                        >
+                            <div class="oneService__img">
+                                <i
+                                    :class="item.icon_class"
+                                    class="fas"></i>
+                            </div>
+                            <div class="oneService__miniHeader">{{item.service_name}}</div>
+                            <div class="oneService__header">{{item.companies.name}}</div>
+                            <div class="oneService__preview">{{item.preview}}</div>
+                            <div class="oneService__line"></div>
                         </div>
-                        <div class="oneService__miniHeader">{{item.service_name}}</div>
-                        <div class="oneService__header">{{item.companies.name}}</div>
-                        <div class="oneService__preview">{{item.preview}}</div>
-                        <div class="oneService__line"></div>
                     </div>
                 </div>
             </div>
@@ -57,6 +54,8 @@ export default {
         return {
             loading: false,
             services: [],
+            title: '',
+            description: '',
         }
     },
     components: {
@@ -65,11 +64,23 @@ export default {
         RequestComponent,
     },
     mounted() {
-        this.getServices()
+        this.getTitleAndDescription()
     },
     methods: {
-        getServices() {
+        getTitleAndDescription() {
             this.loading = true
+            axios.get('/api/getTitleAndDescription/services')
+                .then(res => {
+                    this.title = res.data.title
+                    this.description = res.data.description
+                    this.getServices()
+                })
+            .catch(e => {
+                console.log(e)
+                this.loading = false
+            })
+        },
+        getServices() {
             axios.get('/api/services')
                 .then(res => {
                     this.services = res.data

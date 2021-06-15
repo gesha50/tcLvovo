@@ -1,34 +1,33 @@
 <template>
 <div class="history">
-    <div class="history__header">История ТК Львово</div>
-    <div class="history__text">
-        Claritas est etiam processus dynamicus, qui sequitur
-        mutationem consuetudium lectorum. Investigationes demonstraverunt
-        lectores legere me lius quod ii legunt saepius autem vel eum iriure dolor in
-        hendrerit in vulputate velit esse molestie consequat.
-    </div>
-    <img
-        src="../../../assets/img/history.jpeg"
-        alt=""
-        class="history__img"
-    >
-    <div>
-        <spinner v-if="loading"></spinner>
-        <div class="history__blocks">
-            <div
-                v-for="oneHistory in history"
-                :key="oneHistory.id"
-                class="oneHistory"
-            >
-                <div class="row">
-                    <div class="col-md-4">
-                        <span class="oneHistory__year">{{oneHistory.year}}</span>
-                        <div class="oneHistory__line"></div>
-                    </div>
-                    <div class="col-md-8">
-                        <div class="oneHistory__title">{{oneHistory.title}}</div>
-                        <div class="oneHistory__description">
-                            {{oneHistory.description}}
+    <spinner v-if="loading"></spinner>
+    <div v-else>
+        <div class="history__header">{{title}}</div>
+        <div class="history__text">
+            {{description}}
+        </div>
+        <img
+            src="../../../assets/img/history.jpeg"
+            alt=""
+            class="history__img"
+        >
+        <div>
+            <div class="history__blocks">
+                <div
+                    v-for="oneHistory in history"
+                    :key="oneHistory.id"
+                    class="oneHistory"
+                >
+                    <div class="row">
+                        <div class="col-md-4">
+                            <span class="oneHistory__year">{{oneHistory.year}}</span>
+                            <div class="oneHistory__line"></div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="oneHistory__title">{{oneHistory.title}}</div>
+                            <div class="oneHistory__description">
+                                {{oneHistory.description}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -47,19 +46,32 @@ export default {
       return {
           loading: false,
           history: [],
+          title: '',
+          description: '',
       }
     },
     mounted() {
-        this.getHistories()
+        this.getTitleAndDescription()
     },
     methods: {
+        getTitleAndDescription() {
+            this.loading = true
+            axios.get('/api/getTitleAndDescription/history')
+                .then(res => {
+                    this.title = res.data.title
+                    this.description = res.data.description
+                    this.getHistories()
+                })
+                .catch(e => {
+                    console.log(e)
+                    this.loading = false
+                })
+        },
       getHistories () {
-          this.loading = true
          axios.get('/api/histories')
          .then(res => {
              this.loading = false
              this.history = res.data
-             console.log(res.data)
          })
          .catch(e => {
              this.loading = false

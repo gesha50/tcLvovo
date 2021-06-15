@@ -1,28 +1,27 @@
 <template>
 <div class="tenant">
-    <div class="tenant__header">ТК Львово для арендаторов</div>
-    <div class="tenant__text">
-        Claritas est etiam processus dynamicus, qui sequitur
-        mutationem consuetudium lectorum. Investigationes demonstraverunt
-        lectores legere me lius quod ii legunt saepius autem vel eum iriure dolor in
-        hendrerit in vulputate velit esse molestie consequat.
-    </div>
-    <div>
-        <spinner v-if="loading"></spinner>
-        <div class="tenant__blocks row justify-content-around">
-            <div
-                v-for="dignity in dignities"
-                :key="dignity.id"
-                class="dignities col-md-4"
-            >
-                <div class="row">
-                    <div class="col-md-3">
-                        <i :class="dignity.icon_class" class="dignities__icon fas"></i>
-                    </div>
-                    <div class="col-md-9">
-                        <div class="dignities__title">{{dignity.title}}</div>
-                        <div class="dignities__description">
-                            {{dignity.description}}
+    <spinner v-if="loading"></spinner>
+    <div v-else>
+        <div class="tenant__header">{{title}}</div>
+        <div class="tenant__text">
+            {{description}}
+        </div>
+        <div>
+            <div class="tenant__blocks row justify-content-around">
+                <div
+                    v-for="dignity in dignities"
+                    :key="dignity.id"
+                    class="dignities col-md-4"
+                >
+                    <div class="row">
+                        <div class="col-md-3">
+                            <i :class="dignity.icon_class" class="dignities__icon fas"></i>
+                        </div>
+                        <div class="col-md-9">
+                            <div class="dignities__title">{{dignity.title}}</div>
+                            <div class="dignities__description">
+                                {{dignity.description}}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -41,14 +40,28 @@ export default {
         return {
             loading: false,
             dignities: [],
+            title: '',
+            description: '',
         }
     },
     mounted() {
-        this.getDignities()
+        this.getTitleAndDescription()
     },
     methods: {
-        getDignities () {
+        getTitleAndDescription() {
             this.loading = true
+            axios.get('/api/getTitleAndDescription/tenant')
+                .then(res => {
+                    this.title = res.data.title
+                    this.description = res.data.description
+                    this.getDignities()
+                })
+                .catch(e => {
+                    console.log(e)
+                    this.loading = false
+                })
+        },
+        getDignities () {
             axios.get('/api/tenants')
                 .then(res => {
                     this.loading = false

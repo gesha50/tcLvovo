@@ -7,9 +7,9 @@
         <div class="request__triangle col-md-1"></div>
         <div class="col-md-4 p-5 request__blockRight">
             <div class="service__linkBlock">
-                <a class="service__link request__link" href="#">Оставть заявку
+                <router-link class="service__link request__link" :to="{name: 'contact'}">Оставть заявку
                     <div class="request__line"></div>
-                </a>
+                </router-link>
             </div>
         </div>
     </div>
