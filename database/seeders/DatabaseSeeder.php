@@ -23,6 +23,8 @@ class DatabaseSeeder extends Seeder
             TenantsSeeder::class,
             ReviewsSeeder::class,
             PageInfoSeeder::class,
+            ContactSeeder::class,
+            InformationsSeeder::class,
         ]);
     }
 }

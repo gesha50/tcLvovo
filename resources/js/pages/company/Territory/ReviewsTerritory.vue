@@ -1,7 +1,7 @@
 <template>
 <div class="reviewsTerritory">
-    <h5 class="reviewsTerritory__header">vefvefer</h5>
-    <div class="reviewsTerritory__block">
+    <h5 class="reviewsTerritory__header">Специалист о ТК Львово:</h5>
+    <div class="reviewsTerritory__block mt-3">
         <div class="reviewsTerritory__bg">
             <div class="reviewsTerritory__text">{{ reviewAboutUs.review }}</div>
             <div class="reviewsTerritory__triangle"></div>

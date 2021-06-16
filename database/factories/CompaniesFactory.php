@@ -23,7 +23,7 @@ class CompaniesFactory extends Factory
     {
         return [
             'name' => $this->faker->word,
-            'name_ru' => $this->faker->word,
+            'brand_name' => $this->faker->word,
         ];
     }
 }

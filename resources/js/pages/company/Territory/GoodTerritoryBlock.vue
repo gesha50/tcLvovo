@@ -1,12 +1,12 @@
 <template>
-<div class="goodTerritoryBlock">
+<div class="goodTerritoryBlock col-md-6">
     <div class="row">
         <div class="col-md-2">
-            <i class="fas fa-car goodTerritoryBlock__icon"></i>
+            <i :class="item.iconClass" class="fas goodTerritoryBlock__icon"></i>
         </div>
         <div class="col-md-10">
-            <h5 class="goodTerritoryBlock__header">hfhhdd</h5>
-            <p class="goodTerritoryBlock__text">vefhhgech e v veve</p>
+            <h5 class="goodTerritoryBlock__header">{{item.title}}</h5>
+            <p class="goodTerritoryBlock__text">{{item.description}}</p>
         </div>
     </div>
 </div>
@@ -14,13 +14,15 @@
 
 <script>
 export default {
-    name: "GoodTerritoryBlock"
+    name: "GoodTerritoryBlock",
+    props: {
+      item: Object | Array,
+    },
 }
 </script>
 
 <style lang="scss">
 .goodTerritoryBlock {
-    margin-top: 20px;
     &__icon {
         font-size: 20px;
         color: $yellow;

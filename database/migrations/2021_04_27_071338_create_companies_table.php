@@ -16,7 +16,8 @@ class CreateCompaniesTable extends Migration
         Schema::create('companies', function (Blueprint $table) {
             $table->id();
             $table->string('name')->default('Samarcand');
-            $table->string('name_ru')->default('Самарканд')->nullable();
+            $table->string('brand_name')->default('Самарканд')->nullable();
+            $table->string('type_of_activity')->default('ресторан');
             $table->timestamps();
         });
     }

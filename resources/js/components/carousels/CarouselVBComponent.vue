@@ -7,25 +7,17 @@
             controls
             indicators
             background="#ababab"
-            img-width="1024"
-            img-height="480"
-            style="text-shadow: 1px 1px 2px #333;"
+            img-width="100%"
+            img-height="350"
+            style="text-shadow: 1px 1px 2px #333; height: 100%"
             @sliding-start="onSlideStart"
             @sliding-end="onSlideEnd"
         >
-            <!-- Text slides with image -->
             <b-carousel-slide
-                caption="First slide"
-                text="Nulla vitae elit libero, a pharetra augue mollis interdum."
-                img-src="https://picsum.photos/1024/480/?image=52"
+                v-for="(image, index) in img"
+                :key="index"
+                :img-src="'/images/territory/'+image"
             ></b-carousel-slide>
-
-            <!-- Slides with custom text -->
-            <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=54">
-                <h1>Hello world!</h1>
-            </b-carousel-slide>
-            <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=58"></b-carousel-slide>
-            <b-carousel-slide img-src="https://picsum.photos/1024/480/?image=55"></b-carousel-slide>
         </b-carousel>
     </div>
 </template>
@@ -33,6 +25,9 @@
 <script>
 export default {
     name: 'CarouselVBComponent',
+    props: {
+      img: Array | Object,
+    },
     data() {
         return {
             slide: 0,
@@ -50,8 +45,8 @@ export default {
 }
 </script>
 
-<style scoped>
-.slide {
-    height: 100%;
+<style lang="scss">
+.img-fluid {
+    height: 350px !important;
 }
 </style>

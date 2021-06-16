@@ -2,7 +2,9 @@
 <div class="territory">
     <spinner v-if="loading"></spinner>
     <div v-else>
-        <carousel-v-b-component></carousel-v-b-component>
+        <carousel-v-b-component
+            :img="img"
+        ></carousel-v-b-component>
         <div class="row mt-5">
             <div class="col-md-6 pr-2">
                 <about-territory
@@ -40,6 +42,12 @@ export default {
           loading: false,
           title: '',
           description: '',
+          img: [
+              '2.png',
+              '1.png',
+              '3.png',
+              '4.png',
+          ],
       }
     },
     name: "Territory",

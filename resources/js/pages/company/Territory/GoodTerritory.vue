@@ -1,17 +1,12 @@
 <template>
 <div class="goodTerritory">
     <div class="goodTerritory__header">Достоинства территории</div>
-    <div class="row">
-        <div class="col-md-6">
+    <div class="row mt-3">
             <good-territory-block
-                v-for="i in 3" :key="i"
+                v-for="(item,index) in goodTerritories"
+                :key="index"
+                :item="item"
             ></good-territory-block>
-        </div>
-        <div class="col-md-6">
-            <good-territory-block
-                v-for="i in 3" :key="i"
-            ></good-territory-block>
-        </div>
     </div>
 </div>
 </template>
@@ -20,6 +15,42 @@
 import GoodTerritoryBlock from "./GoodTerritoryBlock";
 
 export default {
+    data() {
+      return {
+          goodTerritories: [
+              {
+                  title: 'Парковка',
+                  description: 'Всегда есть свободные места',
+                  iconClass: 'fa-car',
+              },
+              {
+                  title: 'У дороги',
+                  description: 'Быстро можно заехать с калужского шоссе ',
+                  iconClass: 'fa-road',
+              },
+              {
+                  title: 'Ресторан',
+                  description: 'Узбекская кухня  и др.',
+                  iconClass: 'fa-utensils',
+              },
+              {
+                  title: 'Шиномонтаж',
+                  description: 'Замена резины',
+                  iconClass: 'fa-car',
+              },
+              {
+                  title: 'Работы по металлу',
+                  description: 'Есть мастер по металлу',
+                  iconClass: 'fa-user',
+              },
+              {
+                  title: 'Свободные места',
+                  description: 'Есть доступные торговые зоны',
+                  iconClass: 'fa-warehouse',
+              },
+          ],
+      }
+    },
     name: "GoodTerritory",
     components: {
         GoodTerritoryBlock,

@@ -1,31 +1,22 @@
 <template>
     <div class="missionBlock col-md-4">
         <img
-            src="../../../assets/img/history.jpeg"
+            :src="require(`../../../assets/img/aboutUs/${item.img}`)"
             alt=""
             class="missionBlock__img"
         >
-        <div class="missionBlock__header">Заголовок</div>
+        <div class="missionBlock__header">{{item.title}}</div>
         <div class="missionBlock__text">
-            kkefkjnekj evjvejkn erjklevkjn evjjj
-            kkefkjnekj evjvejkn erjklevkjn evjjj
+            {{item.description}}
         </div>
         <div class="missionBlock__list">
-            <div class="row">
+            <div
+                v-for="(plus, index) in item.plus"
+                :key="index"
+                class="row"
+            >
                 <i class="missionBlock__icon fas fa-check col-md-2"></i>
-                <span class="col-md-10">ghjdjhfdsj</span>
-            </div>
-            <div class="row">
-                <i class="missionBlock__icon fas fa-check col-md-2"></i>
-                <span class="col-md-10">ghjdjhfdsj</span>
-            </div>
-            <div class="row">
-                <i class="missionBlock__icon fas fa-check col-md-2"></i>
-                <span class="col-md-10">ghjdjhfdsj</span>
-            </div>
-            <div class="row">
-                <i class="missionBlock__icon fas fa-check col-md-2"></i>
-                <span class="col-md-10">ghjdjhfdsj</span>
+                <span class="col-md-10">{{plus}}</span>
             </div>
         </div>
     </div>
@@ -33,19 +24,23 @@
 
 <script>
 export default {
-name: "MissionBlock"
+    name: "MissionBlock",
+    props: {
+        item: Object | Array,
+    },
 }
 </script>
 
 <style lang="scss">
 .missionBlock {
     &__img {
+        height: 200px;
         width: 100%;
         object-fit: contain;
     }
     &__header {
         @include miniHeader($textBlack, Montserrat);
-        margin: 25px 0;
+        margin: 20px 0;
     }
     &__text {
         @include miniBodyText($grayText, Montserrat);

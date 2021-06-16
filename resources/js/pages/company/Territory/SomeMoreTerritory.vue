@@ -1,7 +1,7 @@
 <template>
     <div class="someMoreTerritory">
-        <h5 class="someMoreTerritory__header">jhfbbhjw</h5>
-        <div class="someMoreTerritory__blocks">
+        <h5 class="someMoreTerritory__header">У нас вы найдёте:</h5>
+        <div class="someMoreTerritory__blocks mt-3">
             <div class="someMoreTerritory__block">
                 <some-more-about-territory
                     v-for="item in data" :key="item.id"
@@ -21,18 +21,21 @@ export default {
           data: [
               {
                   id: 0,
-                  header: 'Заголовок 1',
-                  text: '00000',
+                  header: 'Автосервис',
+                  text: 'Профессионально оборудованный автосервис.' +
+                      ' Берёмся за любые виды работ. У нас работают опытные мастера.',
               },
               {
                   id: 1,
-                  header: 'Заголовок 2',
-                  text: '1111',
+                  header: 'Продажа древесины',
+                  text: 'Большой выбор качественной древесины' +
+                      ' для строительства домов, бань и т.д.',
               },
               {
                   id: 2,
-                  header: 'Заголовок 3',
-                  text: '2222',
+                  header: 'Мастер кровли',
+                  text: 'Огромный ассортимент кровли. Доступна любая палитра цветов. ' +
+                      'Есть опытные мастера по установке',
               },
           ],
       }

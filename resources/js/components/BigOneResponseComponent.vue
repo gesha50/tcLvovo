@@ -43,6 +43,7 @@ export default {
         @include response();
     }
     &__name {
+        margin-top: 25px;
         @include miniBodyText($textBlack, Montserrat);
     }
     &__position {
