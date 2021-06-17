@@ -15,7 +15,7 @@
                     Редактировать эту компанию
                 </a>
             </div>
-            <div class="card">
+            <div class="card p-3">
                 <h3>Компания - {{$companies->name}}</h3>
                 <h5>Название на сайте: {{$companies->brand_name}}</h5>
                 <div class="card-body">
@@ -37,6 +37,21 @@
             >
                 Добавить новую услугу для этой компании
             </a>
+            <div class="row">
+                @forelse($currentServices as $service)
+                <div class="card col-md-3 m-2 p-3 bg-light text-center">
+                    <i class="fas {{$service->icon_class}} fs-5 m-auto"></i>
+                    <p class="m-2">{{$service->name}}</p>
+                    <p>{{$service->preview}}</p>
+                    <a
+                        class="btn btn-dark text-white d-block m-1"
+                        href="{{route('admin.services.show', $service->id)}}"
+                    >Подробнее...</a>
+                </div>
+                @empty
+                    у вас нету подключенных услуг
+                @endforelse
+            </div>
         </div>
     </div>
 @endsection

@@ -15,12 +15,12 @@
         </div>
         <div class="row justify-content-around">
         @foreach ($services as $obj)
-            <div class="col-md-3 card p-1 m-2">
+            <div class="col-md-3 card p-1 m-2 text-center">
                     <div>
-                        <i class="fas {{$obj->icon_class}}"></i>
-                        <h3>{{$obj->name}}</h3>
-                        <h6>{{$obj->companies->brand_name}}</h6>
-                        <p>{{$obj->preview}}</p>
+                        <i class="m-auto fas {{$obj->icon_class}} fs-5"></i>
+                        <h3>Название услуги: {{$obj->name}}</h3>
+                        <h6>Компания: {{$obj->companies->brand_name}}</h6>
+                        <p>Описание: {{$obj->preview}}</p>
                     </div>
                 <div class="text-center">
                     <a class="btn btn-dark text-white d-block m-1" href="{{route('admin.services.show', $obj->id)}}">Подробнее</a>

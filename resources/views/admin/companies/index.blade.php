@@ -20,6 +20,15 @@
                         <h3>{{$obj->name}}</h3>
                         <h6>{{$obj->brand_name}}</h6>
                         <p>{{$obj->type_of_activity}}</p>
+                        <p>Кол-во услуг:
+                            <strong class="fs-5">
+                                @if($obj->number_of_services)
+                                    {{$obj->number_of_services}}
+                                @else
+                                    0
+                                @endif
+                            </strong>
+                        </p>
                     </div>
                 <div class="text-center">
                     <a class="btn btn-dark text-white d-block m-1" href="{{route('admin.companies.show', $obj->id)}}">Подробнее</a>
