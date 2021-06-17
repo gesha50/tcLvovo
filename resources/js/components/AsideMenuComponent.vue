@@ -2,7 +2,14 @@
     <div class="d-flex">
 <div class="aside">
     <div class="aside__logo">Торговый комплекс</div>
-    <div class="aside__text"><router-link class="aside__link" :to="{name: 'aboutus'}">О нас</router-link></div>
+    <div class="aside__text">
+        <router-link
+            class="aside__link"
+            :to="{name: 'aboutus'}"
+        >
+            О нас
+        </router-link>
+    </div>
     <div class="aside__text"><router-link class="aside__link" :to="{name: 'history'}">История</router-link></div>
     <div class="aside__text"><router-link class="aside__link" :to="{name: 'territory'}">Территория</router-link></div>
     <div class="aside__text"><router-link class="aside__link" :to="{name: 'tenant'}">Арендаторам</router-link></div>
@@ -14,7 +21,7 @@
 
 <script>
 export default {
-    name: "AsideMenuComponent"
+    name: "AsideMenuComponent",
 }
 </script>
 
@@ -34,6 +41,9 @@ export default {
            text-decoration: none;
            color: $yellow;
        }
+    }
+    &__active {
+        color: $yellow;
     }
 }
 

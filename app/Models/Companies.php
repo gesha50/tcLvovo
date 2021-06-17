@@ -13,11 +13,11 @@ class Companies extends Model
 
     public function services()
     {
-        return $this->hasMany(Services::class);
+        return $this->hasMany(Services::class, 'company_id');
     }
 
     public function galleries()
     {
-        return $this->hasMany(Gallery::class);
+        return $this->hasMany(Gallery::class, 'company_id');
     }
 }

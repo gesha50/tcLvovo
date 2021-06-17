@@ -3,7 +3,7 @@
         <spinner v-if="loading"></spinner>
         <div v-else class="oneServiceIndex bg-white p-5">
             <h2 class="oneServiceIndex__header">{{slug}}</h2>
-            <h4 class="oneServiceIndex__miniHeader">{{oneService.service_name}}</h4>
+            <h4 class="oneServiceIndex__miniHeader">{{oneService.name}}</h4>
             <p class="oneServiceIndex__preview">{{oneService.preview}}</p>
             <div class="oneServiceIndex__icon">
                 <i class="fas" :class="oneService.icon_class"></i>

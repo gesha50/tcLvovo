@@ -23,8 +23,8 @@ class ServicesFactory extends Factory
     public function definition()
     {
         return [
-            'service_name' => $this->faker->word(),
-            'companies_id' => Companies::factory(),
+            'name' => $this->faker->word(),
+            'company_id' => Companies::factory(),
             'preview' => $this->faker->sentence(10),
             'description' => $this->faker->sentence(200),
             'icon_class' => 'fa-utensils',

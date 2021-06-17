@@ -24,7 +24,7 @@ class GalleryFactory extends Factory
     public function definition()
     {
         return [
-            'companies_id' => Companies::factory(),
+            'company_id' => Companies::factory(),
             'img' => 'http://lorempixel.com/400/200/',
         ];
     }

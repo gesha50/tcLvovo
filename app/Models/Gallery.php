@@ -12,6 +12,6 @@ class Gallery extends Model
     protected $guarded = [];
 
     public function companies() {
-        return $this->belongsTo(Companies::class);
+        return $this->belongsTo(Companies::class, 'company_id');
     }
 }

@@ -28,7 +28,7 @@
                                     :class="item.icon_class"
                                     class="fas"></i>
                             </div>
-                            <div class="oneService__miniHeader">{{item.service_name}}</div>
+                            <div class="oneService__miniHeader">{{item.name}}</div>
                             <div class="oneService__header">{{item.companies.name}}</div>
                             <div class="oneService__preview">{{item.preview}}</div>
                             <div class="oneService__line"></div>
@@ -84,6 +84,7 @@ export default {
             axios.get('/api/services')
                 .then(res => {
                     this.services = res.data
+                    console.log(this.services)
                     this.loading = false
                 })
                 .catch(e => {

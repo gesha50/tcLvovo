@@ -11,7 +11,7 @@ class GalleryController extends Controller
     public function index () {
         $all = Gallery::all('img')->sortDesc();
         $uniqueName = \DB::table('galleries')
-            ->join('companies', 'galleries.companies_id', 'companies.id')
+            ->join('companies', 'galleries.company_id', 'companies.id')
             ->select('name')->get();
         return ['all' => $all, 'uniqueName' => $uniqueName];
     }

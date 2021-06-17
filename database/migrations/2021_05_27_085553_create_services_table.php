@@ -15,13 +15,13 @@ class CreateServicesTable extends Migration
     {
         Schema::create('services', function (Blueprint $table) {
             $table->id();
-            $table->string('service_name')->default('кафе');
+            $table->string('name')->default('кафе');
             $table->string('preview')->default('Горячая выпечка, плов, самса и т.д.');
             $table->text('description');
             $table->string('icon_class')->default('fa-utensils');
             $table->timestamps();
 
-            $table->foreignId('companies_id')
+            $table->foreignId('company_id')
                 ->default(1)
                 ->references('id')
                 ->on('companies')
