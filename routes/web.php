@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Admin\CompanyController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\FeedbackController;
 use App\Http\Controllers\Admin\InformationController;
@@ -40,6 +41,7 @@ Route::group([
         'reviews' => ReviewController::class,
         'page_info' => PageInfoController::class,
         'feedbacks' => FeedbackController::class,
+        'companies' => CompanyController::class,
     ]);
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/charts', [IndexController::class, 'charts'])->name('charts');

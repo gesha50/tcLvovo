@@ -13,30 +13,32 @@
             <form method="POST" action="{{ route('admin.services.update', $services) }}" enctype="multipart/form-data">
                 @method('PATCH')
                 @csrf
+
                 <div class="form-group">
-                    <label for="service_name">Название услуги</label>
-                    <input
-                        name="service_name"
-                        type="text"
-                        class="form-control @error('service_name') is-invalid @enderror"
-                        id="service_name"
-                        placeholder="Шиномонтаж"
-                        value="{{ old('service_name', $services->service_name) }}"
-                    >
+                    <label for="company_id">Компания</label>
+                    <select class="custom-select disabled" name="company_id" id="company_id">
+                            <option value="{{$brand_name->id}}">
+                                {{$brand_name->brand_name}}
+                            </option>
+                    </select>
+                    <p>
+                        если нужной компании нет в списке нужно сначало
+                        <a href="{{ route('admin.companies.create') }}">создать компанию</a>
+                    </p>
                 </div>
-                @foreach($errors->get('service_name') as $error)
+                @foreach($errors->get('company_id') as $error)
                     <div class="text-danger">{{ $error }}</div>
                 @endforeach
 
                 <div class="form-group">
-                    <label for="name">Название фирмы</label>
+                    <label for="name">Название услуги</label>
                     <input
                         name="name"
                         type="text"
                         class="form-control @error('name') is-invalid @enderror"
                         id="name"
-                        placeholder="TireFast"
-                        value="{{ old('name', $services->companies->name) }}"
+                        placeholder="Шиномонтаж"
+                        value="{{ old('name', $services->name) }}"
                     >
                 </div>
                 @foreach($errors->get('name') as $error)

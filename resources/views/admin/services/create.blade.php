@@ -13,17 +13,33 @@
             <form method="POST" action="{{ route('admin.services.store') }}" enctype="multipart/form-data">
                 @csrf
                 <div class="form-group">
-                    <label for="service_name">Название услуги</label>
+                    <label for="company_id">Выберите компанию</label>
+                    <select class="custom-select" name="company_id" id="company_id">
+                        @foreach($companyName as $name)
+                            <option
+                                @if($name->brand_name == $companyCurrentName) selected @endif
+                                value="{{$name->id}}"
+                            >{{$name->brand_name}}</option>
+                        @endforeach
+                    </select>
+                    <p>
+                        если нужной компании нет в списке нужно сначало
+                        <a href="{{ route('admin.companies.create') }}">создать компанию</a>
+                    </p>
+                </div>
+                <hr>
+                <div class="form-group">
+                    <label for="name">Название услуги</label>
                     <input
-                        name="service_name"
+                        name="name"
                         type="text"
-                        class="form-control @error('service_name') is-invalid @enderror"
-                        id="service_name"
+                        class="form-control @error('name') is-invalid @enderror"
+                        id="name"
                         placeholder="Шиномонтаж"
-                        value="{{ old('service_name') }}"
+                        value="{{ old('name') }}"
                     >
                 </div>
-                @foreach($errors->get('service_name') as $error)
+                @foreach($errors->get('name') as $error)
                     <div class="text-danger">{{ $error }}</div>
                 @endforeach
 

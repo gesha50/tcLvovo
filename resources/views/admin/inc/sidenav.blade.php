@@ -7,7 +7,14 @@
                     <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                     Главная
                 </a>
-                <a class="nav-link" href="{{ route('admin.page_info.index') }}">Заголовки и описания</a>
+                <a class="nav-link" href="{{ route('admin.page_info.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-audio-description"></i></div>
+                    Заголовки и описания
+                </a>
+                <a class="nav-link" href="{{ route('admin.companies.index') }}">
+                    <div class="sb-nav-link-icon"><i class="far fa-building"></i></div>
+                    Компании
+                </a>
                 <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapsePages" aria-expanded="false" aria-controls="collapsePages">
                     <div class="sb-nav-link-icon"><i class="fas fa-book-open"></i></div>
                     Страницы
@@ -44,7 +51,10 @@
                         </div>
                     </nav>
                 </div>
-                <a class="nav-link" href="{{ route('admin.feedbacks.index') }}">Обратная связь</a>
+                <a class="nav-link" href="{{ route('admin.feedbacks.index') }}">
+                    <div class="sb-nav-link-icon"><i class="fas fa-comments"></i></div>
+                    Обратная связь
+                </a>
                 <div class="sb-sidenav-menu-heading">Addons</div>
                 <a class="nav-link" href="{{ route('admin.charts') }}">
                     <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>

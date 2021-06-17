@@ -20,8 +20,8 @@
             </div>
             <div class="card">
                 <i class="fa {{$services->icon_class}}"></i>
-                <h3>{{$services->services_name}}</h3>
-                <h5>{{$services->companies->name}}</h5>
+                <h3>{{$services->name}}</h3>
+                <h5>{{$services->companies->brand_name}}</h5>
                 <div class="card-body">
                     <p class="card-text">{{$services->preview}}</p>
                 </div>

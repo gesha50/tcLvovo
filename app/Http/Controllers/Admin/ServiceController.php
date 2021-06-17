@@ -30,11 +30,17 @@ class ServiceController extends Controller
     /**
      * Show the form for creating a new resource.
      *
+     * @param Request $request
      * @return Application|Factory|View|Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        return view('admin.services.create');
+        $companyCurrentName = $request->get('companyCurrentName');
+        $companyName = Companies::all('id','brand_name');
+        return view('admin.services.create')->with([
+            'companyCurrentName' => $companyCurrentName,
+            'companyName' => $companyName,
+        ]);
     }
 
     /**
@@ -45,18 +51,14 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedCompany = $request->validate([
-            'name' => 'required',
-        ]);
-        $company = Companies::create($validatedCompany);
         $validated = $request->validate([
-            'service_name' => 'required|max:255',
+            'name' => 'required|max:255',
             'preview' => 'required',
             'description' => 'required',
             'icon_class' => 'required',
+            'company_id' => 'required'
         ]);
         $service = Services::create($validated);
-        $service->companies_id = $company->id;
         $service->save();
         return redirect(route('admin.services.index'));
     }
@@ -82,8 +84,14 @@ class ServiceController extends Controller
      */
     public function edit(Services $service)
     {
+        $brand_name = \DB::table('services')
+                    ->join('companies', 'company_id', '=', 'companies.id')
+                    ->select('companies.id','brand_name')
+                    ->where('services.id', $service->id)
+                    ->first();
         return view('admin.services.edit')->with([
             'services' => $service,
+            'brand_name' => $brand_name,
         ]);
     }
 
@@ -96,15 +104,12 @@ class ServiceController extends Controller
      */
     public function update(Request $request, Services $service)
     {
-        $validatedCompany = $request->validate([
-            'name' => 'required',
-        ]);
-        (new \App\Models\Companies)->update($validatedCompany);
         $validated = $request->validate([
-            'service_name' => 'required|max:255',
+            'name' => 'required|max:255',
             'preview' => 'required',
             'description' => 'required',
             'icon_class' => 'required',
+            'company_id' => 'required'
         ]);
         $service->update($validated);
         $request->flash();
