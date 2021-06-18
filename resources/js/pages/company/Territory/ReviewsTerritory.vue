@@ -9,7 +9,7 @@
         <div class="row mt-4">
             <div class="offset-2 col-md-2">
                 <div class="reviewsTerritory__avatar">
-                    <img src="../../../assets/img/1.png" alt="">
+                    <img src="../../../assets/img/territory/1.png" alt="">
                 </div>
             </div>
             <div class="col-md-8">

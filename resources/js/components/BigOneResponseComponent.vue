@@ -2,7 +2,7 @@
 <div class="oneResponse">
     <div class="row">
         <div class="col-md-6">
-            <img src="../assets/img/director.png" alt="" class="oneResponse__img">
+            <img src="../assets/img/aboutUs/director.png" alt="" class="oneResponse__img">
         </div>
         <div class="col-md-6 align-self-center position-relative">
             <i class="fas fa-quote-right oneResponse__icon"></i>

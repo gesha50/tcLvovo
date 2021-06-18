@@ -16,7 +16,7 @@ class CreateBrandsTable extends Migration
         Schema::create('brands', function (Blueprint $table) {
             $table->id();
             $table->string('title')->default('Dulux');
-            $table->string('description')->default('Dulux super puper!!');
+            $table->text('description');
             $table->string('link')->default('https://www.dulux.ru/');
             $table->string('image')->default('/storage/dulux.png');
             $table->timestamps();

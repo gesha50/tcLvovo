@@ -18,7 +18,7 @@ export default {
       return {
           missionData: [
               {
-                  img: '1.jpeg',
+                  img: 'comfort.jpeg',
                   title: 'Удобство',
                   description: 'Расположение идеальное ТК Львово очень удобное',
                   plus: [
@@ -29,7 +29,7 @@ export default {
                   ],
               },
               {
-                  img: '2.jpeg',
+                  img: 'safety.png',
                   title: 'Безопастность',
                   description: 'Наша территория тщательно охраняется',
                   plus: [
@@ -40,7 +40,7 @@ export default {
                   ],
               },
               {
-                  img: '3.png',
+                  img: 'eat.png',
                   title: 'Вкусно',
                   description: 'На территории есть магазин с домашними продуктами',
                   plus: [

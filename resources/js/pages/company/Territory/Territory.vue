@@ -43,10 +43,10 @@ export default {
           title: '',
           description: '',
           img: [
-              '2.png',
-              '1.png',
-              '3.png',
-              '4.png',
+              'ter_1.png',
+              'ter_2.png',
+              'ter_3.png',
+              'ter_4.png',
           ],
       }
     },

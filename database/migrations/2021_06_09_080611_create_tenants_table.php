@@ -16,7 +16,7 @@ class CreateTenantsTable extends Migration
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
             $table->string('title')->default('Безопасность');
-            $table->string('description')->default('Охраняемая территория с забором');
+            $table->text('description');
             $table->string('icon_class')->default('fa-hard-hat');
             $table->timestamps();
         });

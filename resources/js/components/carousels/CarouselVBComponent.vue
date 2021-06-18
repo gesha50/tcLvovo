@@ -16,7 +16,7 @@
             <b-carousel-slide
                 v-for="(image, index) in img"
                 :key="index"
-                :img-src="'/images/territory/'+image"
+                :img-src="require(`../../assets/img/territory/${image}`)"
             ></b-carousel-slide>
         </b-carousel>
     </div>
