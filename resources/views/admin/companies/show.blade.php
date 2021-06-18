@@ -22,21 +22,26 @@
                     <p class="card-text">Основной вид деятельности: {{$companies->type_of_activity}}</p>
                 </div>
             </div>
-            @if($countServices)
-            <div class="card col-md-4 mt-3 p-3">
-                кол-во подключенных услуг: {{$countServices}}
-            </div>
-            @else
-                <div class="card col-md-4 mt-3 p-3">
-                    Нету подключенных услуг!
+            <hr>
+            <div class="row">
+                @if($countServices)
+                    <div class="card col-md-4 mt-3 p-3">
+                        кол-во подключенных услуг: {{$countServices}}
+                    </div>
+                @else
+                    <div class="card col-md-4 mt-3 p-3">
+                        Нету подключенных услуг!
+                    </div>
+                @endif
+                <div class="col-md-4">
+                    <a
+                        class="btn btn-success m-2 text-white"
+                        href="{{route('admin.services.create', ['companyCurrentName' => $companies->brand_name])}}"
+                    >
+                        Добавить новую услугу для этой компании
+                    </a>
                 </div>
-            @endif
-            <a
-                class="btn btn-success m-2 text-white"
-                href="{{route('admin.services.create', ['companyCurrentName' => $companies->brand_name])}}"
-            >
-                Добавить новую услугу для этой компании
-            </a>
+            </div>
             <div class="row">
                 @forelse($currentServices as $service)
                 <div class="card col-md-3 m-2 p-3 bg-light text-center">
@@ -52,6 +57,34 @@
                     у вас нету подключенных услуг
                 @endforelse
             </div>
+            <hr>
+            <div class="row">
+                @if($countImage)
+                    <div class="card col-md-4 mt-3 p-3">
+                        кол-во изображений: {{ $countImage }}
+                    </div>
+                @else
+                    <div class="card col-md-4 mt-3 p-3">
+                        У компании нету изображений :(
+                    </div>
+                @endif
+                    <div class="col-md-4">
+                        <a
+                            class="btn btn-success m-2 text-white"
+                            href="{{route('admin.gallery.create', ['companyCurrentName' => $companies->name])}}"
+                        >
+                            Добавить изображение для этой компании
+                        </a>
+                    </div>
+            </div>
+            <div class="row">
+                @foreach($currentImages as $image)
+                    <div class="card col-md-3 m-2 p-3 bg-light text-center">
+                        <img src="{{$image->img}}" alt="">
+                    </div>
+                @endforeach
+            </div>
+            <hr>
         </div>
     </div>
 @endsection

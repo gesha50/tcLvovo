@@ -16,7 +16,6 @@ class CreateGalleriesTable extends Migration
         Schema::create('galleries', function (Blueprint $table) {
             $table->id();
             $table->foreignId('company_id')
-                ->default(1)
                 ->references('id')
                 ->on('companies')
                 ->onUpdate('cascade')

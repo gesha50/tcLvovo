@@ -10,7 +10,7 @@
         </ol>
         @foreach ($pageInfo as $obj)
             <div class="card">
-                <h3 class="card-header">{{$obj->page}}</h3>
+                <h3 class="card-header">Страница: {{$obj->page}}</h3>
                 <div class="card-body">
                     <h4 class="card-title">{{$obj->title}}</h4>
                     <p class="card-text">{{$obj->description}}</p>

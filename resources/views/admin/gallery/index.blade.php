@@ -26,34 +26,17 @@
                 </form>
             </div>
             <div class="col-md-6">
-                <form action="{{route('admin.gallery.store')}}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    <span>Если нету категории сначало создайте компанию</span>
-                    <select name="name">
-                            <option value="all">Все</option>
-                        @foreach ($uniqueName as $obj)
-                            <option
-                                {{ $obj->name == $name ? "selected":"" }}
-                                value="{{$obj->name}}">
-                                {{$obj->name}}
-                            </option>
-                        @endforeach
-                    </select>
-{{--                    <label for="" class="galleryImgDownload">Загрузить изображения</label>--}}
-                    <input
-                        multiple
-                        id="galleryImgDownload"
-                        type="file"
-                        name="galleryImgDownload[]"
-                        accept="image/*"
-                    >
-                    <input type="submit" value="Загрузить">
-                </form>
+                <a href="{{route('admin.gallery.create')}}" class="btn btn-success float-end">
+                    Добавить изображения
+                </a>
             </div>
         </div>
     <div class="galleryCards">
-        @foreach ($gallery as $obj)
+        @forelse($gallery as $obj)
             <div class="card p-1 galleryCard">
+                <div class="galleryCard__companyName">
+                    Компания: {{ $obj->brand_name }}{{$name}}
+                </div>
                 <div class="galleryCard__delete">
                     <form action="{{route('admin.gallery.destroy', $obj->id)}}">
                         @csrf
@@ -63,6 +46,10 @@
                 </div>
                 <img src="{{$obj->img}}" alt="">
             </div>
-        @endforeach
+        @empty
+            <div class="card col-md-4 p-3 mt-3">
+                <p class="fs-6 text-center">У этой компании нету изображений :( </p>
+            </div>
+        @endforelse
     </div>
 @endsection

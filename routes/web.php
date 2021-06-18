@@ -62,6 +62,7 @@ Route::group([
     Route::group(['prefix' => 'gallery', 'as' => 'gallery.',], function() {
         Route::get('/destroy/{id}', [GalleryController::class, 'destroy'])->name('destroy');
         Route::get('/filter', [GalleryController::class, 'filter'])->name('filter');
+        Route::get('/create', [GalleryController::class, 'create'])->name('create');
         Route::post('/store', [GalleryController::class, 'store'])->name('store');
         Route::get('/', [GalleryController::class, 'index'])->name('index');
     });

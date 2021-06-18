@@ -21,15 +21,22 @@ class CompanyController extends Controller
      */
     public function index()
     {
-        //        select `companies`.*, count(`services`.`company_id`) as `number_of_services`
-        // from `companies`
-        // left join `services` on `companies`.`id` = `services`.`company_id`
-        // group by `companies`.`id`
+//        select `companies`.*,
+//          count(`services`.`company_id`) as `number_of_services`,
+//          count(`galleries`.`company_id`) as `number_of_galleries`
+//         from `companies`
+//         left join `services` on `companies`.`id` = `services`.`company_id`
+//             left join `galleries` on `companies`.`id` = `galleries`.`company_id`
+//         group by `companies`.`id`
 
         // тоже самое для QueryBuilder
         $companiesWithCountServices = \DB::table('companies')
             ->leftJoin('services', 'companies.id', '=', 'services.company_id')
-            ->select('companies.*', \DB::raw('count(services.company_id) as number_of_services'))
+            ->leftJoin('galleries', 'companies.id', '=', 'galleries.company_id')
+            ->select('companies.*',
+                \DB::raw('count(services.company_id) as number_of_services'),
+                \DB::raw('count(galleries.company_id) as number_of_galleries')
+            )
             ->groupBy('companies.id')
             ->get();
         return view('admin.companies.index')->with([
@@ -74,14 +81,27 @@ class CompanyController extends Controller
     {
         $countServices = \DB::table('companies')
                             ->join('services', 'companies.id', 'company_id')
-                            ->where('companies.id', $company->id)->count('companies.id');
+                            ->where('companies.id', $company->id)
+                            ->count('companies.id');
+
+        $countImage = \DB::table('companies')
+                        ->join('galleries', 'companies.id', 'company_id')
+                        ->where('companies.id', $company->id)
+                        ->count('companies.id');
+
         $currentServices = \DB::table('services')
+            ->where('company_id', '=', $company->id)
+            ->get();
+
+        $currentImages = \DB::table('galleries')
             ->where('company_id', '=', $company->id)
             ->get();
         return view('admin.companies.show')->with([
             'companies' => $company,
             'countServices' => $countServices,
             'currentServices' => $currentServices,
+            'countImage' => $countImage,
+            'currentImages' => $currentImages,
         ]);
     }
 

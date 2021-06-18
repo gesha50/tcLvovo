@@ -29,6 +29,15 @@
                                 @endif
                             </strong>
                         </p>
+                        <p>Кол-во изображений:
+                            <strong class="fs-5">
+                                @if($obj->number_of_galleries)
+                                    {{$obj->number_of_galleries}}
+                                @else
+                                    0
+                                @endif
+                            </strong>
+                        </p>
                     </div>
                 <div class="text-center">
                     <a class="btn btn-dark text-white d-block m-1" href="{{route('admin.companies.show', $obj->id)}}">Подробнее</a>
