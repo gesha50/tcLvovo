@@ -52,6 +52,15 @@
                         class="btn btn-dark text-white d-block m-1"
                         href="{{route('admin.services.show', $service->id)}}"
                     >Подробнее...</a>
+                    <form
+                        class="d-block mt-2"
+                        action="{{route('admin.services.destroy', $service->id)}}"
+                        method="POST"
+                    >
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-danger w-100" type="submit">Удалить</button>
+                    </form>
                 </div>
                 @empty
                     у вас нету подключенных услуг
@@ -79,8 +88,16 @@
             </div>
             <div class="row">
                 @foreach($currentImages as $image)
-                    <div class="card col-md-3 m-2 p-3 bg-light text-center">
+                    <div class="card col-md-3 m-2 p-3 pt-5 bg-light text-center position-relative">
                         <img src="{{$image->img}}" alt="">
+                        <form action="{{route('admin.gallery.destroy', $image->id)}}">
+                            @csrf
+                            @method('DELETE')
+                            <button
+                                class="bg-danger btn position-absolute top-0 end-0"
+                                type="submit"
+                            ><i class="fas fa-trash"></i></button>
+                        </form>
                     </div>
                 @endforeach
             </div>

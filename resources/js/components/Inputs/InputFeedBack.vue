@@ -27,7 +27,6 @@ export default {
     },
     computed: {
         isValidate() {
-            console.log(this.item.value)
             if (this.item.value === '') {
                 this.item.errorMessage = '';
                 return '';

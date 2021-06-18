@@ -17,6 +17,15 @@
                 <a class="btn btn-warning m-2" href="{{route('admin.services.edit', $services->id)}}">
                     Редактировать эту услугу
                 </a>
+                <form
+                    class="d-inline"
+                    action="{{route('admin.services.destroy', $services->id)}}"
+                    method="POST"
+                >
+                    @csrf
+                    @method('DELETE')
+                    <button class="btn btn-danger m-2" type="submit">Удалить</button>
+                </form>
             </div>
             <div class="card">
                 <i class="fa {{$services->icon_class}}"></i>

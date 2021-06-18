@@ -17,6 +17,14 @@
                 :item="obj"
                 v-model="obj.value"
             ></input-feed-back>
+        <textarea
+            :id="message.id"
+            class="messageToTCLvovo__block
+               messageToTCLvovo__name"
+            :class="[isValidate, message.class]"
+            :placeholder="message.placeholder"
+            v-model="message.value"
+        ></textarea>
         <button
             :disabled="!isAllInputsCorrect"
             class="btn btn-warning mt-3"
@@ -86,20 +94,20 @@ export default {
                   },
                   isCorrect: false,
               },
-              {
-                  id: 'message',
-                  class: 'messageToTCLvovo__message',
-                  placeholder: 'Введите сообщение *',
-                  text: 'Сообщение',
-                  value: '',
-                  errorMessage: '',
-                  validate: {
-                      min: 1,
-                      max: 256,
-                  },
-                  isCorrect: false,
-              },
           ],
+          message:  {
+              id: 'message',
+              class: 'messageToTCLvovo__message',
+              placeholder: 'Введите сообщение *',
+              text: 'Сообщение',
+              value: '',
+              errorMessage: '',
+              validate: {
+                  min: 1,
+                  max: 256,
+              },
+              isCorrect: false,
+          },
 
       }
     },
@@ -111,7 +119,25 @@ export default {
     computed: {
         isAllInputsCorrect() {
             return !!(this.data[1].isCorrect
-                && this.data[4].isCorrect);
+                && this.message.isCorrect);
+        },
+        isValidate() {
+            console.log(this.message.value)
+            if (this.message.value === '') {
+                this.message.errorMessage = '';
+                return '';
+            }
+            if (this.isValid(this.message.value,
+                this.message.validate.min,
+                this.message.validate.max)
+            ) {
+                this.message.isCorrect = true;
+                this.message.errorMessage = '';
+                return 'messageToTCLvovo__correct';
+            }
+            this.message.errorMessage = 'данные заполнены не корректно!';
+            this.message.isCorrect = false;
+            return 'messageToTCLvovo__error';
         },
     },
     methods: {
@@ -122,7 +148,7 @@ export default {
                 'phone': this.data[1].value,
                 'email': this.data[2].value,
                 'theme': this.data[3].value,
-                'message': this.data[4].value
+                'message': this.message.value
             }
             axios.post('/api/sendContactData', sendData)
             .then(res => {
@@ -133,6 +159,9 @@ export default {
                 console.log(e)
                 this.loading = false
             })
+        },
+        isValid(value, min, max) {
+            return value.length > min && value.length < max
         },
     },
 }

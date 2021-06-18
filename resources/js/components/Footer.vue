@@ -324,6 +324,7 @@ export default {
 
     }
     &__input {
+        width: 280px;
         border-radius: 3px 0 0 3px;
         background-color: #131313;
         height: 52px;
@@ -331,12 +332,12 @@ export default {
         @include miniBodyText($gray_2, $MontserratSB);
     }
     &__btnLeft {
-        background: $green;
-        border-style: solid;
-        border-color: transparent #131313;
-        transform: rotate(90deg);
-        border-width: 20px 26px 0px 26px;
-        margin-left: -30px;
+        border: 26px solid transparent;
+        border-right: 30px solid $green;
+        display: block;
+        width: 0;
+        height: 0;
+        margin-left: -140px;
     }
     &__btn {
         height: 52px;
@@ -345,11 +346,10 @@ export default {
         border: none;
         @include miniBodyText($whiteText, $MontserratSB);
         transition: 1s;
-        //&:hover {
-        //    background: darken($green, 20);
-        //}
     }
-    &__fullBtn:hover &__btnLeft,
+    &__fullBtn:hover &__btnLeft {
+        border-right: 30px solid darken($green, 20);
+    }
     &__fullBtn:hover &__btn {
         background: darken($green, 20);
     }
