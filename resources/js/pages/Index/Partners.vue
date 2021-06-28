@@ -1,7 +1,7 @@
 <template>
-    <div class="container">
+    <div class="container-lg mobile-padding-r-l-0">
         <div class="miniPartners d-flex justify-content-center">
-            <div class="miniPartners__block pr-2">
+            <div class="miniPartners__block pr-2 mr-2">
                 <div class="miniPartners__decor">
                     <div class="decor"></div>
 
@@ -44,20 +44,13 @@ export default {
           axios.get('/api/brands')
           .then(res => {
               for (let i=0; i<4; i++){
-                  //Фото выбираются рандомом
-                  //Могут повторяться!
-                  let obj = this.arrayRandElement(res.data)
-                  this.brandsImg.push(obj)
+                  this.brandsImg.push(res.data[i])
               }
           })
           .catch(e => {
               console.log(e)
           })
         },
-        arrayRandElement(arr) {
-            let rand = Math.floor(Math.random() * arr.length);
-            return arr[rand];
-        }
     },
 }
 </script>
@@ -67,8 +60,19 @@ export default {
     padding: 100px 0;
     background: #ffffff;
     &__block {
-        width: 30%;
         position: relative;
+        @media (min-width: 992px) {
+            width: 30%;
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            width: 40%;
+        }
+        @media (min-width: 576px) and (max-width: 768px) {
+            width: 45%;
+        }
+        @media (max-width: 576px) {
+            width: 45%;
+        }
     }
     &__decor{
         position: absolute;
@@ -77,6 +81,10 @@ export default {
     }
     &__heading {
         @include heading($textBlack);
+        @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
     }
     &__body {
         @include miniBodyText($grayText, Montserrat);

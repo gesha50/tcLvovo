@@ -1,5 +1,5 @@
 <template>
-<div class="container">
+<div class="container-lg mobile-padding-r-l-0">
     <div id="app">
         <agile  :autoplay-speed="4000" :initial-slide="0" :autoplay="true" :pauseOnHover="true">
             <img

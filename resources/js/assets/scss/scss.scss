@@ -14,3 +14,27 @@ main {
     padding-top: 66px;
 }
 
+.mobile-padding-r-l-0 {
+    @media (max-width: 768px) {
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+    }
+}
+.adaptive {
+    @media (min-width: 1200px) {
+
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+
+    }
+    @media (min-width: 576px) and (max-width: 768px) {
+
+    }
+    @media (max-width: 576px) {
+
+    }
+}
+

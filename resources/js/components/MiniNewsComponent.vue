@@ -66,6 +66,46 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+.newsMini {
+    &__header {
 
+    }
+    &__headerText {
+        @include miniHeader($whiteText, Montserrat);
+    }
+    &__cursor {
+        width: 30px;
+    }
+    &__cursor i:hover {
+        color: $yellow;
+    }
+
+    &__date {
+        @include forDate($grayText);
+    }
+    &__text {
+        @include miniBodyText($yellow, Montserrat_light);
+    }
+    &__footer {
+        display: inline-block;
+    }
+
+    &__link {
+        @include miniBodyText($white,$MontserratSB);
+
+        &:hover {
+            text-decoration: none;
+            color: $grayText;
+            cursor: pointer;
+        }
+    }
+
+    &__link:hover .line {
+        width: 100%;
+    }
+}
+.newsMini hr {
+    background: $gray_2;
+}
 </style>

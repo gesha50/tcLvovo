@@ -1,9 +1,11 @@
 <template>
-    <div class="allService container  d-flex justify-content-center">
+    <div class="container-lg mobile-padding-r-l-0">
+    <div class="allService">
+        <div class="row mx-auto">
         <div
             v-for="service in services"
             :key="service.id"
-            class="allService__block col-md-4"
+            class="allService__block col-md-4 col-12 pt-4 pb-3"
         >
             <div class="miniServiceBlock d-flex justify-content-between">
                 <div class="miniServiceBlock__img">
@@ -11,7 +13,7 @@
                 </div>
                 <div class="miniServiceBlock__info">
                     <div class="miniServiceBlock__heading">
-                        {{service.service_name}}
+                        {{service.name}}
                     </div>
                     <div class="miniServiceBlock__body">
                         {{ service.preview}}
@@ -20,6 +22,8 @@
                 </div>
             </div>
         </div>
+        </div>
+    </div>
     </div>
 </template>
 
@@ -64,7 +68,7 @@ export default {
 }
 
 .miniServiceBlock {
-    padding: 55px 0;
+    //padding: 55px 0;
     &__img img {
         width: 110px;
         padding: 0 25px;

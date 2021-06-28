@@ -12,7 +12,7 @@
 
 <script>
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+import Footer from "./components/Footer/Footer";
 
 export default {
     name: "AppContainer",
@@ -28,13 +28,13 @@ export default {
     },
     created() {
         this.initAuth()
-        this.isUserLogin()
     },
     methods: {
         initAuth() {
             axios.get('/sanctum/csrf-cookie')
             .then(res => {
                 console.log(res)
+                this.isUserLogin()
             })
             .catch(e => {
                 console.log(e)

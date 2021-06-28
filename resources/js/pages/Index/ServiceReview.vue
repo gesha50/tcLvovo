@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-lg mobile-padding-r-l-0">
         <div class="service">
             <div class="d-flex">
                 <div class="col-md-6 service__img"></div>
@@ -56,6 +56,10 @@ export default {
         letter-spacing: normal;
         line-height: 40px;
         text-align: left;
+        @media (max-width: 768px) {
+            font-size: 20px;
+            line-height: 20px;
+        }
     }
     &__text {
         color: $grayText;

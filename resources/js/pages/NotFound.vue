@@ -36,7 +36,6 @@
 
 <script>
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import TopImage from "../components/TopImage";
 import RequestComponent from "../components/RequestComponent";
 
@@ -44,7 +43,6 @@ export default {
     name: "NotFound",
     components: {
         Header,
-        Footer,
         TopImage,
         RequestComponent,
     },

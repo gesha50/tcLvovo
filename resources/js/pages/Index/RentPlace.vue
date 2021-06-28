@@ -1,8 +1,8 @@
 <template>
-    <div class="container">
+    <div class="container-lg mobile-padding-r-l-0">
         <div class="statistic">
             <div class="row">
-                <div class="statistic__number p-2 offset-2">{{ works_room }}</div>
+                <div class="statistic__number p-2 offset-1">{{ works_room }}</div>
                 <div class="statistic__textBlock p-2 offset-1">
                     <p class="statistic__textUp">Помещений</p>
                     <p class="statistic__textDown">сейчас в работе!</p>
@@ -54,7 +54,18 @@ export default {
         color: $yellow;
     }
     &__order {
-        width: 25%;
+        @media (min-width: 992px) {
+            width: 25%;
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            width: 250px;
+        }
+        @media (min-width: 576px) and (max-width: 768px) {
+            width: 200px;
+        }
+        @media (max-width: 576px) {
+            width: 150px;
+        }
         position: absolute;
         top: -96px;
         left: 65%;
@@ -62,6 +73,9 @@ export default {
     &__textUp {
         font-family: "Montserrat";
         font-size: 30px;
+        @media (max-width: 576px) {
+            font-size: 22px;
+        }
     }
     &__textDown {
         color: $grayText;
@@ -94,17 +108,37 @@ export default {
         font-size: 16px;
         transition: 0.5s;
         display: block;
+        @media (max-width: 576px) {
+            font-size: 13px;
+        }
         &:hover {
             text-decoration: none;
             color: $hoverForTextBlack;
             font-size: 20px;
+            @media (max-width: 576px) {
+                font-size: 16px;
+            }
         }
     }
     &__triangleLeft {
         background: $yellow;
         border-style: solid;
         border-color:  transparent  $textBlack;
-        border-width: 30px 130px 0px 131px;
+        @media (min-width: 1200px) {
+            border-width: 30px 130px 0px 131px;
+        }
+        @media (min-width: 992px) and (max-width: 1200px) {
+            border-width: 30px 109px 0px 109px;
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            border-width: 30px 118px 0px 118px
+        }
+        @media (min-width: 576px) and (max-width: 768px) {
+            border-width: 30px 92px 0px 92px;
+        }
+        @media (max-width: 576px) {
+            border-width: 30px 67px 0px 68px;
+        }
     }
 }
 </style>

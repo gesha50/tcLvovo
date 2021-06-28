@@ -19,7 +19,8 @@ class IndexController extends Controller
         $isUser = Auth::guard('sanctum')->check();
         if (!$isUser) {
             return [
-                'isUser' => $isUser
+                'isUser' => $isUser,
+                'isAdmin' => false
             ];
         }
         return [

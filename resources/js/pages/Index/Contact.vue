@@ -1,20 +1,22 @@
 <template>
-    <div class="container miniContact d-flex justify-content-center">
-        <div class="miniContact__block col-md-4">
+    <div class="container-lg mobile-padding-r-l-0">
+    <div class="miniContact row mx-auto">
+        <div class="miniContact__block col-md-4 col-12">
             <i class="miniContact__img fas fa-phone-alt"></i>
             <div class="miniContact__body">{{ phone }} - офис</div>
             <div class="miniContact__line"></div>
         </div>
-        <div class="miniContact__block2 col-md-4">
+        <div class="miniContact__block2 col-md-4 col-12">
             <i class="miniContact__img fas fa-map-marked-alt"></i>
             <div class="miniContact__body">{{ address }}</div>
             <div class="miniContact__line"></div>
         </div>
-        <div class="miniContact__block3 col-md-4">
+        <div class="miniContact__block3 col-md-4 col-12">
             <i class="miniContact__img fab fa-telegram-plane"></i>
             <div class="miniContact__body"><a :href="'mailto:'+ email ">{{ email }}</a></div>
             <div class="miniContact__line"></div>
         </div>
+    </div>
     </div>
 </template>
 
@@ -50,8 +52,12 @@ export default {
     &__block2,
     &__block3 {
         text-align: center;
-        padding: 50px;
+        padding: 20px;
         position: relative;
+        @media (max-width: 768px) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
     &__block {
         background-color: $yellow;
@@ -69,6 +75,10 @@ export default {
         @include miniBodyText($textBlack, Montserrat);
         margin: 30px 0;
         text-align: center;
+        @media (max-width: 768px) {
+            text-align: right;
+            margin-left: 20px;
+        }
     }
     &__body a {
         @include miniBodyText($textBlack, Montserrat);
@@ -83,7 +93,7 @@ export default {
         height: 2px;
         background: $textBlack;
         position: absolute;
-        bottom: 50px;
+        bottom: 30px;
         left: calc(50% - 20px);
     }
 }

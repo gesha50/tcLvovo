@@ -13,17 +13,17 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <!-- Left Side Of Navbar -->
                 <ul class="navbar-nav mr-auto">
-                    <li><router-link class="nav-link my-nav-link" :to="{name: 'index'}">Главная</router-link></li>
-                    <li><router-link class="nav-link my-nav-link" :to="{name: 'company'}">О нас</router-link></li>
-                    <li><router-link class="nav-link my-nav-link" :to="{name: 'services'}">Услуги</router-link></li>
-                    <li><router-link class="nav-link my-nav-link" :to="{name: 'gallery'}">Фотогаллерея</router-link></li>
-                    <li><router-link class="nav-link my-nav-link" :to="{name: 'contact'}">Контакты</router-link></li>
-                    <li><router-link class="nav-link my-nav-link" :to="{name: 'news'}">Новости</router-link></li>
+                    <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'index'}">Главная</router-link></li>
+                    <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'company'}">О нас</router-link></li>
+                    <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'services'}">Услуги</router-link></li>
+                    <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'gallery'}">Фотогаллерея</router-link></li>
+                    <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'contact'}">Контакты</router-link></li>
+                    <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'news'}">Новости</router-link></li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <div class="search navbar-nav">
-                    <a v-if="userLogin" class="nav-link my-nav-link" href="/dashboard">Админка</a>
-                    <i v-else class="fas fa-search"></i>
+                    <a @click="remove" v-if="userLogin" class="nav-link my-nav-link" href="/dashboard">Админка</a>
+<!--                    <i v-else class="fas fa-search"></i>-->
                 </div>
             </div>
         </nav>
@@ -35,6 +35,15 @@ export default {
     name: "Header",
     props: {
         userLogin: Boolean,
+    },
+    methods: {
+      remove() {
+          let el = document.getElementById('navbarSupportedContent')
+          if (el.classList.contains("show")) {
+              el.classList.remove("show");
+          }
+          el.setAttribute('aria-expanded', 'false')
+      }
     },
 }
 </script>
