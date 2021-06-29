@@ -3,7 +3,7 @@
     <top-image
         :headerText="'Новости'"
     ></top-image>
-    <div class="container">
+    <div class="container-lg">
         <div v-if="Object.keys($route.params).length !== 0">
             <router-view></router-view>
         </div>
@@ -16,12 +16,12 @@
                     class="eachNews"
                 >
                     <div class="row">
-                        <div class="col-md-1">
+                        <div class="col-2">
                             <date-month
                                 :created_at="oneNews.created_at"
                             ></date-month>
                         </div>
-                        <div class="col-md-11">
+                        <div class="col-10">
                             <preview
                                 :one-news="oneNews"
                             ></preview>
@@ -80,8 +80,22 @@ export default {
 
 <style lang="scss">
 .newsContainer {
-    padding: 0 60px 20px;
     background: $whiteText;
+    @media (min-width: 1200px) {
+        padding: 0 60px 20px;
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+        padding: 0 50px 20px;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        padding: 0 30px 20px;
+    }
+    @media (min-width: 576px) and (max-width: 768px) {
+        padding: 0 20px 20px;
+    }
+    @media (max-width: 576px) {
+        padding: 0 10px 20px;
+    }
 }
 .eachNews {
     margin-bottom: 20px;

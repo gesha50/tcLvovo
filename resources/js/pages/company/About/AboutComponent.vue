@@ -1,5 +1,5 @@
 <template>
-<div class="aboutUs">
+<div class="aboutUs p-3">
     <spinner v-if="loading" ></spinner>
     <div v-else>
         <big-one-response-component
@@ -73,6 +73,9 @@ export default {
     &__header {
         @include superHeader($textBlack, "Montserrat - Ultra Light");
         margin: 30px 0;
+        @media (max-width: 768px) {
+            text-align: center;
+        }
     }
     &__text {
         @include miniBodyText($grayText, Montserrat);

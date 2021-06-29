@@ -35,9 +35,14 @@ export default {
     &__icon {
         position: absolute;
         top: 0;
-        left: -40px;
         font-size: 30px;
         color: $yellow_2;
+        @media (min-width: 768px) {
+            left: -40px;
+        }
+        @media (max-width: 768px) {
+            right: 0;
+        }
     }
     &__response {
         @include response();
@@ -45,9 +50,15 @@ export default {
     &__name {
         margin-top: 25px;
         @include miniBodyText($textBlack, Montserrat);
+        @media (max-width: 768px) {
+            text-align: end;
+        }
     }
     &__position {
         @include  forDate($grayText);
+        @media (max-width: 768px) {
+            text-align: end;
+        }
     }
 }
 </style>

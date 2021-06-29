@@ -4,12 +4,12 @@
     <div v-else class="newsContainer">
         <div class="oneNews">
             <div class="row">
-                <div class="col-md-1">
+                <div class="col-2">
                     <date-month
                         :created_at="oneNews.created_at"
                     ></date-month>
                 </div>
-                <div class="col-md-11">
+                <div class="col-10">
                     <full-news
                         :one-news="oneNews"
                     ></full-news>

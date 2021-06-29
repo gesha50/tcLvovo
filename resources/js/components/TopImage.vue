@@ -1,12 +1,12 @@
 <template>
 <div>
     <div class="bgForBreadcrumb"></div>
-    <div class="container blockForBreadcrumd">
+    <div class="container-lg blockForBreadcrumb">
         <div class="d-flex justify-content-between p-3">
-            <h1 class="blockForBreadcrumd__header">{{ headerText }}</h1>
-            <div class="blockForBreadcrumd__contact">
+            <h1 class="blockForBreadcrumb__header">{{ headerText }}</h1>
+            <div class="blockForBreadcrumb__contact">
                 <router-link
-                    class="blockForBreadcrumd__link"
+                    class="blockForBreadcrumb__link"
                     :to="{name: 'contact'}"
                 >Связаться с нами
                     <div class="line"></div>
@@ -15,7 +15,7 @@
         </div>
         <breadcrumb-component></breadcrumb-component>
     </div>
-    <div style="margin-bottom: -237px" class="container">
+    <div style="margin-bottom: -237px" class="container-lg">
         <div class="companyContent">
             <div class="d-flex topContent">
                 <div class="whiteBlock"></div>
@@ -54,7 +54,7 @@ export default {
     z-index: -22;
 }
 
-.blockForBreadcrumd {
+.blockForBreadcrumb {
     position: relative;
     margin: -480px auto;
     z-index: 1;

@@ -31,11 +31,10 @@ export default {
         @include miniBodyText($grayText, Montserrat);
     }
     &__imgBlock {
-        padding: 30px 100px;
+        padding: 10px 10px;
     }
     &__img {
         width: 100%;
-        height: 400px;
         object-fit: contain;
     }
 }

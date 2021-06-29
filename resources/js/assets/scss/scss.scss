@@ -20,6 +20,14 @@ main {
         padding-left: 0 !important;
     }
 }
+.desktop_flex_only {
+    @media (min-width: 768px) {
+        display: flex;
+    }
+    @media (max-width: 768px) {
+        display: block;
+    }
+}
 .adaptive {
     @media (min-width: 1200px) {
 

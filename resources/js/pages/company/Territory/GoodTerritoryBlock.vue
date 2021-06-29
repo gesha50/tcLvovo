@@ -1,10 +1,10 @@
 <template>
-<div class="goodTerritoryBlock col-md-6">
+<div class="goodTerritoryBlock col-6">
     <div class="row">
-        <div class="col-md-2">
+        <div class="col-2">
             <i :class="item.iconClass" class="fas goodTerritoryBlock__icon"></i>
         </div>
-        <div class="col-md-10">
+        <div class="col-10">
             <h5 class="goodTerritoryBlock__header">{{item.title}}</h5>
             <p class="goodTerritoryBlock__text">{{item.description}}</p>
         </div>

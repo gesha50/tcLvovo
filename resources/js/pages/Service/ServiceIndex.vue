@@ -3,7 +3,7 @@
     <top-image
         :headerText="'Услуги'"
     ></top-image>
-    <div class="container">
+    <div class="container-lg">
         <div v-if="Object.keys($route.params).length !== 0">
             <router-view></router-view>
         </div>
@@ -157,10 +157,28 @@ export default {
         margin-bottom: 30px;
     }
     &__blocks {
-        padding: 0 150px;
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
         grid-gap: 10px;
+        @media (min-width: 1200px) {
+            grid-template-columns: repeat(3, 1fr);
+            padding: 0 150px;
+        }
+        @media (min-width: 992px) and (max-width: 1200px) {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 130px;
+        }
+        @media (min-width: 768px) and (max-width: 992px) {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 110px;
+        }
+        @media (min-width: 576px) and (max-width: 768px) {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 0 80px;
+        }
+        @media (max-width: 576px) {
+            grid-template-columns: 1fr;
+            padding: 0;
+        }
     }
 }
 .bgImgServices {

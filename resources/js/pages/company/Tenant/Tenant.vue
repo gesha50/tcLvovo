@@ -1,5 +1,5 @@
 <template>
-<div class="tenant">
+<div class="tenant p-4">
     <spinner v-if="loading"></spinner>
     <div v-else>
         <div class="tenant__header">{{title}}</div>
@@ -11,14 +11,14 @@
                 <div
                     v-for="dignity in dignities"
                     :key="dignity.id"
-                    class="dignities col-md-4"
+                    class="dignities col-6 col-md-6 col-lg-4"
                 >
                     <div class="row">
-                        <div class="col-md-3">
+                        <div class="col-12 col-sm-3 text-center mb-1">
                             <i :class="dignity.icon_class" class="dignities__icon fas"></i>
                         </div>
-                        <div class="col-md-9">
-                            <div class="dignities__title">{{dignity.title}}</div>
+                        <div class="col-12 col-sm-9">
+                            <div class="dignities__title text-center">{{dignity.title}}</div>
                             <div class="dignities__description">
                                 {{dignity.description}}
                             </div>

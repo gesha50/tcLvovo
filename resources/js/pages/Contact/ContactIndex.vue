@@ -3,12 +3,12 @@
     <top-image
         :headerText="'Контакты'"
     ></top-image>
-    <div class="container">
+    <div class="container-lg">
             <div class="pl-5 pr-5 pb-5" style="min-height: 237px; background: white;">
                 <spinner v-if="loading"></spinner>
                 <div v-else>
                     <div class="row">
-                        <div class="col-md">
+                        <div class="col">
                             <h2 class="contactHeader">{{title}}</h2>
                         </div>
                     </div>
@@ -98,6 +98,9 @@ export default {
     & p {
         @include miniBodyText($grayText, Montserrat);
         padding: 25px 0;
+    }
+    @media (max-width: 768px) {
+        margin-bottom: 70px;
     }
 }
 </style>

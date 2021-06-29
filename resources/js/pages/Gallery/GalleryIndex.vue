@@ -3,7 +3,7 @@
         <top-image
             :headerText="'Фотогаллерея'"
         ></top-image>
-        <div class="container">
+        <div class="container-lg">
             <div class="pl-5 pr-5 pb-5" style="min-height: 237px; background: white;">
                 <nav class="galleryNav">
                     <span
@@ -126,8 +126,22 @@ export default {
 }
 .galleryPhoto {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     grid-gap: 10px;
+    @media (min-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (min-width: 576px) and (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 576px) {
+        grid-template-columns: 1fr;
+    }
     &__img {
         width: 100%;
         height: 200px;

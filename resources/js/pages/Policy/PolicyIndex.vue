@@ -1,6 +1,6 @@
 <template>
 <div>
-    <div class="container">
+    <div class="container-lg">
         <div class="layout">
             <h1>Политика конфиденциальности персональных данных</h1>
             <p>Настоящая Политика конфиденциальности персональных данных (далее – Политика конфиденциальности) действует в
@@ -245,7 +245,7 @@ export default {
 
 <style scoped>
 form {margin:0}
-.layout {background:#fff; width:940px; margin:1em auto; border:1px solid #ccc; padding:1em 2%}
+.layout {background:#fff; margin:1em auto; border:1px solid #ccc; padding:1em 2%}
 h1 {color:#006dad; font-size:2.2em; text-align:center}
 h2 {color:#444; font-size:1.8em; text-align:center}
 h3 {color:#222; font-size:1.6em; text-align:center}

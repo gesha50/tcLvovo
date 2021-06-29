@@ -5,22 +5,22 @@
         Вы можете связаться с нами любым удобным для вас способом. Будем рады ответить на ваши вопросы.
     </p>
     <div class="row contact">
-        <i class="contact__img col-md-3 fas fa-phone-alt"></i>
-        <div class="contact__body col-md-9">
+        <i class="contact__img col-3 fas fa-phone-alt"></i>
+        <div class="contact__body col-9">
             {{ phone }} - офис
         </div>
     </div>
     <div class="darkLine"></div>
     <div class="row">
-        <i class="contact__img col-md-3 fas fa-map-marked-alt"></i>
-        <div class="contact__body col-md-9">
+        <i class="contact__img col-3 fas fa-map-marked-alt"></i>
+        <div class="contact__body col-9">
             {{ address }}
         </div>
     </div>
     <div class="darkLine"></div>
     <div class="row">
-        <i class="contact__img col-md-3 fab fa-telegram-plane"></i>
-        <div class="contact__body col-md-9">
+        <i class="contact__img col-3 fab fa-telegram-plane"></i>
+        <div class="contact__body col-9">
             <a :href="'mailto:'+ email ">
                 {{ email }}
             </a>

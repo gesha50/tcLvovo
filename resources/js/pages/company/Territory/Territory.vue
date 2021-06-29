@@ -1,5 +1,5 @@
 <template>
-<div class="territory">
+<div class="territory p-3">
     <spinner v-if="loading"></spinner>
     <div v-else>
         <carousel-v-b-component

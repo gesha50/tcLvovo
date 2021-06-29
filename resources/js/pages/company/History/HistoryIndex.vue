@@ -1,5 +1,5 @@
 <template>
-<div class="history">
+<div class="history p-3">
     <spinner v-if="loading"></spinner>
     <div v-else>
         <div class="history__header">{{title}}</div>

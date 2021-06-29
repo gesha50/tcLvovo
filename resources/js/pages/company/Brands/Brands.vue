@@ -1,5 +1,5 @@
 <template>
-<div class="brands">
+<div class="brands p-3">
     <spinner v-if="loading"></spinner>
     <div v-else>
         <h2 class="brands__header">{{title}}</h2>
@@ -14,10 +14,10 @@
                     class="oneBrand"
                 >
                     <div class="row">
-                        <div class="col-md-4">
-                            <img :src="brand.image" alt="" class="oneBrand__img">
+                        <div class="col-12 col-sm-4">
+                            <img :src="brand.image" alt="" class="oneBrand__img mb-2">
                         </div>
-                        <div class="col-md-8">
+                        <div class="col-12 col-sm-8">
                             <div class="oneBrand__header">{{brand.title}}</div>
                             <div class="oneBrand__description">{{brand.description}}</div>
                             <a :href="brand.link" target="_blank" class="oneBrand__link">{{brand.link}}</a>
@@ -97,9 +97,9 @@ export default {
     padding-bottom: 20px;
     margin-bottom: 20px;
     &__img {
-        width: 200px;
+        width: 100%;
         object-fit: contain;
-        height: 200px;
+        //height: 200px;
     }
     &__header {
         @include newsHeader();

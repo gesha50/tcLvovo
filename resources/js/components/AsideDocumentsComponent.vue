@@ -35,6 +35,9 @@ export default {
 <style lang="scss">
 .documentPadding {
     padding-top: 30px;
+    @media (max-width: 768px) {
+        display: none;
+    }
 }
 .download {
     &:hover &__link {
