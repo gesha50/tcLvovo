@@ -17,6 +17,8 @@
 import Spinner from "../../../components/Spinner/Spinner";
 
 export default {
+    beforeCreate() { document.title = 'Услуги' },
+    beforeUpdate() { document.title = 'Услуги' },
     name: "OneServiceIndex",
     props: ['slug', 'id'],
     components: {

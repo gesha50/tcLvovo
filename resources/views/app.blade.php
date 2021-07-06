@@ -7,8 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('layouts.name', 'Laravel') }}</title>
-
+    <title>{{ config('layouts.name', 'ТК Львово') }}</title>
+    <link rel="icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <!-- Scripts -->
 {{--    <script defer src="/js/brands.js"></script>--}}
 {{--    <script defer src="/js/solid.js"></script>--}}

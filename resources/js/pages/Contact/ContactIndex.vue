@@ -45,6 +45,8 @@ export default {
             description: '',
         }
     },
+    beforeCreate() { document.title = 'Контакты' },
+    beforeUpdate() { document.title = 'Контакты' },
     name: "ContactIndex",
     components: {
         TopImage,

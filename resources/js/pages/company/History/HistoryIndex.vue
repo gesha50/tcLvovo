@@ -41,6 +41,8 @@
 import Spinner from "../../../components/Spinner/Spinner";
 
 export default {
+    beforeCreate() { document.title = 'История' },
+    beforeUpdate() { document.title = 'История' },
     name: "HistoryComponent",
     data() {
       return {

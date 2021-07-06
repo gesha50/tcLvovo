@@ -49,6 +49,8 @@ import Spinner from "../../components/Spinner/Spinner";
 import RequestComponent from "../../components/RequestComponent";
 
 export default {
+    beforeCreate() { document.title = 'Услуги' },
+    beforeUpdate() { document.title = 'Услуги' },
     name: "ServiceIndex",
     data() {
         return {

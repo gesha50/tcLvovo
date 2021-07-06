@@ -28,6 +28,8 @@ import Spinner from "../../../components/Spinner/Spinner";
 import FullNews from "./FullNews";
 
 export default {
+    beforeCreate() { document.title = 'Новости' },
+    beforeUpdate() { document.title = 'Новости' },
     name: "OneNews",
     props: ['slug', 'id'],
     data() {

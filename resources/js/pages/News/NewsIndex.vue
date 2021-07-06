@@ -44,6 +44,8 @@ import Spinner from "../../components/Spinner/Spinner";
 import RequestComponent from "../../components/RequestComponent";
 
 export default {
+    beforeCreate() { document.title = 'Новости' },
+    beforeUpdate() { document.title = 'Новости' },
     name: "NewsIndex",
     components: {
         TopImage,

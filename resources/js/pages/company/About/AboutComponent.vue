@@ -30,6 +30,8 @@ export default {
             reviewAboutUs: [],
         }
     },
+    beforeCreate() { document.title = 'О нас' },
+    beforeUpdate() { document.title = 'О нас' },
     name: "AboutComponent",
     components: {
         BigOneResponseComponent,

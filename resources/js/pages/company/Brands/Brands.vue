@@ -34,6 +34,8 @@
 import Spinner from "../../../components/Spinner/Spinner";
 
 export default {
+    beforeCreate() { document.title = 'Бренды' },
+    beforeUpdate() { document.title = 'Бренды' },
     name: "Brands",
     data() {
       return {

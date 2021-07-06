@@ -35,6 +35,8 @@
 import Spinner from "../../../components/Spinner/Spinner";
 
 export default {
+    beforeCreate() { document.title = 'Арендаторам' },
+    beforeUpdate() { document.title = 'Арендаторам' },
     name: "Tenant",
     data() {
         return {

@@ -40,6 +40,8 @@ import TopImage from "../components/TopImage";
 import RequestComponent from "../components/RequestComponent";
 
 export default {
+    beforeCreate() { document.title = '404' },
+    beforeUpdate() { document.title = '404' },
     name: "NotFound",
     components: {
         Header,

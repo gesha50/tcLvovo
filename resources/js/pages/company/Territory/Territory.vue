@@ -50,6 +50,8 @@ export default {
           ],
       }
     },
+    beforeCreate() { document.title = 'Территория' },
+    beforeUpdate() { document.title = 'Территория' },
     name: "Territory",
     components: {
         CarouselVBComponent,

@@ -28,6 +28,8 @@ export default {
     mounted() {
         this.getWorksRoom()
     },
+    beforeCreate() { document.title = 'ТК Львово' },
+    beforeUpdate() { document.title = 'ТК Львово' },
     name: "IndexComponent",
     components: {
         carousel,

@@ -56,6 +56,8 @@ export default {
             img: [],
         }
     },
+    beforeCreate() { document.title = 'Галлерея' },
+    beforeUpdate() { document.title = 'Галлерея' },
     name: "GalleryIndex",
     components: {
         TopImage,

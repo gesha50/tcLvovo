@@ -236,6 +236,8 @@
 import RequestComponent from "../../components/RequestComponent";
 
 export default {
+    beforeCreate() { document.title = 'Конфиденциальность' },
+    beforeUpdate() { document.title = 'Конфиденциальность' },
     name: "PolicyIndex",
     components: {
         RequestComponent,

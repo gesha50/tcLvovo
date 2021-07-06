@@ -15,7 +15,7 @@
                 <div class="form-group">
                     <label for="company_id">Выберите компанию</label>
                     <select class="custom-select" name="name">
-                        @if(is_array($uniqueName))
+                        @if(is_array($uniqueName) || is_object($uniqueName))
                             <option value="all">Все</option>
                             @foreach ($uniqueName as $obj)
                                 <option
