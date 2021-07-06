@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 
 Route::get('/information', [App\Http\Controllers\IndexController::class, 'information'] );
 Route::get('/contact', [App\Http\Controllers\IndexController::class, 'contact'] );
+Route::get('/get-carousel-img', [App\Http\Controllers\IndexController::class, 'sliderImages'] );
 
 Route::get('/gallery/photo', [App\Http\Controllers\GalleryController::class, 'index'] );
 Route::get('/gallery/photoCategory', [App\Http\Controllers\GalleryController::class, 'category'] );

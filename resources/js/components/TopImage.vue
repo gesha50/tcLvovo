@@ -2,7 +2,7 @@
 <div>
     <div class="bgForBreadcrumb"></div>
     <div class="container-lg blockForBreadcrumb">
-        <div class="d-flex justify-content-between p-3">
+        <div class="d-flex justify-content-between p-2">
             <h1 class="blockForBreadcrumb__header">{{ headerText }}</h1>
             <div class="blockForBreadcrumb__contact">
                 <router-link
@@ -63,6 +63,10 @@ export default {
     }
     &__link {
         @include miniBodyText ($whiteText, $MontserratSB);
+        @media (max-width: 350px) {
+            font-size: 14px;
+            line-height: 16px;
+        }
         &:hover .line {
             width: 100%;
         }

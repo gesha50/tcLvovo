@@ -46,6 +46,10 @@ export default {
     }
     &__response {
         @include response();
+        @media (max-width: 576px) {
+            font-size: 20px;
+            line-height: 22px;
+        }
     }
     &__name {
         margin-top: 25px;

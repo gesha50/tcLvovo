@@ -136,5 +136,10 @@ export default {
             font-size: 14px;
         }
     }
+    @media (max-width: 386px) {
+        &__text {
+            line-height: 25px;
+        }
+    }
 }
 </style>

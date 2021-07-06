@@ -16,12 +16,12 @@
                     class="eachNews"
                 >
                     <div class="row">
-                        <div class="col-2">
+                        <div class="col-2 col-lg-1">
                             <date-month
                                 :created_at="oneNews.created_at"
                             ></date-month>
                         </div>
-                        <div class="col-10">
+                        <div class="col-10 col-lg-11">
                             <preview
                                 :one-news="oneNews"
                             ></preview>

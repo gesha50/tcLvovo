@@ -1,7 +1,7 @@
 <template>
     <div class="container-lg mobile-padding-r-l-0">
-        <div class="miniPartners d-flex justify-content-center">
-            <div class="miniPartners__block pr-2 mr-2">
+        <div class="miniPartners d-flex flex-wrap justify-content-center">
+            <div class="miniPartners__block col-12 col-sm-6 p-4 mr-2">
                 <div class="miniPartners__decor">
                     <div class="decor"></div>
 
@@ -16,7 +16,7 @@
                     </router-link>
                 </div>
             </div>
-            <div class="miniPartners__block row">
+            <div class="miniPartners__block col-12 col-sm-6 row">
                 <img
                     v-for="img in brandsImg"
                     :src="img.image"
@@ -60,6 +60,7 @@ export default {
     padding: 100px 0;
     background: #ffffff;
     &__block {
+        margin: 0 auto;
         position: relative;
         @media (min-width: 992px) {
             width: 30%;
@@ -76,8 +77,12 @@ export default {
     }
     &__decor{
         position: absolute;
-        left: -30px;
-        top: -30px;
+        left: -3px;
+        top: -3px;
+        @media (max-width: 576px) {
+            top: -6px;
+            left: 6px;
+        }
     }
     &__heading {
         @include heading($textBlack);
@@ -89,6 +94,7 @@ export default {
     &__body {
         @include miniBodyText($grayText, Montserrat);
         margin: 30px 0;
+        width: 80%;
     }
     &__footer {
         display: inline-block;
@@ -111,6 +117,9 @@ export default {
         &:hover {
             opacity: 1;
         }
+    }
+    @media (max-width: 576px) {
+        padding: 20px 0;
     }
 }
 </style>

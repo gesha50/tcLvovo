@@ -26,11 +26,11 @@
                         <a class="nav-link" href="{{ route('admin.gallery.index') }}">Галерея</a>
                         <a class="nav-link" href="{{ route('admin.news.index') }}">Новости</a>
                         <a class="nav-link" href="{{ route('admin.contact.index') }}">Контакты</a>
-                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseError" aria-expanded="false" aria-controls="pagesCollapseError">
+                        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#pagesCollapseCompany" aria-expanded="false" aria-controls="pagesCollapseCompany">
                             Компания
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
-                        <div class="collapse" id="pagesCollapseError" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
+                        <div class="collapse" id="pagesCollapseCompany" aria-labelledby="headingOne" data-parent="#sidenavAccordionPages">
                             <nav class="sb-sidenav-menu-nested nav">
                                 <a class="nav-link" href="{{ route('admin.tenants.index') }}">Арендаторам</a>
                                 <a class="nav-link" href="{{ route('admin.histories.index') }}">История</a>

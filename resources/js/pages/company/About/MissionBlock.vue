@@ -41,9 +41,12 @@ export default {
         margin-bottom: 20px;
     }
     &__img {
-        height: 200px;
+        height: 100px;
         width: 100%;
         object-fit: contain;
+        @media (max-width: 576px) {
+            height: 100px;
+        }
     }
     &__header {
         @include miniHeader($textBlack, Montserrat);

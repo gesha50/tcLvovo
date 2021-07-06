@@ -4,7 +4,7 @@
         :headerText="'Контакты'"
     ></top-image>
     <div class="container-lg">
-            <div class="pl-5 pr-5 pb-5" style="min-height: 237px; background: white;">
+            <div class="pl-3 pr-3 pb-5" style="min-height: 237px; background: white;">
                 <spinner v-if="loading"></spinner>
                 <div v-else>
                     <div class="row">

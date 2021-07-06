@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="paddingForCarousel">
         <b-carousel
             id="carousel-1"
             v-model="slide"
@@ -46,6 +46,17 @@ export default {
 </script>
 
 <style lang="scss">
+.paddingForCarousel{
+    @media (min-width: 1200px) {
+        padding-right: 50px;
+    }
+    @media (min-width: 992px) and (max-width: 1200px) {
+        padding-right: 30px;
+    }
+    @media (min-width: 768px) and (max-width: 992px) {
+        padding-right: 10px;
+    }
+}
 .img-fluid {
     height: 350px !important;
 }

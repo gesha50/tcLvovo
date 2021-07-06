@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\NewsController;
 use App\Http\Controllers\Admin\ServiceController;
 use \App\Http\Controllers\Admin\BrandController;
+use App\Http\Controllers\Admin\SliderImageController;
 use App\Http\Controllers\Admin\TenantController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +43,7 @@ Route::group([
         'page_info' => PageInfoController::class,
         'feedbacks' => FeedbackController::class,
         'companies' => CompanyController::class,
+        'slider-images' => SliderImageController::class,
     ]);
     Route::get('/', [IndexController::class, 'index'])->name('index');
     Route::get('/charts', [IndexController::class, 'charts'])->name('charts');

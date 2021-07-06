@@ -1,14 +1,13 @@
 <template>
     <div class="container-lg mobile-padding-r-l-0">
         <div class="statistic">
-            <div class="row">
+            <div class="d-flex">
                 <div class="statistic__number p-2 offset-1">{{ works_room }}</div>
                 <div class="statistic__textBlock p-2 offset-1">
                     <p class="statistic__textUp">Помещений</p>
                     <p class="statistic__textDown">сейчас в работе!</p>
                 </div>
             </div>
-
             <div class="statistic__order p-2">
                 <div class="miniOrder">
                     <div class="miniOrder__up p-3">
@@ -18,7 +17,7 @@
                     </div>
                     <div class="miniOrder__down">
                         <div class="miniOrder__blockText p-2">
-                            <a href="#">Оставьте заявку!</a>
+                            <router-link :to="{name: 'contact'}">Оставьте заявку!</router-link>
                         </div>
                         <div class="miniOrder__triangleLeft"></div>
                     </div>
@@ -42,8 +41,6 @@ export default {
     position: relative;
     background-color: $textBlack;
     color: $whiteText;
-    padding-left: -15px;
-    padding-right: -15px;
     &__number {
         height: 100px;
         width: 100px;
@@ -52,6 +49,11 @@ export default {
         text-align: center;
         font-size: 30px;;
         color: $yellow;
+        @media (max-width: 576px) {
+            height: 60px;
+            width: 60px;
+            font-size: 22px;
+        }
     }
     &__order {
         @media (min-width: 992px) {
@@ -63,8 +65,11 @@ export default {
         @media (min-width: 576px) and (max-width: 768px) {
             width: 200px;
         }
-        @media (max-width: 576px) {
+        @media (min-width: 410px) and (max-width: 576px) {
             width: 150px;
+        }
+        @media (max-width: 410px) {
+            display: none
         }
         position: absolute;
         top: -96px;
@@ -74,7 +79,7 @@ export default {
         font-family: "Montserrat";
         font-size: 30px;
         @media (max-width: 576px) {
-            font-size: 22px;
+            font-size: 18px;
         }
     }
     &__textDown {
@@ -96,10 +101,11 @@ export default {
         font-size: 18px;
     }
     &__down {
-        background: $yellow;
+        //background: $yellow;
     }
     &__blockText {
         text-align: center;
+        background: $yellow;
     }
     &__blockText a {
         text-decoration: none;

@@ -49,10 +49,12 @@
             <div class="col-xl-6">
                 <div class="card mb-4">
                     <div class="card-header">
-                        <i class="fas fa-chart-area mr-1"></i>
-                        Area Chart Example
+                        <i class="fas fa-images mr-1"></i>
+                        Изображения для слайдера на главной странице
                     </div>
-                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
+                    <div class="card-body">
+                        <a class="btn btn-success" href="{{route('admin.slider-images.index')}}">Редактировать</a>
+                    </div>
                 </div>
             </div>
             <div class="col-xl-6">

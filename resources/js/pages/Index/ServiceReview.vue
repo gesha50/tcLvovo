@@ -2,8 +2,8 @@
     <div class="container-lg mobile-padding-r-l-0">
         <div class="service">
             <div class="d-flex">
-                <div class="col-md-6 service__img"></div>
-                <div class="col-md-6 p-2 d-flex">
+                <div class="col-4 col-md-6 service__img"></div>
+                <div class="col-8 col-md-6 p-2 d-flex">
                     <div class="service__rightBlock">
                         <div class="service__decor">
                             <div class="decor"></div>
@@ -46,6 +46,9 @@ export default {
     &__textBlock {
         padding-left: 30px;
         width: 75%;
+        @media (max-width: 576px) {
+            width: 99%;
+        }
     }
     &__heading {
         color: #111111;

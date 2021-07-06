@@ -9,7 +9,7 @@
         >
             <div class="miniServiceBlock d-flex justify-content-between">
                 <div class="miniServiceBlock__img">
-                    <img src="/storage/icon.png" alt="">
+                    <i :class="service.icon_class" class="fas"></i>
                 </div>
                 <div class="miniServiceBlock__info">
                     <div class="miniServiceBlock__heading">
@@ -69,10 +69,11 @@ export default {
 
 .miniServiceBlock {
     //padding: 55px 0;
-    &__img img {
+    &__img i {
         width: 110px;
         padding: 0 25px;
         margin: 25px 0;
+        font-size: 60px;
     }
     &__info {
 

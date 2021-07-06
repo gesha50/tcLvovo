@@ -1,13 +1,15 @@
 <template>
 <div class="container-lg mobile-padding-r-l-0">
-    <div id="app">
+    <spinner v-if="loading"></spinner>
+    <div v-else id="app">
         <agile  :autoplay-speed="4000" :initial-slide="0" :autoplay="true" :pauseOnHover="true">
             <img
-                v-for="i in 4"
+                v-for="(image, i) in images"
                 :key="i"
                 class="slide"
-                :src="'/storage/slider_'+i+'.jpeg'"
-            />
+                :src="'/storage/'+image.pathToImage"
+                alt=""
+            >
             <template slot="prevButton"><i class="fas fa-chevron-left"></i></template>
             <template slot="nextButton"><i class="fas fa-chevron-right"></i></template>
         </agile>
@@ -17,11 +19,36 @@
 
 <script>
 import { VueAgile } from 'vue-agile'
+import Spinner from "../Spinner/Spinner";
 export default {
+    data() {
+        return {
+            loading: false,
+            images: [],
+        }
+    },
     name: "carousel",
     components: {
-        agile: VueAgile
-    }
+        agile: VueAgile,
+        Spinner,
+    },
+    created() {
+        this.getImageForCarousel()
+    },
+    methods: {
+        getImageForCarousel() {
+            this.loading = true
+            axios.get('/api/get-carousel-img')
+            .then(res => {
+                this.images = res.data
+                this.loading = false
+            })
+            .catch(e => {
+                console.log(e)
+                this.loading = false
+            })
+        },
+    },
 }
 </script>
 

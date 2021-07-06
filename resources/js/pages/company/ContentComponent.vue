@@ -88,10 +88,15 @@ export default {
             right: 14px;
             border-left: 28px solid #e1e1e1;
         }
-        @media (max-width: 576px) {
+        @media (min-width: 440px) and (max-width: 576px) {
             right: 14px;
             border-left: 27px solid #e1e1e1;
         }
+        @media (max-width: 440px) {
+            right: 14px;
+            border-left: 27px solid #e1e1e1;
+        }
+
     }
 }
 </style>
