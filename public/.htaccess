@@ -1,3 +1,4 @@
+#SetEnvIfNoCase Request_URI ^ / thumb.php no-gzip -vary
 #DirectoryIndex index.php
 <IfModule mod_rewrite.c>
     <IfModule mod_negotiation.c>
