@@ -35,7 +35,7 @@
         @forelse($gallery as $obj)
             <div class="card p-1 galleryCard">
                 <div class="galleryCard__companyName">
-                    Компания: {{ $obj->brand_name }}{{$name}}
+                    Компания: {{ $obj->brand_name }}
                 </div>
                 <div class="galleryCard__delete">
                     <form action="{{route('admin.gallery.destroy', $obj->id)}}">

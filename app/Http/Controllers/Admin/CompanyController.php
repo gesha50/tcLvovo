@@ -32,15 +32,26 @@ class CompanyController extends Controller
         // тоже самое для QueryBuilder
         $companiesWithCountServices = \DB::table('companies')
             ->leftJoin('services', 'companies.id', '=', 'services.company_id')
-            ->leftJoin('galleries', 'companies.id', '=', 'galleries.company_id')
             ->select('companies.*',
-                \DB::raw('count(services.company_id) as number_of_services'),
+                \DB::raw('count(services.company_id) as number_of_services')
+            )
+            ->groupBy('companies.id')
+            ->get();
+//        select `companies`.`id`,
+//          count(`galleries`.`company_id`) as `number_of_services`
+//         from `companies`
+//         left join `galleries` on `companies`.`id` = `galleries`.`company_id`
+//         group by `companies`.`id`
+        $countGalleries = \DB::table('companies')
+            ->leftJoin('galleries', 'companies.id', '=', 'galleries.company_id')
+            ->select('companies.id',
                 \DB::raw('count(galleries.company_id) as number_of_galleries')
             )
             ->groupBy('companies.id')
             ->get();
         return view('admin.companies.index')->with([
             'companies' => $companiesWithCountServices,
+            'countGalleries' => $countGalleries,
         ]);
     }
 

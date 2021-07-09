@@ -4,7 +4,7 @@
             :headerText="'Фотогаллерея'"
         ></top-image>
         <div class="container-lg">
-            <div class="pl-5 pr-5 pb-5" style="min-height: 237px; background: white;">
+            <div class="pl-2 pr-2 pb-5" style="min-height: 237px; background: white;">
                 <nav class="galleryNav">
                     <span
                         @click="getAllPhoto"
@@ -112,8 +112,8 @@ export default {
 <style lang="scss">
 .galleryNav {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
-    width: 75%;
     margin-bottom: 20px;
     &__span {
         cursor: pointer;

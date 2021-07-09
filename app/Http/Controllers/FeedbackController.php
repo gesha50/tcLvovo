@@ -18,4 +18,15 @@ class FeedbackController extends Controller
         return Feedbacks::create($validated);
 
     }
+
+    public function sendEmail (Request $request) {
+        $validated = $request->validate([
+            'name' => '',
+            'email' => 'required | email',
+            'phone' => '',
+            'theme' => '',
+            'message' => ''
+        ]);
+        return Feedbacks::create($validated);
+    }
 }

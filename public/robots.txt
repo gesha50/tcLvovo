@@ -1,2 +1,7 @@
 User-agent: *
-Disallow:
+Crawl-delay: 1
+Host: https://tclvovo.ru/
+Disallow: /dashboard
+Disallow: /login
+Disallow: /register
+Sitemap: https://tclvovo.ru/sitemap.xml

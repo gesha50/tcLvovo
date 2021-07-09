@@ -14,16 +14,16 @@
             </a>
         </div>
         <div class="row justify-content-around">
-        @foreach ($companies as $obj)
-            <div class="col-md-3 card p-1 m-2 text-center">
+            @for ($i = 0; $i < count($companies); $i++)
+                <div class="col-md-3 card p-1 m-2 text-center">
                     <div>
-                        <h3>{{$obj->name}}</h3>
-                        <h6>{{$obj->brand_name}}</h6>
-                        <p>{{$obj->type_of_activity}}</p>
+                        <h3>{{$companies[$i]->name}}</h3>
+                        <h6>{{$companies[$i]->brand_name}}</h6>
+                        <p>{{$companies[$i]->type_of_activity}}</p>
                         <p>Кол-во услуг:
                             <strong class="fs-5">
-                                @if($obj->number_of_services)
-                                    {{$obj->number_of_services}}
+                                @if($companies[$i]->number_of_services)
+                                    {{$companies[$i]->number_of_services}}
                                 @else
                                     0
                                 @endif
@@ -31,8 +31,8 @@
                         </p>
                         <p>Кол-во изображений:
                             <strong class="fs-5">
-                                @if($obj->number_of_galleries)
-                                    {{$obj->number_of_galleries}}
+                                @if($countGalleries[$i]->number_of_galleries)
+                                    {{$countGalleries[$i]->number_of_galleries}}
                                 @else
                                     0
                                 @endif
@@ -40,11 +40,11 @@
                         </p>
                     </div>
                 <div class="text-center">
-                    <a class="btn btn-dark text-white d-block m-1" href="{{route('admin.companies.show', $obj->id)}}">Подробнее</a>
-                    <a class="btn btn-warning d-block m-1" href="{{route('admin.companies.edit', $obj->id)}}">Редактировать</a>
+                    <a class="btn btn-dark text-white d-block m-1" href="{{route('admin.companies.show', $companies[$i]->id)}}">Подробнее</a>
+                    <a class="btn btn-warning d-block m-1" href="{{route('admin.companies.edit', $companies[$i]->id)}}">Редактировать</a>
                     <form
                         class="d-block"
-                        action="{{route('admin.companies.destroy', $obj->id)}}"
+                        action="{{route('admin.companies.destroy', $companies[$i]->id)}}"
                         method="POST"
                     >
                         @csrf
@@ -53,6 +53,6 @@
                     </form>
                 </div>
             </div>
-        @endforeach
-    </div>
+            @endfor
+        </div>
 @endsection

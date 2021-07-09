@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class GalleryController extends Controller
 {
     public function index () {
-        $all = Gallery::all('img')->sortDesc();
+        $all = \DB::table('galleries')->orderByDesc('id')->get();
         $uniqueName = \DB::table('galleries')
                         ->join('companies', 'galleries.company_id', 'companies.id')
                         ->select('name')

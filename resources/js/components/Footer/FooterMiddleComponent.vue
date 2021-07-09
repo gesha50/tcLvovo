@@ -26,17 +26,17 @@
                     <div class="footerHours__block d-flex justify-content-between">
                         <div class="footerHours__day flex-shrink-0">Пн - Пт:</div>
                         <div class="footerHours__line w-100"></div>
-                        <div class="footerHours__time flex-shrink-0">9:00 - 21:00</div>
+                        <div class="footerHours__time flex-shrink-0">8:00 - 22:00</div>
                     </div>
                     <div class="footerHours__block d-flex justify-content-between">
                         <div class="footerHours__day flex-shrink-0">Суббота:</div>
                         <div class="footerHours__line w-100"></div>
-                        <div class="footerHours__time flex-shrink-0">9:00 - 20:00</div>
+                        <div class="footerHours__time flex-shrink-0">8:00 - 23:00</div>
                     </div>
                     <div class="footerHours__block d-flex justify-content-between">
                         <div class="footerHours__day flex-shrink-0">Воскресенье:</div>
                         <div class="footerHours__line w-100"></div>
-                        <div class="footerHours__time flex-shrink-0">9:00 - 20:00</div>
+                        <div class="footerHours__time flex-shrink-0">8:00 - 22:00</div>
                     </div>
                 </div>
             </div>
@@ -48,14 +48,16 @@
                 </div>
                 <hr>
                 <div class="footerEmail__send">
-                    <form class="d-flex" action="#" method="POST">
-                        <input type="text" class="footerEmail__input"
+                   <div class="d-flex">
+                        <input
+                            v-model="email"
+                            type="email" class="footerEmail__input"
                                placeholder="Введите ваш email">
                         <div class="footerEmail__fullBtn d-flex">
                             <div class="footerEmail__btnLeft"></div>
-                            <button class="footerEmail__btn">Отправить</button>
+                            <button  @click="sendEmailToServer" class="footerEmail__btn">Отправить</button>
                         </div>
-                    </form>
+                    </div>
                 </div>
                 <div class="footerEmail__body">
                     <p>Мы с вами свяжемся в ближайшее время! Спасибо!</p>
@@ -70,7 +72,26 @@
 
 <script>
 export default {
+    data() {
+        return {
+            email: '',
+        }
+    },
     name: "FooterMiddleComponent",
+    methods: {
+        sendEmailToServer() {
+            let sendData = {
+                'email': this.email
+            }
+            axios.post('/api/sendEmail', sendData)
+            .then(res => {
+                console.log(res)
+            })
+            .catch(e => {
+                console.log(e)
+            })
+        }
+    },
 }
 </script>
 

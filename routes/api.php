@@ -43,6 +43,7 @@ Route::get('/histories', [App\Http\Controllers\HistoryController::class, 'index'
 Route::get('/tenants', [App\Http\Controllers\TenantController::class, 'index'] );
 
 Route::post('/sendContactData', [App\Http\Controllers\FeedbackController::class, 'sendContactData'] );
+Route::post('/sendEmail', [App\Http\Controllers\FeedbackController::class, 'sendEmail'] );
 
 Route::get('/oneReview/{id}', [App\Http\Controllers\ReviewController::class, 'oneReview'] );
 
