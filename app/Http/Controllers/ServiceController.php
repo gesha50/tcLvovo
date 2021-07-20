@@ -30,4 +30,12 @@ class ServiceController extends Controller
     {
         return $services;
     }
+
+    public function getImage(Services $services)
+    {
+        return \DB::table('galleries')
+            ->select('img')
+            ->where('company_id','=', $services->id)
+            ->get();
+    }
 }

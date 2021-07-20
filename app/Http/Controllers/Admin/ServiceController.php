@@ -35,11 +35,9 @@ class ServiceController extends Controller
      */
     public function create(Request $request)
     {
-        $companyCurrentName = $request->get('companyCurrentName');
-        $companyName = Companies::all('id','brand_name');
         return view('admin.services.create')->with([
-            'companyCurrentName' => $companyCurrentName,
-            'companyName' => $companyName,
+            'companyCurrentName' => $request->get('companyCurrentName'),
+            'companyName' => Companies::all('id','brand_name'),
         ]);
     }
 
@@ -56,7 +54,9 @@ class ServiceController extends Controller
             'preview' => 'required',
             'description' => 'required',
             'icon_class' => 'required',
-            'company_id' => 'required'
+            'company_id' => 'required',
+            'why_choose_us' => 'required',
+            'pluses' => 'required'
         ]);
         $service = Services::create($validated);
         $service->save();
@@ -109,7 +109,9 @@ class ServiceController extends Controller
             'preview' => 'required',
             'description' => 'required',
             'icon_class' => 'required',
-            'company_id' => 'required'
+            'company_id' => 'required',
+            'why_choose_us' => 'required',
+            'pluses' => 'required'
         ]);
         $service->update($validated);
         $request->flash();

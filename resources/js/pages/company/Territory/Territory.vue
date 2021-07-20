@@ -13,7 +13,7 @@
                 ></about-territory>
             </div>
             <div class="col-md-6">
-                <good-territory></good-territory>
+
             </div>
         </div>
         <div class="row mt-5 mb-4">

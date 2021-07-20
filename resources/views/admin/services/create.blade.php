@@ -44,21 +44,6 @@
                 @endforeach
 
                 <div class="form-group">
-                    <label for="name">Название фирмы</label>
-                    <input
-                        name="name"
-                        type="text"
-                        class="form-control @error('name') is-invalid @enderror"
-                        id="name"
-                        placeholder="TireFast"
-                        value="{{ old('name') }}"
-                    >
-                </div>
-                @foreach($errors->get('name') as $error)
-                    <div class="text-danger">{{ $error }}</div>
-                @endforeach
-
-                <div class="form-group">
                     <label for="preview">Короткое описание</label>
                     <input
                         name="preview"
@@ -85,6 +70,36 @@
                     >
                 </div>
                 @foreach($errors->get('description') as $error)
+                    <div class="text-danger">{{ $error }}</div>
+                @endforeach
+
+                <div class="form-group">
+                    <label for="why_choose_us">Почему выбирает именно нас?</label>
+                    <input
+                        name="why_choose_us"
+                        type="text"
+                        class="form-control @error('why_choose_us') is-invalid @enderror"
+                        id="why_choose_us"
+                        placeholder="Мы предоставляем качественные услуги..."
+                        value="{{ old('why_choose_us') }}"
+                    >
+                </div>
+                @foreach($errors->get('why_choose_us') as $error)
+                    <div class="text-danger">{{ $error }}</div>
+                @endforeach
+
+                <div class="form-group">
+                    <label for="pluses">Достоинства (ВАЖНО!! перечислять достоинства по пунктам, через запятую ",")</label>
+                    <input
+                        name="pluses"
+                        type="text"
+                        class="form-control @error('pluses') is-invalid @enderror"
+                        id="pluses"
+                        placeholder="качественный подход, быстрая работа, современное оборудование, ..."
+                        value="{{ old('pluses') }}"
+                    >
+                </div>
+                @foreach($errors->get('pluses') as $error)
                     <div class="text-danger">{{ $error }}</div>
                 @endforeach
 

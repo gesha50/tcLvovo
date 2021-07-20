@@ -37,6 +37,13 @@
                 <div class="card-body">
                     <p class="card-text">{{$services->description}}</p>
                 </div>
+
+                <div class="card-body">Почему выбирают именно вас?
+                    <p class="card-text">{{$services->why_choose_us}}</p>
+                </div>
+                <div class="card-body">Достоинства:
+                    <p class="card-text">{{$services->pluses}}</p>
+                </div>
             </div>
         </div>
     </div>

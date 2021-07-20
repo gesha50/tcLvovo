@@ -76,6 +76,36 @@
                 @endforeach
 
                 <div class="form-group">
+                    <label for="why_choose_us">Почему выбирает именно нас?</label>
+                    <input
+                        name="why_choose_us"
+                        type="text"
+                        class="form-control @error('why_choose_us') is-invalid @enderror"
+                        id="why_choose_us"
+                        placeholder="Мы предоставляем качественные услуги..."
+                        value="{{ old('why_choose_us', $services->why_choose_us) }}"
+                    >
+                </div>
+                @foreach($errors->get('why_choose_us') as $error)
+                    <div class="text-danger">{{ $error }}</div>
+                @endforeach
+
+                <div class="form-group">
+                    <label for="pluses">Достоинства (ВАЖНО!! перечислять достоинства по пунктам, через запятую ",")</label>
+                    <input
+                        name="pluses"
+                        type="text"
+                        class="form-control @error('pluses') is-invalid @enderror"
+                        id="pluses"
+                        placeholder="качественный подход, быстрая работа, современное оборудование, ..."
+                        value="{{ old('pluses', $services->pluses) }}"
+                    >
+                </div>
+                @foreach($errors->get('pluses') as $error)
+                    <div class="text-danger">{{ $error }}</div>
+                @endforeach
+
+                <div class="form-group">
                     <label for="icon_class">CSS-класс иконки можно взять
                         <a
                             target="_blank"
