@@ -7,7 +7,7 @@
             controls
             indicators
             background="#ababab"
-            img-width="100%"
+            img-width="400px"
             img-height="350"
             style="text-shadow: 1px 1px 2px #333; height: 100%"
             @sliding-start="onSlideStart"
@@ -45,16 +45,27 @@ export default {
 }
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 .paddingForCarousel{
     @media (min-width: 1200px) {
         padding-right: 50px;
+        width: 70%;
+        margin: 0 auto;
     }
     @media (min-width: 992px) and (max-width: 1200px) {
         padding-right: 30px;
+        width: 80%;
+        margin: 0 auto;
     }
     @media (min-width: 768px) and (max-width: 992px) {
         padding-right: 10px;
+        width: 90%;
+        margin: 0 auto;
+    }
+    @media (max-width: 768px) {
+        padding-right: 0;
+        width: 100%;
+        margin: 0 auto;
     }
 }
 .img-fluid {

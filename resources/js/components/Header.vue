@@ -22,8 +22,22 @@
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <div class="search navbar-nav">
-                    <a @click="remove" v-if="userLogin" class="nav-link my-nav-link" href="/dashboard">Админка</a>
+                    <a @click="remove" v-if="isAdmin" class="nav-link my-nav-link" href="/dashboard">
+                        Админка
+                    </a>
 <!--                    <i v-else class="fas fa-search"></i>-->
+                    <a @click="remove" v-if="!userLogin" class="nav-link my-nav-link" href="/login">
+                        войти
+                    </a>
+                    <a @click="remove" v-if="!userLogin" class="nav-link my-nav-link" href="/register">
+                        регистрация
+                    </a>
+                    <a @click="remove" v-if="userLogin" class="nav-link my-nav-link" href="/cabinet">
+                        Кабинет
+                    </a>
+                    <a @click="logout" v-if="userLogin" class="nav-link my-nav-link" href="#">
+                        Выйти
+                    </a>
                 </div>
             </div>
         </nav>
@@ -35,6 +49,7 @@ export default {
     name: "Header",
     props: {
         userLogin: Boolean,
+        isAdmin: Boolean,
     },
     methods: {
       remove() {
@@ -43,7 +58,16 @@ export default {
               el.classList.remove("show");
           }
           el.setAttribute('aria-expanded', 'false')
-      }
+      },
+        logout() {
+            axios.post('logout')
+            .then(response => {
+                location.reload();
+            })
+            .catch(error => {
+                location.reload();
+            });
+        }
     },
 }
 </script>

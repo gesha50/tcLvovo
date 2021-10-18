@@ -2,12 +2,10 @@
     <div style="padding-left: -15px; background-color: #f3cc29;">
 <div class="container-fluid">
     <div class="request">
-<!--        <div>-->
             <div class="request__blockLeft">
                 <div class="request__text">Хотите арендовать помещение для торговли или склада?</div>
             </div>
             <div class="request__triangle"></div>
-<!--        </div>-->
         <div class="request__blockRight">
             <div class="service__linkBlock">
                 <router-link class="service__link request__link" :to="{name: 'contact'}">Оставть заявку

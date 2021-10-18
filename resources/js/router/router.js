@@ -160,6 +160,22 @@ const routes = [
                 }
             },
             {
+                path: 'login',
+                redirect: '/login'
+            },
+            {
+                path: 'register',
+                redirect: '/register'
+            },
+            {
+                path: 'logout',
+                redirect: '/logout'
+            },
+            {
+                path: 'password/reset',
+                redirect: '/password/reset'
+            },
+            {
                 path: '/404',
                 name: '404',
                 component: NotFound,
@@ -168,6 +184,22 @@ const routes = [
                 },
             },
         ]
+    },
+    {
+        path: 'login',
+        redirect: '/login'
+    },
+    {
+        path: 'register',
+        redirect: '/register'
+    },
+    {
+        path: 'logout',
+        redirect: '/logout'
+    },
+    {
+        path: 'password/reset',
+        redirect: '/password/reset'
     },
     {
         path: '*',

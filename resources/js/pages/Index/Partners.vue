@@ -112,6 +112,7 @@ export default {
     &__img {
         width: 46%;
         margin: 2%;
+        height: 150px;
         object-fit: contain;
         opacity: 0.5;
         &:hover {

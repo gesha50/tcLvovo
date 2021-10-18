@@ -1,7 +1,8 @@
 <template>
 <div>
     <Header
-        :userLogin="isAdmin"
+        :isAdmin="isAdmin"
+        :userLogin="isUser"
     ></Header>
     <main>
         <router-view></router-view>
