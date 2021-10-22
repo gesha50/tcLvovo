@@ -19,25 +19,34 @@
                     <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'gallery'}">Фотогаллерея</router-link></li>
                     <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'contact'}">Контакты</router-link></li>
                     <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'news'}">Новости</router-link></li>
+                    <li @click="remove"><router-link class="nav-link my-nav-link" :to="{name: 'shop'}">Магазин</router-link></li>
                 </ul>
                 <!-- Right Side Of Navbar -->
                 <div class="search navbar-nav">
                     <a @click="remove" v-if="isAdmin" class="nav-link my-nav-link" href="/dashboard">
                         Админка
                     </a>
-<!--                    <i v-else class="fas fa-search"></i>-->
                     <a @click="remove" v-if="!userLogin" class="nav-link my-nav-link" href="/login">
-                        войти
+                        <i class="fas fa-sign-in-alt"></i>
                     </a>
-                    <a @click="remove" v-if="!userLogin" class="nav-link my-nav-link" href="/register">
-                        регистрация
-                    </a>
-                    <a @click="remove" v-if="userLogin" class="nav-link my-nav-link" href="/cabinet">
-                        Кабинет
-                    </a>
+                    <div @click="remove"  v-if="userLogin">
+                        <router-link class="nav-link my-nav-link" :to="{name: 'cabinet'}">
+                            <i class="fas fa-user-circle"></i>
+                        </router-link>
+                    </div>
                     <a @click="logout" v-if="userLogin" class="nav-link my-nav-link" href="#">
-                        Выйти
+                        <i class="fas fa-sign-out-alt"></i>
                     </a>
+                    <div @click="remove">
+                        <router-link class="nav-link my-nav-link" :to="{name: 'favourites'}">
+                            <i class="fas fa-thumbs-up"></i>
+                        </router-link>
+                    </div>
+                    <div @click="remove">
+                        <router-link class="nav-link my-nav-link" :to="{name: 'cart'}">
+                            <i class="fas fa-shopping-cart"></i>
+                        </router-link>
+                    </div>
                 </div>
             </div>
         </nav>

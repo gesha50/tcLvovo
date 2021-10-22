@@ -17,6 +17,11 @@ import PolicyIndex from "../pages/Policy/PolicyIndex";
 import NotFound from "../pages/NotFound";
 import OneNews from "../pages/News/OneNews/OneNews";
 import OneServiceIndex from "../pages/Service/OneService/OneServiceIndex";
+import Shop from "../pages/Shop/Shop";
+import Favourites from "../pages/Shop/Favourites";
+import Cart from "../pages/Shop/Cart";
+import Cabinet from "../pages/User/Cabinet";
+import Item from "../pages/Shop/Item/Item";
 
 Vue.use(Router)
 
@@ -149,6 +154,52 @@ const routes = [
                 component: ContactIndex,
                 meta: {
                     breadcrumb: 'Контакты'
+                }
+            },
+            {
+                path: "shop",
+                name: "shop",
+                component: Shop,
+                meta: {
+                    breadcrumb: 'Магазин'
+                },
+                children: [
+                    {
+                        path: ":slug",
+                        name: "item",
+                        component: Item,
+                        meta: {
+                            breadcrumb: routeParams => routeParams.slug
+                        },
+                        props: (route) => ({ // функция генерации входных параметров
+                            item: route.query.item,
+                            slug: route.params.slug,
+                        }),
+                    },
+                ],
+            },
+            {
+                path: "favourites",
+                name: "favourites",
+                component: Favourites,
+                meta: {
+                    breadcrumb: 'Избранное'
+                }
+            },
+            {
+                path: "cart",
+                name: "cart",
+                component: Cart,
+                meta: {
+                    breadcrumb: 'Корзина'
+                }
+            },
+            {
+                path: "cabinet",
+                name: "cabinet",
+                component: Cabinet,
+                meta: {
+                    breadcrumb: 'Личный кабинет'
                 }
             },
             {
