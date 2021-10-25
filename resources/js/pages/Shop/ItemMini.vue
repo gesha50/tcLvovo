@@ -1,8 +1,9 @@
 <template>
-    <div @click="showMore(item)" class="item col-md-3 mb-4 justify-content-around py-3">
-        <i class="fas fa-heart float-right"></i>
+    <div class="item col-6 col-sm-4 col-md-3 mb-4 justify-content-around py-3">
+        <i @click="addToFavourites(item)" class="fas fa-heart position-absolute heart"></i>
+    <div @click="showMore(item)">
         <div class="d-flex justify-content-center w-100 my-2">
-            <img width="150px" height="150px" src="https://jjji.ru/800x450" alt="">
+            <img width="150px" height="150px" :src="item.img[1]" alt="">
         </div>
         <div class="d-flex justify-content-start">
             <div class="price">
@@ -14,17 +15,24 @@
                 {{item.title}}
             </div>
         </div>
-        <button class="btn btn-light">Купить</button>
+    </div>
+    <button @click="buy(item)" class="btn btn-light">Купить</button>
     </div>
 </template>
 
 <script>
+import {mapActions, mapGetters} from "vuex";
+
 export default {
     name: "ItemMini",
     props: {
         item: Object,
     },
     methods: {
+        ...mapActions({
+            addItemInCart: 'addItemInCart',
+            addItemToFavourites: 'addItemToFavourites',
+        }),
         showMore(item) {
           this.$router.push({
               path: `/shop/${item.title}`,
@@ -32,11 +40,28 @@ export default {
               query: { item: item }
           })
         },
-    }
+        buy(item) {
+            this.addItemInCart(item)
+        },
+        addToFavourites(item) {
+            this.addItemToFavourites(item)
+        },
+    },
+    computed: {
+        ...mapGetters({
+            cart: 'getCart',
+            favourites: 'getFavourites',
+        }),
+    },
 }
 </script>
 
 <style lang="scss">
+.heart {
+    right: 5px;
+    top: 5px;
+    z-index: 10;
+}
 .item {
     transition: 0.2s;
     &:hover {

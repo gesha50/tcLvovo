@@ -60,67 +60,196 @@ export default {
           items: [
               {
                   id: 1,
-                  title: 'шуруповерт',
+                  article: '',
+                  idCategory: 1,
+                  idCompany: 2,
+                  tags: '',
+                  img: {
+                      0: 'https://jjji.ru/800x450',
+                      1: 'https://jjji.ru/800x550',
+                      2: 'https://jjji.ru/750x500',
+                  },
+                  title: 'Шуруповерт',
                   description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
-                  price: 2500,
-                  isNew: true,
-                  isSale: false,
+                  fullDescriptio: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3' +
+                      ' 34vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
+                  dignities: ['vefcs', 'vrgfced', 'tgvrfc'],
+                  specifications: {
+                      0: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      1: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      2: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                  },
+                  price: 4990,
+                  status: 'new',
               },
               {
                   id: 2,
+                  article: '',
+                  idCategory: 1,
+                  idCompany: 2,
+                  tags: '',
+                  img: {
+                      0: 'https://jjji.ru/800x450',
+                      1: 'https://jjji.ru/800x550',
+                      2: 'https://jjji.ru/750x500',
+                  },
                   title: 'Бензопила',
                   description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
+                  fullDescriptio: '',
+                  dignities: ['vefcs', 'vrgfced', 'tgvrfc'],
+                  specifications: {
+                      0: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      1: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      2: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                  },
                   price: 4990,
-                  isNew: false,
-                  isSale: false,
+                  status: 'new',
               },
               {
                   id: 3,
-                  title: 'Мангал',
+                  article: '',
+                  idCategory: 1,
+                  idCompany: 2,
+                  tags: '',
+                  img: {
+                      0: 'https://jjji.ru/800x450',
+                      1: 'https://jjji.ru/800x550',
+                      2: 'https://jjji.ru/750x500',
+                  },
+                  title: 'Газонокосилка',
                   description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
-                  price: 20000,
-                  isNew: false,
-                  isSale: false,
+                  fullDescriptio: '',
+                  dignities: ['vefcs', 'vrgfced', 'tgvrfc'],
+                  specifications: {
+                      0: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      1: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      2: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                  },
+                  price: 4990,
+                  status: 'new',
               },
               {
                   id: 4,
-                  title: 'Колеса',
+                  article: '',
+                  idCategory: 1,
+                  idCompany: 2,
+                  tags: '',
+                  img: {
+                      0: 'https://jjji.ru/800x450',
+                      1: 'https://jjji.ru/800x550',
+                      2: 'https://jjji.ru/750x500',
+                  },
+                  title: 'Гвозди',
                   description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
-                  price: 10000,
-                  isNew: false,
-                  isSale: false,
+                  fullDescriptio: '',
+                  dignities: ['vefcs', 'vrgfced', 'tgvrfc'],
+                  specifications: {
+                      0: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      1: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      2: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                  },
+                  price: 4990,
+                  status: 'new',
               },
               {
                   id: 5,
-                  title: 'шуруповерт',
+                  article: '',
+                  idCategory: 1,
+                  idCompany: 2,
+                  tags: '',
+                  img: {
+                      0: 'https://jjji.ru/800x450',
+                      1: 'https://jjji.ru/800x550',
+                      2: 'https://jjji.ru/750x500',
+                  },
+                  title: 'Мангал',
                   description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
-                  price: 2500,
-                  isNew: true,
-                  isSale: false,
+                  fullDescriptio: '',
+                  dignities: ['vefcs', 'vrgfced', 'tgvrfc'],
+                  specifications: {
+                      0: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      1: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      2: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                  },
+                  price: 4990,
+                  status: 'new',
               },
               {
                   id: 6,
-                  title: 'Бензопила',
+                  article: '',
+                  idCategory: 1,
+                  idCompany: 2,
+                  tags: '',
+                  img: {
+                      0: 'https://jjji.ru/800x450',
+                      1: 'https://jjji.ru/800x550',
+                      2: 'https://jjji.ru/750x500',
+                  },
+                  title: 'Краска',
                   description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
+                  fullDescriptio: '',
+                  dignities: ['vefcs', 'vrgfced', 'tgvrfc'],
+                  specifications: {
+                      0: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      1: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                      2: {
+                          key: 'free speed',
+                          value: 'rrmfj'
+                      },
+                  },
                   price: 4990,
-                  isNew: false,
-                  isSale: false,
-              },
-              {
-                  id: 7,
-                  title: 'Мангал',
-                  description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
-                  price: 20000,
-                  isNew: false,
-                  isSale: false,
-              },
-              {
-                  id: 8,
-                  title: 'Колеса',
-                  description: 'vgjbh jhbjkvef rejkfjwekn r3ffh3jh3 34',
-                  price: 10000,
-                  isNew: false,
-                  isSale: false,
+                  status: 'new',
               },
           ],
           lastItemOnPage: 10
@@ -132,8 +261,8 @@ export default {
         ItemMini,
     },
     methods: {
-        moreItems(id) {
-          // axios.get('', id)
+        moreItems(lastId) {
+          // axios.get('', lastId)
           //     .then(response => {
           //
           //     })
